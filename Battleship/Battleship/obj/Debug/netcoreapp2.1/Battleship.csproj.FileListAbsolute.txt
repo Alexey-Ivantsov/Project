@@ -1,0 +1,14 @@
+C:\Users\vin-a\Documents\GitHub\project\Battleship\Battleship\bin\Debug\netcoreapp2.1\Battleship.deps.json
+C:\Users\vin-a\Documents\GitHub\project\Battleship\Battleship\bin\Debug\netcoreapp2.1\Battleship.runtimeconfig.json
+C:\Users\vin-a\Documents\GitHub\project\Battleship\Battleship\bin\Debug\netcoreapp2.1\Battleship.runtimeconfig.dev.json
+C:\Users\vin-a\Documents\GitHub\project\Battleship\Battleship\bin\Debug\netcoreapp2.1\Battleship.dll
+C:\Users\vin-a\Documents\GitHub\project\Battleship\Battleship\bin\Debug\netcoreapp2.1\Battleship.pdb
+C:\Users\vin-a\Documents\GitHub\project\Battleship\Battleship\obj\Debug\netcoreapp2.1\Battleship.csproj.CoreCompileInputs.cache
+C:\Users\vin-a\Documents\GitHub\project\Battleship\Battleship\obj\Debug\netcoreapp2.1\Battleship.AssemblyInfoInputs.cache
+C:\Users\vin-a\Documents\GitHub\project\Battleship\Battleship\obj\Debug\netcoreapp2.1\Battleship.AssemblyInfo.cs
+C:\Users\vin-a\Documents\GitHub\project\Battleship\Battleship\obj\Debug\netcoreapp2.1\Battleship.dll
+C:\Users\vin-a\Documents\GitHub\project\Battleship\Battleship\obj\Debug\netcoreapp2.1\Battleship.pdb
+C:\Users\vin-a\Documents\GitHub\project\Battleship\Battleship\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\vin-a\Documents\GitHub\project\Battleship\Battleship\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Users\vin-a\Documents\GitHub\project\Battleship\Battleship\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\Users\vin-a\Documents\GitHub\project\Battleship\Battleship\obj\Debug\netcoreapp2.1\Battleship.csprojAssemblyReference.cache
