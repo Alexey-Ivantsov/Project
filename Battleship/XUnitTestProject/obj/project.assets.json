@@ -5786,11 +5786,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vin-a\\Documents\\GitHub\\project\\Battleship\\XUnitTestProject\\XUnitTestProject.csproj",
+      "projectUniqueName": "C:\\Users\\vin-a\\Documents\\GitHub\\Project\\Battleship\\XUnitTestProject\\XUnitTestProject.csproj",
       "projectName": "XUnitTestProject",
-      "projectPath": "C:\\Users\\vin-a\\Documents\\GitHub\\project\\Battleship\\XUnitTestProject\\XUnitTestProject.csproj",
+      "projectPath": "C:\\Users\\vin-a\\Documents\\GitHub\\Project\\Battleship\\XUnitTestProject\\XUnitTestProject.csproj",
       "packagesPath": "C:\\Users\\vin-a\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vin-a\\Documents\\GitHub\\project\\Battleship\\XUnitTestProject\\obj\\",
+      "outputPath": "C:\\Users\\vin-a\\Documents\\GitHub\\Project\\Battleship\\XUnitTestProject\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5809,8 +5809,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\vin-a\\Documents\\GitHub\\project\\Battleship\\Battleship\\Battleship.csproj": {
-              "projectPath": "C:\\Users\\vin-a\\Documents\\GitHub\\project\\Battleship\\Battleship\\Battleship.csproj"
+            "C:\\Users\\vin-a\\Documents\\GitHub\\Project\\Battleship\\Battleship\\Battleship.csproj": {
+              "projectPath": "C:\\Users\\vin-a\\Documents\\GitHub\\Project\\Battleship\\Battleship\\Battleship.csproj"
             }
           }
         }

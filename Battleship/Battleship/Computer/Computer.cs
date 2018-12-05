@@ -6,16 +6,16 @@ using System;
 
 public class Computer : IPlayer
 {
-    public Status[,] Grid { get; set; }
-    HitInformation hitInformation;
+    public Status[,] Grid { get; set; }    
     public int LastI { get; set; }
     public int LastJ { get; set; }
+    HitInformation _hitInformation;
     public Computer()
     {
         LastI = 0;
         LastJ = 0;
         GridComputer();
-        hitInformation = new HitInformation();
+        _hitInformation = new HitInformation();
     }
     public void GridComputer()
     {
@@ -31,46 +31,46 @@ public class Computer : IPlayer
     }
     public void Hit(Status[,] playerGrid)
     {
-        if (hitInformation.ShipCount == 0)
+        if (_hitInformation.ShipCount == 0)
         {
             Search(playerGrid);
         }
-        if (hitInformation.ShipCount != 0 && hitInformation.ResDirection == ResultDirection.None)
+        if (_hitInformation.ShipCount != 0 && _hitInformation.ResDirection == ResultDirection.None)
         {
 
             do
             {
-                Check.FindDirection(LastI, LastJ, playerGrid, hitInformation);
-            } while (hitInformation.StatusShoot == ShootStatus.Hit);
-            hitInformation.StatusShoot = ShootStatus.Hit;
-            if (LastJ + 1 < Const.MAX_BOUND && (hitInformation.ResDirection == ResultDirection.Up || hitInformation.ResDirection == ResultDirection.Down))
+                Check.FindDirection(LastI, LastJ, playerGrid, _hitInformation);
+            } while (_hitInformation.StatusShoot == ShootStatus.Hit);
+            _hitInformation.StatusShoot = ShootStatus.Hit;
+            if (LastJ + 1 < Const.MAX_BOUND && (_hitInformation.ResDirection == ResultDirection.Up || _hitInformation.ResDirection == ResultDirection.Down))
             {
                 playerGrid[LastI, LastJ + 1] = Status.Used;//
             }
-            if (LastJ - 1 > Const.MIN_BOUND && (hitInformation.ResDirection == ResultDirection.Up || hitInformation.ResDirection == ResultDirection.Down))
+            if (LastJ - 1 > Const.MIN_BOUND && (_hitInformation.ResDirection == ResultDirection.Up || _hitInformation.ResDirection == ResultDirection.Down))
             {
                 playerGrid[LastI, LastJ - 1] = Status.Used;//
             }
 
-            if (LastI + 1 < Const.MAX_BOUND && (hitInformation.ResDirection == ResultDirection.Right || hitInformation.ResDirection == ResultDirection.Left))
+            if (LastI + 1 < Const.MAX_BOUND && (_hitInformation.ResDirection == ResultDirection.Right || _hitInformation.ResDirection == ResultDirection.Left))
             {
                 playerGrid[LastI + 1, LastJ] = Status.Used;//
             }
-            if (LastI - 1 > Const.MIN_BOUND && (hitInformation.ResDirection == ResultDirection.Right || hitInformation.ResDirection == ResultDirection.Left))
+            if (LastI - 1 > Const.MIN_BOUND && (_hitInformation.ResDirection == ResultDirection.Right || _hitInformation.ResDirection == ResultDirection.Left))
             {
                 playerGrid[LastI - 1, LastJ] = Status.Used;//
             }
         }
-        if (hitInformation.ResDirection > 0)
+        if (_hitInformation.ResDirection > 0)
         {
             do
             {
-                Check.HitDirection(LastI, LastJ, playerGrid, hitInformation);
-            } while (hitInformation.StatusShoot == ShootStatus.Hit && hitInformation.ShipCount != 0);
-            if (hitInformation.ShipCount == 0)
+                Check.HitDirection(LastI, LastJ, playerGrid, _hitInformation);
+            } while (_hitInformation.StatusShoot == ShootStatus.Hit && _hitInformation.ShipCount != 0);
+            if (_hitInformation.ShipCount == 0)
             {
-                hitInformation.Count = 1;
-                hitInformation.ResDirection = ResultDirection.None;
+                _hitInformation.Count = 1;
+                _hitInformation.ResDirection = ResultDirection.None;
             }
         }
     }
@@ -145,7 +145,7 @@ public class Computer : IPlayer
 
             if (playerGrid[i, j] == Status.Occupied || playerGrid[i, j] == Status.Occupied2 || playerGrid[i, j] == Status.Occupied3 || playerGrid[i, j] == Status.Occupied4)
             {
-                hitInformation.PlayerCount--;
+                _hitInformation.PlayerCount--;
 
                 if (playerGrid[i, j] == Status.Occupied)
                 {
@@ -168,21 +168,21 @@ public class Computer : IPlayer
                         k++;
                     }
                     playerGrid[i, j] = Status.Hit;
-                    hitInformation.ShipCount = 0;
+                    _hitInformation.ShipCount = 0;
                 }
-                else if (playerGrid[i, j] == Status.Occupied2) { playerGrid[i, j] = Status.Hit; LastI = i; LastJ = j; hitInformation.ShipCount = 1; break; }
-                else if (playerGrid[i, j] == Status.Occupied3) { playerGrid[i, j] = Status.Hit; LastI = i; LastJ = j; hitInformation.ShipCount = 2; break; }
-                else if (playerGrid[i, j] == Status.Occupied4) { playerGrid[i, j] = Status.Hit; LastI = i; LastJ = j; hitInformation.ShipCount = 3; break; }
+                else if (playerGrid[i, j] == Status.Occupied2) { playerGrid[i, j] = Status.Hit; LastI = i; LastJ = j; _hitInformation.ShipCount = 1; break; }
+                else if (playerGrid[i, j] == Status.Occupied3) { playerGrid[i, j] = Status.Hit; LastI = i; LastJ = j; _hitInformation.ShipCount = 2; break; }
+                else if (playerGrid[i, j] == Status.Occupied4) { playerGrid[i, j] = Status.Hit; LastI = i; LastJ = j; _hitInformation.ShipCount = 3; break; }
 
             }
             else if (playerGrid[i, j] != Status.Hit) playerGrid[i, j] = Status.Used;
             Print.PrintShip(playerGrid);
 
-        } while (playerGrid[i, j] == Status.Hit && hitInformation.PlayerCount != 0 && playerGrid[i, j] == Status.Used);
+        } while (playerGrid[i, j] == Status.Hit && _hitInformation.PlayerCount != 0 && playerGrid[i, j] == Status.Used);
     }
     public bool IsWin()
     {
-        return hitInformation.PlayerCount == 0;
+        return _hitInformation.PlayerCount == 0;
     }
 }
 
