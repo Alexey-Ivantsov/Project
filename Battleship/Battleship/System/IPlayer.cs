@@ -10,5 +10,6 @@ namespace Battleship.System
         void Hit(Status[,] grid);
         void Placement();
         bool IsWin();
+        bool FinishHit();
     }
 }

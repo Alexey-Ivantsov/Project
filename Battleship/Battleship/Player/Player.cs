@@ -7,7 +7,7 @@ using System.Text;
 
 
 public class Player : IPlayer
-{   
+{
     public int ComputerCount { get; set; }
     public Status[,] Grid { get; set; }
     public Player()
@@ -79,6 +79,10 @@ public class Player : IPlayer
             else if (computerGrid[i, j] == Status.Empty) computerGrid[i, j] = Status.Used;
         } while (computerGrid[i, j] == Status.Hit && ComputerCount != 0);
 
+    }
+    public bool FinishHit()
+    {
+        return true;
     }
     public bool IsWin()
     {

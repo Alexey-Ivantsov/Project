@@ -6,20 +6,29 @@ namespace Battleship.System
 {
     public class Game
     {
-        public static void Start()
+        Player player;
+        Computer computer;
+        public Game()
         {
-            Player player = new Player();
-            Computer computer = new Computer();
+            player = new Player();
+            computer = new Computer();
+        }
+        delegate void Move();
+        public void Start()
+        {
+
+            Move move;
             player.Placement();
             computer.Placement();
             Console.Clear();
             Print.PrintShip(computer.Grid);
             Console.WriteLine();
             Print.PrintShip(player.Grid);
+            move = PlayerHit;
+            move += ComputerHit;
             do
             {
-                player.Hit(computer.Grid);
-                computer.Hit(player.Grid);
+                move();
                 Console.Clear();
                 Print.PrintShip(computer.Grid);
                 Console.WriteLine();
@@ -28,6 +37,14 @@ namespace Battleship.System
 
             Print.PrintWinner(computer, player);
             Console.ReadKey();
+        }
+        private void PlayerHit()
+        {
+            player.Hit(computer.Grid);
+        }
+        private void ComputerHit()
+        {
+            computer.Hit(player.Grid);
         }
     }
 }
