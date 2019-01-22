@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 <<<<<<< HEAD:WebMongo/WebMongo/Controllers/PhoneController.cs
 <<<<<<< HEAD:WebMongo/WebMongo/Controllers/PhoneController.cs
+<<<<<<< HEAD:WebMongo/WebMongo/Controllers/PhoneController.cs
 using WebMongo.Data;
 using WebMongo.Data.Interfaces;
+=======
+>>>>>>> parent of e1406b2... ----:WebMongo/WebMongo/Controllers/HomeController.cs
 =======
 >>>>>>> parent of e1406b2... ----:WebMongo/WebMongo/Controllers/HomeController.cs
 =======
@@ -21,10 +24,15 @@ namespace WebMongo.Controllers
     {
 <<<<<<< HEAD:WebMongo/WebMongo/Controllers/PhoneController.cs
 <<<<<<< HEAD:WebMongo/WebMongo/Controllers/PhoneController.cs
+<<<<<<< HEAD:WebMongo/WebMongo/Controllers/PhoneController.cs
         Repository jkl = new Repository();
 
         private readonly Repository db;
         public PhoneController(Repository context)
+=======
+        private readonly MobileContext db;
+        public HomeController(MobileContext context)
+>>>>>>> parent of e1406b2... ----:WebMongo/WebMongo/Controllers/HomeController.cs
 =======
         private readonly MobileContext db;
         public HomeController(MobileContext context)
