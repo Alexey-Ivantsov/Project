@@ -6,12 +6,13 @@ using WebMongo.Models;
 
 namespace WebMongo.Data.Interfaces
 {
-    interface IRepository
+    public interface IRepository
     {
-        Task<IEnumerable<Phone>> GetAllGames();
-        Task<Phone> GetGame(string name);
-        Task Create(Phone game);
-        Task<bool> Update(Phone game);
-        Task<bool> Delete(string name);
+        Task<IEnumerable<Phone>> GetPhones(int? min, int? max, string name);
+        Task<byte[]> GetImage(string id);
+        Task Create(Phone name);
+        Task Update(Phone name);
+        Task Delete(string name);
+        Task<Phone> Read(string id);
     }
 }

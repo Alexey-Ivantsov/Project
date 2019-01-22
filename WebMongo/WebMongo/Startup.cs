@@ -10,7 +10,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+<<<<<<< HEAD
+<<<<<<< HEAD
 using WebMongo.Data;
+using WebMongo.Data.Interfaces;
+=======
+>>>>>>> parent of e1406b2... ----
+=======
+>>>>>>> parent of e1406b2... ----
 using WebMongo.Models;
 
 namespace WebMongo
@@ -19,7 +26,7 @@ namespace WebMongo
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<Repository>();
+            services.AddTransient<MobileContext>();
             services.AddMvc();
         }
 

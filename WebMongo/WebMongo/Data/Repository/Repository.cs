@@ -5,11 +5,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using WebMongo.Data.Interfaces;
 using WebMongo.Models;
 
 namespace WebMongo.Data
 {
-    public class Repository
+    public class Repository : IRepository
     {
         MobileContext newDB = new MobileContext();
         // обращаемся к коллекции Phones

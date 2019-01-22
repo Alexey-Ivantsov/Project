@@ -4,16 +4,37 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+<<<<<<< HEAD:WebMongo/WebMongo/Controllers/PhoneController.cs
+<<<<<<< HEAD:WebMongo/WebMongo/Controllers/PhoneController.cs
 using WebMongo.Data;
+using WebMongo.Data.Interfaces;
+=======
+>>>>>>> parent of e1406b2... ----:WebMongo/WebMongo/Controllers/HomeController.cs
+=======
+>>>>>>> parent of e1406b2... ----:WebMongo/WebMongo/Controllers/HomeController.cs
 using WebMongo.Models;
+
 namespace WebMongo.Controllers
 {
-    public class HomeController : Controller
+    [Produces("application/json")]
+    public class PhoneController : Controller
     {
+<<<<<<< HEAD:WebMongo/WebMongo/Controllers/PhoneController.cs
+<<<<<<< HEAD:WebMongo/WebMongo/Controllers/PhoneController.cs
+        Repository jkl = new Repository();
+
         private readonly Repository db;
-        public HomeController(Repository context)
+        public PhoneController(Repository context)
+=======
+        private readonly MobileContext db;
+        public HomeController(MobileContext context)
+>>>>>>> parent of e1406b2... ----:WebMongo/WebMongo/Controllers/HomeController.cs
+=======
+        private readonly MobileContext db;
+        public HomeController(MobileContext context)
+>>>>>>> parent of e1406b2... ----:WebMongo/WebMongo/Controllers/HomeController.cs
         {
-            db = context;
+            db = jkl;
         }
         public async Task<IActionResult> Index(FilterViewModel filter)
         {
@@ -26,6 +47,9 @@ namespace WebMongo.Controllers
         {
             var phones = await db.GetPhones(filter.MinPrice, filter.MaxPrice, filter.Name);
             var model = new IndexViewModel { Phones = phones, Filter = filter };
+
+
+
             return View(model);
         }
 
@@ -47,7 +71,7 @@ namespace WebMongo.Controllers
 
         public async Task<IActionResult> Edit(string id)
         {
-            Phone p = await db.Read(id);
+            Phone p = await db.GetPhone(id);
             if (p == null)
                 return NotFound();
             return View(p);
@@ -64,13 +88,13 @@ namespace WebMongo.Controllers
         }
         public async Task<IActionResult> Delete(string id)
         {
-            await db.Delete(id);
+            await db.Remove(id);
             return RedirectToAction("Index");
         }
 
         public async Task<ActionResult> AttachImage(string id)
         {
-            Phone p = await db.Read(id);
+            Phone p = await db.GetPhone(id);
             if (p == null)
                 return NotFound();
             return View(p);
