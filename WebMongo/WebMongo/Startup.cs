@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using WebMongo.Data;
 using WebMongo.Models;
 
 namespace WebMongo
@@ -18,7 +19,7 @@ namespace WebMongo
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<MobileContext>();
+            services.AddTransient<Repository>();
             services.AddMvc();
         }
 

@@ -4,14 +4,14 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using WebMongo.Data;
 using WebMongo.Models;
-
 namespace WebMongo.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly MobileContext db;
-        public HomeController(MobileContext context)
+        private readonly Repository db;
+        public HomeController(Repository context)
         {
             db = context;
         }
@@ -26,9 +26,6 @@ namespace WebMongo.Controllers
         {
             var phones = await db.GetPhones(filter.MinPrice, filter.MaxPrice, filter.Name);
             var model = new IndexViewModel { Phones = phones, Filter = filter };
-
-
-
             return View(model);
         }
 
@@ -50,7 +47,7 @@ namespace WebMongo.Controllers
 
         public async Task<IActionResult> Edit(string id)
         {
-            Phone p = await db.GetPhone(id);
+            Phone p = await db.Read(id);
             if (p == null)
                 return NotFound();
             return View(p);
@@ -67,13 +64,13 @@ namespace WebMongo.Controllers
         }
         public async Task<IActionResult> Delete(string id)
         {
-            await db.Remove(id);
+            await db.Delete(id);
             return RedirectToAction("Index");
         }
 
         public async Task<ActionResult> AttachImage(string id)
         {
-            Phone p = await db.GetPhone(id);
+            Phone p = await db.Read(id);
             if (p == null)
                 return NotFound();
             return View(p);
