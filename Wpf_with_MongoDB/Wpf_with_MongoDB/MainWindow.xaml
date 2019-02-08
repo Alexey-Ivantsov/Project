@@ -1,0 +1,25 @@
+﻿<Window x:Class="Wpf_with_MongoDB.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="400" Width="1000">
+    <Grid Margin="-4,10,3.6,-2.6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="55*"/>
+            <ColumnDefinition Width="392*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Save" Height="42" HorizontalAlignment="Left" Margin="80.6,273,0,0" Name="ConnectMongodb" VerticalAlignment="Top" Width="99" Click="ConnectMongodb_Click" Grid.Column="1" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="52,38,0,0" Name="txtFName" Text="First Name" VerticalAlignment="Top" Grid.ColumnSpan="2" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="80.371,38,0,0" Name="textBox1" VerticalAlignment="Top" Width="288" Grid.Column="1" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="52,95,0,0" Name="txtLName" Text="Last Name" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="80.371,95,0,0" Name="textBox2" VerticalAlignment="Top" Width="288" Grid.Column="1"  />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="52,164,0,0" Name="txtAge" Text="Age" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="80.371,154,0,0" Name="textBox3" VerticalAlignment="Top" Width="288" Grid.Column="1" />
+        <DataGrid AutoGenerateColumns="True" Height="287" HorizontalAlignment="Left" Margin="413.6,12,0,0" Name="infogrid" VerticalAlignment="Top" Width="438" SelectionChanged="infogrid_SelectionChanged" Grid.Column="1" />
+        <Button Content="Update" Height="42" HorizontalAlignment="Left" Margin="184.6,273,0,0" Name="btnUpdate" VerticalAlignment="Top" Width="99" Click="btnUpdate_Click" Grid.Column="1" />
+        <Button Content="Delete" Height="42" HorizontalAlignment="Left" Margin="288.6,273,0,0" Name="btnDelete" VerticalAlignment="Top" Width="99" Click="btnDelete_Click" Grid.Column="1" />
+        <Button Content="New" Height="42" HorizontalAlignment="Left" Margin="9,273,0,0" Name="btnNew" VerticalAlignment="Top" Width="99" Click="btnNew_Click" RenderTransformOrigin="0.426,2.067" />
+        <TextBlock Height="32" HorizontalAlignment="Left" Margin="52,213,0,0" x:Name="txtUpd" Text="Update/Delete Id" VerticalAlignment="Top" Grid.ColumnSpan="2" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="79.6,213,0,0" x:Name="textBox4" VerticalAlignment="Top" Width="288" Grid.Column="1" />
+    </Grid>
+</Window>
+
