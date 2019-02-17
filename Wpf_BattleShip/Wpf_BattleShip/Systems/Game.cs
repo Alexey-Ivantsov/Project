@@ -20,9 +20,6 @@ namespace Wpf_BattleShip.Systems
             computer.Placement();
 
         }
-        /*public void Start()
-        {
-            computer.Placement();
-        }*/
+
     }
 }

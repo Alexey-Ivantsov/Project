@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,14 +21,17 @@ namespace Wpf_BattleShip
 
     public partial class MainWindow : Window
     {
-
+        Grid grid = new Grid();
         public Grid[,] fieldsEnemy;
         public Grid[,] fieldsPlayer;
+        Placement pl;
+
         public MainWindow()
         {
+
             InitializeComponent();
 
-            fieldsEnemy = new Grid[,]{
+            /*fieldsEnemy = new Grid[,]{
                                 { A1, A2, A3, A4, A5, A6, A7, A8, A9, A10 },
                                 { B1, B2, B3, B4, B5, B6, B7,B8,B9,B10},
                                 { C1, C2, C3, C4, C5, C6, C7,C8,C9,C10},
@@ -50,13 +54,29 @@ namespace Wpf_BattleShip
                                 { PH1, PH2, PH3, PH4, PH5, PH6, PH7, PH8, PH9, PH10},
                                 { PI1, PI2, PI3, PI4, PI5, PI6, PI7, PI8, PI9, PI10},
                                 { PJ1, PJ2, PJ3, PJ4, PJ5, PJ6, PJ7, PJ8, PJ9, PJ10}
-            };
+            };*/
+            Content = grid;
 
-            Game game = new Game(fieldsEnemy, fieldsPlayer);
+            this.MinHeight = 500;
+            this.MinWidth = 550;
+            this.Height = 300;
+            this.Width = 330;
+
+
+
+            pl = new Placement();
+            //pl.Show();
+            grid.Children.Add(pl);
+            //grid.Children.Add
+            // Game game = new Game(fieldsEnemy, fieldsPlayer);
+            grid.Children.Clear();
+
+            GameStart gm = new GameStart(pl.fieldsPlayer);
+            grid.Children.Add(gm);
         }
 
 
-        private void gridMouseDown(object sender, MouseButtonEventArgs e)
+        private void GridShow(object sender, MouseButtonEventArgs e)
         {
             Grid square = (Grid)sender;
             if ((Status)square.Tag == Status.Empty)
@@ -70,7 +90,69 @@ namespace Wpf_BattleShip
 
         }
 
+        private void Place_Ship(object sender, RoutedEventArgs e)
+        {
+            Grid square = (Grid)sender;
 
+            int i = -1;
+            int j = -1;
+
+            /* string pattern = "^[a b c d e f g h i j]|[A B C D E F G H I J]";
+             Regex regex = new Regex(pattern);
+             if (!Int32.TryParse(BlockX.Text, out i) || i > 10)
+             {
+                 BlockX.Clear();
+                 i = -1;
+                 MessageBox.Show($"Невереный ввод, введите цифру от 1 до 10.");
+             }
+             else
+             {
+                 i = i - 1;
+             }
+             if (!Regex.IsMatch(BlockY.Text, pattern))
+             {
+                 BlockY.Clear();
+                 MessageBox.Show($"Невереный ввод, введите верно букву от A до J.");
+             }
+             else
+             {
+                 int cha = (int)BlockY.Text[0];
+                 if (cha <= 74)
+                 {
+                     j = cha - 65;
+                 }
+                 else
+                     j = cha - 97;
+             }
+
+             if (i < 10 && j < 10 && i >= 0 && j >= 0)
+             {
+                 Fill.FillShip(i, j, TypeShip.FourDeck, Orientations.Horizontal, fieldsPlayer, 0);
+                 foreach (var item in fieldsPlayer)
+                 {
+                     if (item.Tag.Equals(Status.Empty))
+                     {
+                         item.Background = Brushes.DeepSkyBlue;
+                     }
+                     else if (item.Tag.Equals(Status.OccupiedComputer))
+                         item.Background = Brushes.Black;
+                     else
+                         item.Background = Brushes.Red;
+                 }
+
+             }*/
+
+        }
+        private void gridMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Grid square = (Grid)sender;
+            if ((Status)square.Tag == Status.Empty)
+            {
+                square.Background = Brushes.DeepSkyBlue;
+            }
+            else if ((Status)square.Tag == Status.OccupiedComputer)
+                square.Background = Brushes.OrangeRed;
+        }
 
         private void button_Click_1(object sender, RoutedEventArgs e)
         {
