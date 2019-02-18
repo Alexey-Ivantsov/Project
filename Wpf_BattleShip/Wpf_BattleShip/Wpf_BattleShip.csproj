@@ -64,21 +64,11 @@
     <Compile Include="Enum\Role.cs" />
     <Compile Include="Enum\ShootStatus.cs" />
     <Compile Include="Enum\TypeShip.cs" />
-    <Compile Include="GameStart.xaml.cs">
-      <DependentUpon>GameStart.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Placement.xaml.cs">
-      <DependentUpon>Placement.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Playerr\Player.cs" />
     <Compile Include="Systems\Check.cs" />
     <Compile Include="Systems\Const.cs" />
     <Compile Include="Systems\Fill.cs" />
     <Compile Include="Systems\HitInformation.cs" />
-    <Page Include="GameStart.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -94,10 +84,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Placement.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -126,9 +112,13 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Resource Include="Resources\2257efc72a5fb04.jpg" />
+    <Resource Include="Resources\ThreeDeck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\DoubleDeck.png" />
+    <Resource Include="Resources\FourDeck.png" />
+    <Resource Include="Resources\SingleDeck.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

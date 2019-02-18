@@ -21,61 +21,61 @@ namespace Wpf_BattleShip
 
     public partial class MainWindow : Window
     {
-        Grid grid = new Grid();
+
         public Grid[,] fieldsEnemy;
         public Grid[,] fieldsPlayer;
-        Placement pl;
+        TypeShip typeShip;
+        Orientations orientations;
+        int threeDeckCount = Const.ThreeDeck;
+
 
         public MainWindow()
         {
 
             InitializeComponent();
 
-            /*fieldsEnemy = new Grid[,]{
-                                { A1, A2, A3, A4, A5, A6, A7, A8, A9, A10 },
-                                { B1, B2, B3, B4, B5, B6, B7,B8,B9,B10},
-                                { C1, C2, C3, C4, C5, C6, C7,C8,C9,C10},
-                                { D1, D2, D3, D4, D5, D6, D7,D8,D9,D10},
-                                { E1, E2, E3, E4, E5, E6, E7,E8,E9,E10},
-                                { F1, F2, F3, F4, F5, F6, F7,F8,F9,F10},
-                                { G1, G2, G3, G4, G5, G6, G7,G8,G9,G10},
-                                { H1, H2, H3, H4, H5, H6, H7,H8,H9,H10},
-                                { I1, I2, I3, I4, I5, I6, I7,I8,I9,I10},
-                                { J1, J2, J3, J4, J5, J6, J7,J8,J9,J10 }
+            fieldsEnemy = new Grid[,]{
+                                { A1, B1, C1, D1, E1, F1, G1, H1, I1, J1 },
+                                { A2, B2, C2, D2, E2, F2, G2, H2, I2, J2},
+                                { A3, B3, C3, D3, E3, F3, G3, H3, I3, J3},
+                                { A4, B4, C4, D4, E4, F4, G4, H4, I4, J4},
+                                { A5, B5, C5, D5, E5, F5, G5, H5, I5, J5},
+                                { A6, B6, C6, D6, E6, F6, G6, H6, I6, J6},
+                                { A7, B7, C7, D7, E7, F7, G7, H7, I7, J7},
+                                { A8, B8, C8, D8, E8, F8, G8, H8, I8, J8},
+                                { A9, B9, C9, D9, E9, F9, G9, H9, I9, J9},
+                                { A10, B10, C10, D10, E10, F10, G10, H10, I10, J10 }
             };
             fieldsPlayer = new Grid[,]{
-                                { PA1, PA2, PA3, PA4, PA5, PA6, PA7, PA8, PA9, PA10},
-                                { PB1, PB2, PB3, PB4, PB5, PB6, PB7, PB8, PB9, PB10},
-                                { PC1, PC2, PC3, PC4, PC5, PC6, PC7, PC8, PC9, PC10},
-                                { PD1, PD2, PD3, PD4, PD5, PD6, PD7, PD8, PD9, PD10},
-                                { PE1, PE2, PE3, PE4, PE5, PE6, PE7, PE8, PE9, PE10},
-                                { PF1, PF2, PF3, PF4, PF5, PF6, PF7, PF8, PF9, PF10},
-                                { PG1, PG2, PG3, PG4, PG5, PG6, PG7, PG8, PG9, PG10},
-                                { PH1, PH2, PH3, PH4, PH5, PH6, PH7, PH8, PH9, PH10},
-                                { PI1, PI2, PI3, PI4, PI5, PI6, PI7, PI8, PI9, PI10},
-                                { PJ1, PJ2, PJ3, PJ4, PJ5, PJ6, PJ7, PJ8, PJ9, PJ10}
-            };*/
-            Content = grid;
-
-            this.MinHeight = 500;
-            this.MinWidth = 550;
-            this.Height = 300;
-            this.Width = 330;
-
-
-
-            pl = new Placement();
-            //pl.Show();
-            grid.Children.Add(pl);
-            //grid.Children.Add
-            // Game game = new Game(fieldsEnemy, fieldsPlayer);
-            grid.Children.Clear();
-
-            GameStart gm = new GameStart(pl.fieldsPlayer);
-            grid.Children.Add(gm);
+                                    {PA1,PB1,PC1,PD1,PE1,PF1,PG1,PH1,PI1,PJ1},
+                                    {PA2,PB2,PC2,PD2,PE2,PF2,PG2,PH2,PI2,PJ2},
+                                    {PA3,PB3,PC3,PD3,PE3,PF3,PG3,PH3,PI3,PJ3},
+                                    {PA4,PB4,PC4,PD4,PE4,PF4,PG4,PH4,PI4,PJ4},
+                                    {PA5,PB5,PC5,PD5,PE5,PF5,PG5,PH5,PI5,PJ5},
+                                    {PA6,PB6,PC6,PD6,PE6,PF6,PG6,PH6,PI6,PJ6},
+                                    {PA7,PB7,PC7,PD7,PE7,PF7,PG7,PH7,PI7,PJ7},
+                                    {PA8,PB8,PC8,PD8,PE8,PF8,PG8,PH8,PI8,PJ8},
+                                    {PA9,PB9,PC9,PD9,PE9,PF9,PG9,PH9,PI9,PJ9},
+                                    {PA10,PB10,PC10,PD10,PE10,PF10,PG10,PH10,PI10,PJ10}
+            };
+            Game game = new Game(fieldsEnemy, fieldsPlayer);
+            prnt();
         }
 
-
+        public void prnt()
+        {
+            foreach (var item in fieldsPlayer)
+            {
+                if (item.Tag.Equals(Status.Empty))
+                {
+                    item.Background = Brushes.DeepSkyBlue;
+                }
+                else if (item.Tag.Equals(Status.OccupiedComputer))
+                    item.Background = Brushes.Black;
+                else
+                    item.Background = Brushes.Red;
+            }
+        }
         private void GridShow(object sender, MouseButtonEventArgs e)
         {
             Grid square = (Grid)sender;
@@ -90,14 +90,14 @@ namespace Wpf_BattleShip
 
         }
 
-        private void Place_Ship(object sender, RoutedEventArgs e)
+        /*private void Place_Ship(object sender, RoutedEventArgs e)
         {
             Grid square = (Grid)sender;
 
             int i = -1;
             int j = -1;
 
-            /* string pattern = "^[a b c d e f g h i j]|[A B C D E F G H I J]";
+             string pattern = "^[a b c d e f g h i j]|[A B C D E F G H I J]";
              Regex regex = new Regex(pattern);
              if (!Int32.TryParse(BlockX.Text, out i) || i > 10)
              {
@@ -140,7 +140,79 @@ namespace Wpf_BattleShip
                          item.Background = Brushes.Red;
                  }
 
-             }*/
+             }
+        }*/
+
+        private void FourVertShip(object sender, MouseButtonEventArgs e)
+        {
+            // MessageBox.Show("Укажите на поле игрока место расположения");
+            typeShip = TypeShip.FourDeck;
+            orientations = Orientations.Vertical;
+            FourD.IsEnabled = false;
+        }
+        private void FourHoriztShip(object sender, MouseButtonEventArgs e)
+        {
+            // MessageBox.Show("Укажите на поле игрока место расположения");
+            typeShip = TypeShip.FourDeck;
+            orientations = Orientations.Horizontal;
+        }
+
+        private void ThreeVertShip(object sender, MouseButtonEventArgs e)
+        {
+            // MessageBox.Show("Укажите на поле игрока место расположения");
+            typeShip = TypeShip.ThreeDeck;
+            orientations = Orientations.Vertical;
+
+
+        }
+        private void ThreeHoriztShip(object sender, MouseButtonEventArgs e)
+        {
+            // MessageBox.Show("Укажите на поле игрока место расположения");
+            typeShip = TypeShip.ThreeDeck;
+            orientations = Orientations.Horizontal;
+        }
+
+        private void DoubleVertShip(object sender, MouseButtonEventArgs e)
+        {
+            // MessageBox.Show("Укажите на поле игрока место расположения");
+            typeShip = TypeShip.DoubleDeck;
+            orientations = Orientations.Vertical;
+        }
+        private void DoubleHoriztShip(object sender, MouseButtonEventArgs e)
+        {
+            // MessageBox.Show("Укажите на поле игрока место расположения");
+            typeShip = TypeShip.DoubleDeck;
+            orientations = Orientations.Horizontal;
+        }
+
+        private void SingleShip(object sender, MouseButtonEventArgs e)
+        {
+            // MessageBox.Show("Укажите на поле игрока место расположения");
+            typeShip = TypeShip.SingleDeck;
+            orientations = Orientations.None;
+        }
+
+
+        private void gridA1(object sender, MouseButtonEventArgs e)
+        {
+            Grid square = (Grid)sender;
+            int j = Grid.GetColumn(square) - 1;
+            int i = Grid.GetRow(square) - 1;
+            if (Check.CheckPlacement(i, j, typeShip, orientations, fieldsPlayer))
+            {
+                MessageBox.Show("Неверное расположение");
+            }
+            else
+            {
+                Fill.FillShip(i, j, typeShip, orientations, fieldsPlayer, 0);
+
+                threeDeckCount--;
+                prnt();
+            }
+            if (threeDeckCount == 0)
+            {
+
+            }
 
         }
         private void gridMouseDown(object sender, MouseButtonEventArgs e)

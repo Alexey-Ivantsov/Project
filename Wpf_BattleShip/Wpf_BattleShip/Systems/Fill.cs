@@ -34,7 +34,6 @@ namespace Wpf_BattleShip.Systems
                     if (role == Role.Computer)
                     {
                         grid[i, j + l].Tag = Status.OccupiedComputer;
-                        // grid[i, j + l].Background =
                     }
                     else
                     {
