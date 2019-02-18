@@ -24,10 +24,12 @@ namespace Wpf_BattleShip
 
         public Grid[,] fieldsEnemy;
         public Grid[,] fieldsPlayer;
-        TypeShip typeShip;
+        TypeShip typeShip = 0;
         Orientations orientations;
-        int threeDeckCount = Const.ThreeDeck;
-
+        public int fourDeckCount = Const.FourDeck;
+        public int threeDeckCount = Const.ThreeDeck;
+        public int doubleDeckCount = Const.DoubleDeck;
+        public int singleDeckCount = Const.SingleDeck;
 
         public MainWindow()
         {
@@ -148,7 +150,9 @@ namespace Wpf_BattleShip
             // MessageBox.Show("Укажите на поле игрока место расположения");
             typeShip = TypeShip.FourDeck;
             orientations = Orientations.Vertical;
-            FourD.IsEnabled = false;
+
+
+
         }
         private void FourHoriztShip(object sender, MouseButtonEventArgs e)
         {
@@ -195,9 +199,15 @@ namespace Wpf_BattleShip
 
         private void gridA1(object sender, MouseButtonEventArgs e)
         {
+
+
             Grid square = (Grid)sender;
             int j = Grid.GetColumn(square) - 1;
             int i = Grid.GetRow(square) - 1;
+            if (typeShip == 0)
+            {
+                MessageBox.Show("Выберите тип корабля");
+            }
             if (Check.CheckPlacement(i, j, typeShip, orientations, fieldsPlayer))
             {
                 MessageBox.Show("Неверное расположение");
@@ -205,14 +215,50 @@ namespace Wpf_BattleShip
             else
             {
                 Fill.FillShip(i, j, typeShip, orientations, fieldsPlayer, 0);
-
-                threeDeckCount--;
-                prnt();
+                int size = Convert.ToInt32(typeShip);
+                switch (size)
+                {
+                    case 1:
+                        singleDeckCount--;
+                        if (singleDeckCount == 0)
+                        {
+                            Single.IsEnabled = false;
+                            typeShip = 0;
+                        }
+                        break;
+                    case 2:
+                        doubleDeckCount--;
+                        if (doubleDeckCount == 0)
+                        {
+                            DoubleH.IsEnabled = false;
+                            DoubleV.IsEnabled = false;
+                            typeShip = 0;
+                        }
+                        break;
+                    case 3:
+                        threeDeckCount--;
+                        if (threeDeckCount == 0)
+                        {
+                            ThreeH.IsEnabled = false;
+                            ThreeV.IsEnabled = false;
+                            typeShip = 0;
+                        }
+                        break;
+                    case 4:
+                        fourDeckCount--;
+                        if (fourDeckCount == 0)
+                        {
+                            FourH.IsEnabled = false;
+                            FourV.IsEnabled = false;
+                            typeShip = 0;
+                        }
+                        break;
+                    default:
+                        break;
+                }
             }
-            if (threeDeckCount == 0)
-            {
+            prnt();
 
-            }
 
         }
         private void gridMouseDown(object sender, MouseButtonEventArgs e)

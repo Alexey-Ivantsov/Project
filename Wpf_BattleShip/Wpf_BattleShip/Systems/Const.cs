@@ -15,7 +15,7 @@ namespace Wpf_BattleShip.Systems
         public const int AMOUNT_SHIPS = 4;
         public const int FourDeck = 1;
         public const int ThreeDeck = 2;
-        public const int TwoDeck = 3;
+        public const int DoubleDeck = 3;
         public const int SingleDeck = 4;
     }
 }

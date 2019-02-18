@@ -13,6 +13,7 @@ namespace Wpf_BattleShip.Systems
         public static void FillShip(int i, int j, TypeShip ship, Orientations direction, Grid[,] grid, Role role)
         {
             int size = Convert.ToInt32(ship);
+
             if (direction == Orientations.Vertical)
             {
                 for (int l = 0; l < size; l++)

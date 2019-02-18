@@ -548,47 +548,38 @@
 
         </ListBoxItem>
         <Grid Height="440" Margin="0,8,0,-0.2" VerticalAlignment="Top" Width="448">
-            <Button x:Name="FourD" Margin="0,0,328,335" Background="#FF7AE0EA">
-                <Image x:Name="FourDeckHoriz" Source="Resources/FourDeck.png" HorizontalAlignment="Left" Height="110" VerticalAlignment="Top" Width="110" Margin="0,20,0,0" MouseDown="FourHoriztShip" />
+
+            <Button x:Name="FourH" Margin="0,20,328,315" Background="#FF7AE0EA">
+                <Image x:Name="FourDeckHoriz" Source="Resources/FourDeck.png" HorizontalAlignment="Left" Height="105" VerticalAlignment="Top" Width="120" MouseDown="FourHoriztShip" />
             </Button>
 
-            <Image x:Name="FourDeckVert" Source="Resources/FourDeck.png"  HorizontalAlignment="Left" Height="110" VerticalAlignment="Top" Width="110" Margin="130,28,0,0" RenderTransformOrigin="0.5,0.5" MouseDown="FourVertShip">
-                <Image.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="270"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Image.RenderTransform>
-            </Image>
+            <Button x:Name="FourV" Margin="120,20,208,315" Background="#FF7AE0EA">
+                <Image x:Name="FourDeckVert" Source="Resources/FourDeckVert.png"  HorizontalAlignment="Left" Height="102" VerticalAlignment="Top" Width="117"  MouseDown="FourVertShip"  />
+            </Button>
 
-            <Image x:Name="ThreeDeckVert" Source="Resources/ThreeDeck.png"  HorizontalAlignment="Left" Height="110" VerticalAlignment="Top" Width="110" Margin="130,134,0,0" RenderTransformOrigin="0.5,0.5" MouseDown="ThreeVertShip">
-                <Image.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="270"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Image.RenderTransform>
-            </Image>
-            <Image x:Name="ThreeDeckHoriz" Source="Resources/ThreeDeck.png" HorizontalAlignment="Left" Height="110" VerticalAlignment="Top" Width="110" Margin="0,110,0,0" MouseDown="ThreeHoriztShip"/>
 
-            <Image x:Name="DoubleDeckHoriz" Source="Resources/DoubleDeck.png" HorizontalAlignment="Left" Height="110" VerticalAlignment="Top" Width="110" Margin="0,236,0,0" MouseDown="DoubleHoriztShip"/>
-            <Image x:Name="DoubleDeckVert" Source="Resources/DoubleDeck.png" HorizontalAlignment="Left" Height="110" VerticalAlignment="Top" Width="110" Margin="132,250,0,0" RenderTransformOrigin="0.5,0.5" MouseDown="DoubleVertShip">
-                <Image.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform/>
-                        <RotateTransform Angle="270"/>
-                        <TranslateTransform/>
-                    </TransformGroup>
-                </Image.RenderTransform>
-            </Image>
 
-            <Image x:Name="SingleDeck" Source="Resources/SingleDeck.png" HorizontalAlignment="Left" Height="110" VerticalAlignment="Top" Width="110" Margin="10,330,0,0" MouseDown="SingleShip"/>
+            <Button x:Name="ThreeH" Margin="0,125,328,210" Background="#FF7AE0EA">
+                <Image x:Name="ThreeDeckHoriz" Source="Resources/ThreeDeck.png" HorizontalAlignment="Left" Height="103" VerticalAlignment="Top" Width="118" MouseDown="ThreeHoriztShip"/>
+            </Button>
 
+            <Button x:Name="ThreeV" Margin="120,125,208,210" Background="#FF7AE0EA" >
+                <Image x:Name="ThreeDeckVert" Source="Resources/ThreeDeckVert.png"  HorizontalAlignment="Left" Height="105" VerticalAlignment="Top" Width="120"  MouseDown="ThreeVertShip" />
+            </Button>
+
+
+
+            <Button x:Name="DoubleH" Margin="0,230,328,100" Background="#FF7AE0EA">
+                <Image x:Name="DoubleDeckHoriz" Source="Resources/DoubleDeck.png" HorizontalAlignment="Left" Height="108" VerticalAlignment="Top" Width="118"  MouseDown="DoubleHoriztShip"/>
+            </Button>
+
+            <Button x:Name="DoubleV" Margin="120,230,208,100" Background="#FF7AE0EA">
+                <Image x:Name="DoubleDeckVert" Source="Resources/DoubleDeckVert.png" HorizontalAlignment="Left" Height="110" VerticalAlignment="Top" Width="116"  RenderTransformOrigin="0.5,0.5" MouseDown="DoubleVertShip" />
+            </Button>
+
+            <Button x:Name="Single" Margin="0,340,328,-5" Background="#FF7AE0EA">
+                <Image x:Name="SingleDeck" Source="Resources/SingleDeck.png" HorizontalAlignment="Left" Height="105" VerticalAlignment="Top" Width="117" MouseDown="SingleShip"/>
+            </Button>
 
 
         </Grid>
