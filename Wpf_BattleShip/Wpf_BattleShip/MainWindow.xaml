@@ -581,6 +581,11 @@
                 <Image x:Name="SingleDeck" Source="Resources/SingleDeck.png" HorizontalAlignment="Left" Height="105" VerticalAlignment="Top" Width="117" MouseDown="SingleShip"/>
             </Button>
 
+            <Button x:Name="StartButton" HorizontalAlignment="Left" Height="215" Margin="285,128,0,0" VerticalAlignment="Top" Width="143" Background="White">
+                <Image x:Name="StartImage" Source="Resources/Start.png" HorizontalAlignment="Stretch" Height="210" VerticalAlignment="Top" Width="143" MouseDown="Start"/>
+            </Button>
+
+
 
         </Grid>
 

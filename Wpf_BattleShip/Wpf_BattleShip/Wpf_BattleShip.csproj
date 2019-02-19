@@ -110,7 +110,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\ThreeDeck.png" />
@@ -124,6 +126,9 @@
     <Resource Include="Resources\DoubleDeckVert.png" />
     <Resource Include="Resources\FourDeckVert.png" />
     <Resource Include="Resources\ThreeDeckVert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Start.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

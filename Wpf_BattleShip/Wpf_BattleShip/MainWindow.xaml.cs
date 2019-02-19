@@ -330,6 +330,10 @@ namespace Wpf_BattleShip
 
 
         }
+        private void Start(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Игра Началась!");
+        }
         private void gridMouseDown(object sender, MouseButtonEventArgs e)
         {
             Grid square = (Grid)sender;
