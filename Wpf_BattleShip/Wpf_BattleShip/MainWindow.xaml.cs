@@ -210,7 +210,76 @@ namespace Wpf_BattleShip
             }
             if (Check.CheckPlacement(i, j, typeShip, orientations, fieldsPlayer))
             {
-                MessageBox.Show("Неверное расположение");
+                int flag = Convert.ToInt32(typeShip);
+
+                switch (flag)
+                {
+
+                    case 2:
+                        if (!Check.CheckPlacement(i - 1, j, typeShip, orientations, fieldsPlayer) && orientations == Orientations.Vertical)
+                        {
+                            MessageBox.Show("пойдет");
+                            Fill.FillShip(i - 1, j, typeShip, orientations, fieldsPlayer, 0);
+                            doubleDeckCount--;
+                        }
+                        if (!Check.CheckPlacement(i, j - 1, typeShip, orientations, fieldsPlayer) && orientations == Orientations.Horizontal)
+                        {
+                            MessageBox.Show("пойдет");
+                            Fill.FillShip(i, j - 1, typeShip, orientations, fieldsPlayer, 0);
+                            doubleDeckCount--;
+                        }
+                        if (doubleDeckCount == 0)
+                        {
+                            DoubleH.IsEnabled = false;
+                            DoubleV.IsEnabled = false;
+                            typeShip = 0;
+                        }
+                        break;
+                    case 3:
+                        if (!Check.CheckPlacement(i - 2, j, typeShip, orientations, fieldsPlayer) && orientations == Orientations.Vertical)
+                        {
+                            MessageBox.Show("пойдет");
+                            Fill.FillShip(i - 2, j, typeShip, orientations, fieldsPlayer, 0);
+                            threeDeckCount--;
+                        }
+                        if (!Check.CheckPlacement(i, j - 2, typeShip, orientations, fieldsPlayer) && orientations == Orientations.Horizontal)
+                        {
+                            MessageBox.Show("пойдет");
+                            Fill.FillShip(i, j - 2, typeShip, orientations, fieldsPlayer, 0);
+                            threeDeckCount--;
+                        }
+                        if (threeDeckCount == 0)
+                        {
+                            ThreeH.IsEnabled = false;
+                            ThreeV.IsEnabled = false;
+                            typeShip = 0;
+                        }
+                        break;
+                    case 4:
+                        if (!Check.CheckPlacement(i - 3, j, typeShip, orientations, fieldsPlayer) && orientations == Orientations.Vertical)
+                        {
+                            MessageBox.Show("пойдет");
+                            Fill.FillShip(i - 3, j, typeShip, orientations, fieldsPlayer, 0);
+                            fourDeckCount--;
+                        }
+                        if (!Check.CheckPlacement(i, j - 3, typeShip, orientations, fieldsPlayer) && orientations == Orientations.Horizontal)
+                        {
+                            MessageBox.Show("пойдет");
+                            Fill.FillShip(i, j - 3, typeShip, orientations, fieldsPlayer, 0);
+                            fourDeckCount--;
+                        }
+                        if (fourDeckCount == 0)
+                        {
+                            FourH.IsEnabled = false;
+                            FourV.IsEnabled = false;
+                            typeShip = 0;
+                        }
+                        break;
+
+                    default:
+                        break;
+                }
+                // MessageBox.Show("Неверное расположение");
             }
             else
             {
