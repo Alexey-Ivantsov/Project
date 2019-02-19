@@ -30,7 +30,12 @@ namespace Wpf_BattleShip
         public int threeDeckCount = Const.ThreeDeck;
         public int doubleDeckCount = Const.DoubleDeck;
         public int singleDeckCount = Const.SingleDeck;
+        bool singleDeckbool;
+        bool doubleDeckbool;
+        bool threeDeckbool;
+        bool fourDeckbool;
 
+        Game game;
         public MainWindow()
         {
 
@@ -60,8 +65,9 @@ namespace Wpf_BattleShip
                                     {PA9,PB9,PC9,PD9,PE9,PF9,PG9,PH9,PI9,PJ9},
                                     {PA10,PB10,PC10,PD10,PE10,PF10,PG10,PH10,PI10,PJ10}
             };
-            Game game = new Game(fieldsEnemy, fieldsPlayer);
-            prnt();
+            game = new Game(fieldsEnemy, fieldsPlayer);
+            FieldsEnemy.IsEnabled = false;
+            StartButton.IsEnabled = false;
         }
 
         public void prnt()
@@ -74,6 +80,10 @@ namespace Wpf_BattleShip
                 }
                 else if (item.Tag.Equals(Status.OccupiedComputer))
                     item.Background = Brushes.Black;
+                else if (item.Tag.Equals(Status.Used))
+                    item.Background = Brushes.Violet;
+                else if (item.Tag.Equals(Status.Hit))
+                    item.Background = Brushes.BlanchedAlmond;
                 else
                     item.Background = Brushes.Red;
             }
@@ -293,6 +303,7 @@ namespace Wpf_BattleShip
                         {
                             Single.IsEnabled = false;
                             typeShip = 0;
+                            singleDeckbool = true;
                         }
                         break;
                     case 2:
@@ -302,6 +313,7 @@ namespace Wpf_BattleShip
                             DoubleH.IsEnabled = false;
                             DoubleV.IsEnabled = false;
                             typeShip = 0;
+                            doubleDeckbool = true;
                         }
                         break;
                     case 3:
@@ -311,6 +323,7 @@ namespace Wpf_BattleShip
                             ThreeH.IsEnabled = false;
                             ThreeV.IsEnabled = false;
                             typeShip = 0;
+                            threeDeckbool = true;
                         }
                         break;
                     case 4:
@@ -320,6 +333,7 @@ namespace Wpf_BattleShip
                             FourH.IsEnabled = false;
                             FourV.IsEnabled = false;
                             typeShip = 0;
+                            fourDeckbool = true;
                         }
                         break;
                     default:
@@ -327,12 +341,20 @@ namespace Wpf_BattleShip
                 }
             }
             prnt();
-
-
+            if (singleDeckbool && doubleDeckbool && threeDeckbool && fourDeckbool)
+            {
+                StartButton.IsEnabled = true;
+                MessageBox.Show("Жми старт!");
+            }
         }
         private void Start(object sender, MouseButtonEventArgs e)
         {
+
             MessageBox.Show("Игра Началась!");
+            FieldsEnemy.IsEnabled = true;
+            game.Start();
+            prnt();
+
         }
         private void gridMouseDown(object sender, MouseButtonEventArgs e)
         {

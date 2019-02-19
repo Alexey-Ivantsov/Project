@@ -93,5 +93,324 @@ namespace Wpf_BattleShip.Systems
             }
             return false;
         }
+        public static bool FindDirection(int i, int j, Grid[,] playerGrid, HitInformation hitInformation)
+        {
+            if (i < 0 || j < 0 || i > 9 || j > 9)
+            {
+                return true;
+            }
+            switch (hitInformation.DirectionCheck)
+            {
+                case DirectionCheck.Up:
+
+                    if (i - 1 < Const.MIN_BOUND || playerGrid[i - 1, j].Tag.Equals(Status.Used))
+                    {
+                        hitInformation.DirectionCheck++;
+                        hitInformation.StatusShoot = ShootStatus.Hit;
+                        break;
+                    }
+                    else if (playerGrid[i - 1, j].Tag.Equals(Status.Empty))
+                    {
+                        playerGrid[i - 1, j].Tag = Status.Used;
+                        hitInformation.DirectionCheck++;
+                        hitInformation.StatusShoot = ShootStatus.Miss;
+                        break;
+                    }
+                    else
+                    {
+                        playerGrid[i - 1, j].Tag = Status.Hit;
+                        if (j + 1 < Const.MAX_BOUND)
+                        {
+                            playerGrid[i - 1, j + 1].Tag = Status.Used;//
+                        }
+                        if (j - 1 > Const.MIN_BOUND)
+                        {
+                            playerGrid[i - 1, j - 1].Tag = Status.Used;//
+                        }
+                        hitInformation.PlayerCount--;
+                        hitInformation.ShipCount--;
+                        hitInformation.ResDirection = ResultDirection.Up;
+                        hitInformation.DirectionCheck = DirectionCheck.Up;
+                        hitInformation.StatusShoot = ShootStatus.Miss;
+                        break;
+                    }
+
+                case DirectionCheck.Right:
+
+                    if (j + 1 > Const.MAX_BOUND || playerGrid[i, j + 1].Tag.Equals(Status.Used))
+                    {
+                        hitInformation.DirectionCheck++;
+                        hitInformation.StatusShoot = ShootStatus.Hit;
+                        break;
+                    }
+                    else if (playerGrid[i, j + 1].Tag.Equals(Status.Empty))
+                    {
+                        playerGrid[i, j + 1].Tag = Status.Used;
+                        hitInformation.StatusShoot = ShootStatus.Miss;
+                        hitInformation.DirectionCheck++;
+                        break;
+                    }
+                    else
+                    {
+                        playerGrid[i, j + 1].Tag = Status.Hit;
+                        if (i + 1 < Const.MAX_BOUND)
+                        {
+                            playerGrid[i + 1, j + 1].Tag = Status.Used;//
+                        }
+                        if (i - 1 > Const.MIN_BOUND)
+                        {
+                            playerGrid[i - 1, j + 1].Tag = Status.Used;//
+                        }
+                        hitInformation.PlayerCount--;
+                        hitInformation.ShipCount--;
+                        hitInformation.ResDirection = ResultDirection.Right;
+                        hitInformation.DirectionCheck = DirectionCheck.Up;
+                        hitInformation.StatusShoot = ShootStatus.Miss;
+                        break;
+                    }
+
+                case DirectionCheck.Down:
+
+                    if (i + 1 > Const.MAX_BOUND || playerGrid[i + 1, j].Tag.Equals(Status.Used))
+                    {
+                        hitInformation.DirectionCheck++;
+                        hitInformation.StatusShoot = ShootStatus.Hit;
+                        break;
+                    }
+                    else if (playerGrid[i + 1, j].Tag.Equals(Status.Empty))
+                    {
+                        playerGrid[i + 1, j].Tag = Status.Used;
+                        hitInformation.StatusShoot = ShootStatus.Miss;
+                        hitInformation.DirectionCheck++;
+                        break;
+                    }
+                    else
+                    {
+                        playerGrid[i + 1, j].Tag = Status.Hit;
+                        if (j + 1 < Const.MAX_BOUND)
+                        {
+                            playerGrid[i + 1, j + 1].Tag = Status.Used;//
+                        }
+                        if (j - 1 > Const.MIN_BOUND)
+                        {
+                            playerGrid[i + 1, j - 1].Tag = Status.Used;//
+                        }
+                        hitInformation.PlayerCount--;
+                        hitInformation.ShipCount--;
+                        hitInformation.ResDirection = ResultDirection.Down;
+                        hitInformation.DirectionCheck = DirectionCheck.Up;
+                        hitInformation.StatusShoot = ShootStatus.Miss;
+                        break;
+                    }
+
+                case DirectionCheck.Left:
+
+                    playerGrid[i, j - 1].Tag = Status.Hit;
+                    if (i + 1 < Const.MAX_BOUND)
+                    {
+                        playerGrid[i + 1, j - 1].Tag = Status.Used;//
+                    }
+                    if (i - 1 > Const.MIN_BOUND)
+                    {
+                        playerGrid[i - 1, j - 1].Tag = Status.Used;//
+                    }
+                    hitInformation.PlayerCount--;
+                    hitInformation.ShipCount--;
+                    hitInformation.ResDirection = ResultDirection.Left;
+                    hitInformation.DirectionCheck = DirectionCheck.Up;
+                    hitInformation.StatusShoot = ShootStatus.Miss;
+                    break;
+
+                default:
+                    break;
+            }
+            return false;
+        }
+        public static void HitDirection(int i, int j, Grid[,] playerGrid, HitInformation hitInformation)
+        {
+
+            switch (hitInformation.ResDirection)
+            {
+                case ResultDirection.Up:
+                    for (; hitInformation.Count < 4;)
+                    {
+
+                        if (i - hitInformation.Count < Const.MIN_BOUND || playerGrid[i - hitInformation.Count, j].Tag.Equals(Status.Used))
+                        {
+                            hitInformation.ResDirection = ResultDirection.Down;
+                            hitInformation.Count = 1;
+                            return;
+                        }
+                        else if (playerGrid[i - hitInformation.Count, j].Tag.Equals(Status.Hit))
+                        {
+                            hitInformation.Count++;
+                        }
+                        else if (playerGrid[i - hitInformation.Count, j].Tag.Equals(Status.Empty))
+                        {
+                            playerGrid[i - hitInformation.Count, j].Tag = Status.Used;
+                            hitInformation.ResDirection = ResultDirection.Down;
+                            hitInformation.Count = 1;
+                            hitInformation.StatusShoot = ShootStatus.Miss;
+                            return;
+                        }
+                        else
+                        {
+                            playerGrid[i - hitInformation.Count, j].Tag = Status.Hit;
+                            if (j + 1 < Const.MAX_BOUND)
+                            {
+                                playerGrid[i - hitInformation.Count, j + 1].Tag = Status.Used;//
+                            }
+                            if (j - 1 > Const.MIN_BOUND)
+                            {
+                                playerGrid[i - hitInformation.Count, j - 1].Tag = Status.Used;//
+                            }
+                            hitInformation.PlayerCount--;
+                            hitInformation.ShipCount--;
+                            hitInformation.Count++;
+                            if (hitInformation.ShipCount == 0)
+                            {
+                                hitInformation.StatusShoot = ShootStatus.Miss;
+                                return;
+                            }
+                        }
+                    }
+                    break;
+
+                case ResultDirection.Right:
+                    for (; hitInformation.Count < 4;)
+                    {
+
+                        if (j + hitInformation.Count > Const.MAX_BOUND || playerGrid[i, j + hitInformation.Count].Tag.Equals(Status.Used))
+                        {
+                            hitInformation.ResDirection = ResultDirection.Left;
+                            hitInformation.Count = 1;
+                            return;
+                        }
+                        else if (playerGrid[i, j + hitInformation.Count].Tag.Equals(Status.Hit))
+                        {
+                            hitInformation.Count++;
+                        }
+                        else if (playerGrid[i, j + hitInformation.Count].Tag.Equals(Status.Empty))
+                        {
+                            playerGrid[i, j + hitInformation.Count].Tag = Status.Used;
+                            hitInformation.ResDirection = ResultDirection.Left;
+                            hitInformation.Count = 1;
+                            hitInformation.StatusShoot = ShootStatus.Miss;
+                            return;
+                        }
+                        else
+                        {
+                            playerGrid[i, j + hitInformation.Count].Tag = Status.Hit;
+                            if (i + 1 < Const.MAX_BOUND)
+                            {
+                                playerGrid[i + 1, j + hitInformation.Count].Tag = Status.Used;//
+                            }
+                            if (i - 1 > Const.MIN_BOUND)
+                            {
+                                playerGrid[i - 1, j + hitInformation.Count].Tag = Status.Used;//
+                            }
+                            hitInformation.PlayerCount--;
+                            hitInformation.ShipCount--;
+                            hitInformation.Count++;
+                            if (hitInformation.ShipCount == 0)
+                            {
+                                hitInformation.StatusShoot = ShootStatus.Miss;
+                                return;
+                            }
+                        }
+                    }
+                    break;
+                case ResultDirection.Down:
+                    for (; hitInformation.Count < 4;)
+                    {
+                        if (i + hitInformation.Count > Const.MAX_BOUND || playerGrid[i + hitInformation.Count, j].Tag.Equals(Status.Used))
+                        {
+                            hitInformation.ResDirection = ResultDirection.Up;
+                            hitInformation.Count = 1;
+                            return;
+                        }
+                        else if (playerGrid[i + hitInformation.Count, j].Tag.Equals(Status.Hit))
+                        {
+                            hitInformation.Count++;
+                        }
+                        else if (playerGrid[i + hitInformation.Count, j].Tag.Equals(Status.Empty))
+                        {
+                            playerGrid[i + hitInformation.Count, j].Tag = Status.Used;
+                            hitInformation.ResDirection = ResultDirection.Up;
+                            hitInformation.Count = 1;
+                            hitInformation.StatusShoot = ShootStatus.Miss;
+                            return;
+                        }
+                        else
+                        {
+                            playerGrid[i + hitInformation.Count, j].Tag = Status.Hit;
+                            if (j + 1 < Const.MAX_BOUND)
+                            {
+                                playerGrid[i + hitInformation.Count, j + 1].Tag = Status.Used;//
+                            }
+                            if (j - 1 > Const.MIN_BOUND)
+                            {
+                                playerGrid[i + hitInformation.Count, j - 1].Tag = Status.Used;//
+                            }
+                            hitInformation.PlayerCount--;
+                            hitInformation.ShipCount--;
+                            hitInformation.Count++;
+                            if (hitInformation.ShipCount == 1)
+                            {
+                                hitInformation.StatusShoot = ShootStatus.Miss;
+                                return;
+                            }
+                        }
+                    }
+                    break;
+                case ResultDirection.Left:
+                    for (; hitInformation.Count < 4;)
+                    {
+
+                        if (j - hitInformation.Count < Const.MIN_BOUND || playerGrid[i, j - hitInformation.Count].Tag.Equals(Status.Used))
+                        {
+                            hitInformation.ResDirection = ResultDirection.Right;
+                            hitInformation.Count = 1;
+                            return;
+                        }
+                        else if (playerGrid[i, j - hitInformation.Count].Tag.Equals(Status.Hit))
+                        {
+                            hitInformation.Count++;
+                        }
+                        else if (playerGrid[i, j - hitInformation.Count].Tag.Equals(Status.Empty))
+                        {
+                            playerGrid[i, j - hitInformation.Count].Tag = Status.Used;
+                            hitInformation.ResDirection = ResultDirection.Right;
+                            hitInformation.Count = 1;
+                            hitInformation.StatusShoot = ShootStatus.Miss;
+                            return;
+                        }
+                        else
+                        {
+                            playerGrid[i, j - hitInformation.Count].Tag = Status.Hit;
+                            if (i + 1 < Const.MAX_BOUND)
+                            {
+                                playerGrid[i + 1, j - hitInformation.Count].Tag = Status.Used;//
+                            }
+                            if (i - 1 > Const.MIN_BOUND)
+                            {
+                                playerGrid[i - 1, j - hitInformation.Count].Tag = Status.Used;//
+                            }
+                            hitInformation.PlayerCount--;
+                            hitInformation.ShipCount--;
+                            hitInformation.Count++;
+                            if (hitInformation.ShipCount == 0)
+                            {
+                                hitInformation.StatusShoot = ShootStatus.Miss;
+                                return;
+                            }
+                        }
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+        }
     }
 }

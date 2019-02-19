@@ -7,7 +7,7 @@ using Wpf_BattleShip.Enum;
 
 namespace Wpf_BattleShip.Systems
 {
-    class HitInformation
+    public class HitInformation
     {
         public int PlayerCount { get; set; }
         public ResultDirection ResDirection;
