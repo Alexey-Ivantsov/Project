@@ -99,10 +99,43 @@ namespace Wpf_BattleShip.Computter
                     break;
             }
         }
+        ////////////////////////////////////////////////////////////////////////////////////////
+        public void FindHit(Grid[,] playerGrid)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    if (playerGrid[i, j].Tag.Equals(Status.Hit))
+                    {
+                        for (int k = -1; k < 2;)
+                        {
+                            for (int l = -1; l < 2;)
+                            {
+                                if (i + k < Const.MIN_BOUND || i + k > Const.MAX_BOUND || j + l < Const.MIN_BOUND || j + l > Const.MAX_BOUND)
+                                {
+                                    l++;
+                                }
+                                else
+                                {
+                                    if (!playerGrid[i, j].Tag.Equals(Status.Hit) && !playerGrid[i, j].Tag.Equals(Status.Occupied) && !playerGrid[i, j].Tag.Equals(Status.Occupied2) && !playerGrid[i, j].Tag.Equals(Status.Occupied3) && !playerGrid[i, j].Tag.Equals(Status.Occupied4))
+                                    {
+                                        playerGrid[i + k, j + l].Tag = Status.Used;
 
+                                    }
+                                    l++;
+                                }
+
+                            }
+                            k++;
+                        }
+                    }
+                }
+            }
+        }
         public void Hit(Grid[,] playerGrid)
         {
-
+            FindHit(playerGrid);
             if (_hitInformation.ShipCount == 0)
             {
                 Search(playerGrid);
