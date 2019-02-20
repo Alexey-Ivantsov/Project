@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,7 +22,7 @@ namespace Wpf_BattleShip
 
     public partial class MainWindow : Window
     {
-
+        int ComputerCount;
         public Grid[,] fieldsEnemy;
         public Grid[,] fieldsPlayer;
         TypeShip typeShip = 0;
@@ -34,6 +35,7 @@ namespace Wpf_BattleShip
         bool doubleDeckbool;
         bool threeDeckbool;
         bool fourDeckbool;
+
 
         Game game;
         public MainWindow()
@@ -66,6 +68,7 @@ namespace Wpf_BattleShip
                                     {PA10,PB10,PC10,PD10,PE10,PF10,PG10,PH10,PI10,PJ10}
             };
             game = new Game(fieldsEnemy, fieldsPlayer);
+            ComputerCount = Const.COMPUTER_START;
             FieldsEnemy.IsEnabled = false;
             StartButton.IsEnabled = false;
         }
@@ -78,14 +81,22 @@ namespace Wpf_BattleShip
                 {
                     item.Background = Brushes.DeepSkyBlue;
                 }
-                else if (item.Tag.Equals(Status.OccupiedComputer))
+                else if (item.Tag.Equals(Status.Occupied) || item.Tag.Equals(Status.Occupied2) || item.Tag.Equals(Status.Occupied3) || item.Tag.Equals(Status.Occupied4))
                     item.Background = Brushes.Black;
                 else if (item.Tag.Equals(Status.Used))
                     item.Background = Brushes.Violet;
                 else if (item.Tag.Equals(Status.Hit))
                     item.Background = Brushes.BlanchedAlmond;
-                else
-                    item.Background = Brushes.Red;
+                //else
+                //item.Background = Brushes.Red;
+            }
+            foreach (var item in fieldsEnemy)
+            {
+                if (item.Tag.Equals(Status.Used))
+                    item.Background = Brushes.DeepSkyBlue;
+                else if (item.Tag.Equals(Status.Hit))
+                { item.Background = Brushes.Red; }
+
             }
         }
         private void GridShow(object sender, MouseButtonEventArgs e)
@@ -207,7 +218,7 @@ namespace Wpf_BattleShip
         }
 
 
-        private void gridA1(object sender, MouseButtonEventArgs e)
+        public void gridA1(object sender, MouseButtonEventArgs e)
         {
 
 
@@ -228,13 +239,13 @@ namespace Wpf_BattleShip
                     case 2:
                         if (!Check.CheckPlacement(i - 1, j, typeShip, orientations, fieldsPlayer) && orientations == Orientations.Vertical)
                         {
-                            MessageBox.Show("пойдет");
+
                             Fill.FillShip(i - 1, j, typeShip, orientations, fieldsPlayer, 0);
                             doubleDeckCount--;
                         }
                         if (!Check.CheckPlacement(i, j - 1, typeShip, orientations, fieldsPlayer) && orientations == Orientations.Horizontal)
                         {
-                            MessageBox.Show("пойдет");
+
                             Fill.FillShip(i, j - 1, typeShip, orientations, fieldsPlayer, 0);
                             doubleDeckCount--;
                         }
@@ -243,18 +254,19 @@ namespace Wpf_BattleShip
                             DoubleH.IsEnabled = false;
                             DoubleV.IsEnabled = false;
                             typeShip = 0;
+                            doubleDeckbool = true;
                         }
                         break;
                     case 3:
                         if (!Check.CheckPlacement(i - 2, j, typeShip, orientations, fieldsPlayer) && orientations == Orientations.Vertical)
                         {
-                            MessageBox.Show("пойдет");
+
                             Fill.FillShip(i - 2, j, typeShip, orientations, fieldsPlayer, 0);
                             threeDeckCount--;
                         }
                         if (!Check.CheckPlacement(i, j - 2, typeShip, orientations, fieldsPlayer) && orientations == Orientations.Horizontal)
                         {
-                            MessageBox.Show("пойдет");
+
                             Fill.FillShip(i, j - 2, typeShip, orientations, fieldsPlayer, 0);
                             threeDeckCount--;
                         }
@@ -263,18 +275,19 @@ namespace Wpf_BattleShip
                             ThreeH.IsEnabled = false;
                             ThreeV.IsEnabled = false;
                             typeShip = 0;
+                            threeDeckbool = true;
                         }
                         break;
                     case 4:
                         if (!Check.CheckPlacement(i - 3, j, typeShip, orientations, fieldsPlayer) && orientations == Orientations.Vertical)
                         {
-                            MessageBox.Show("пойдет");
+
                             Fill.FillShip(i - 3, j, typeShip, orientations, fieldsPlayer, 0);
                             fourDeckCount--;
                         }
                         if (!Check.CheckPlacement(i, j - 3, typeShip, orientations, fieldsPlayer) && orientations == Orientations.Horizontal)
                         {
-                            MessageBox.Show("пойдет");
+
                             Fill.FillShip(i, j - 3, typeShip, orientations, fieldsPlayer, 0);
                             fourDeckCount--;
                         }
@@ -283,6 +296,7 @@ namespace Wpf_BattleShip
                             FourH.IsEnabled = false;
                             FourV.IsEnabled = false;
                             typeShip = 0;
+                            fourDeckbool = true;
                         }
                         break;
 
@@ -349,22 +363,45 @@ namespace Wpf_BattleShip
         }
         private void Start(object sender, MouseButtonEventArgs e)
         {
-
             MessageBox.Show("Игра Началась!");
             FieldsEnemy.IsEnabled = true;
-            game.Start();
-            prnt();
-
         }
         private void gridMouseDown(object sender, MouseButtonEventArgs e)
         {
             Grid square = (Grid)sender;
-            if ((Status)square.Tag == Status.Empty)
+            prnt();
+            int j = Grid.GetColumn(square) - 1;
+            int i = Grid.GetRow(square) - 1;
+            if (fieldsEnemy[i, j].Tag.Equals(Status.OccupiedComputer))
             {
-                square.Background = Brushes.DeepSkyBlue;
+                ComputerCount--;
+                fieldsEnemy[i, j].Tag = Status.Hit;
+                prnt();
+                IsWin();
+                return;
             }
-            else if ((Status)square.Tag == Status.OccupiedComputer)
-                square.Background = Brushes.OrangeRed;
+            else if (fieldsEnemy[i, j].Tag.Equals(Status.Empty))
+            {
+                fieldsEnemy[i, j].Tag = Status.Used;
+                game.computer.Hit(fieldsPlayer);
+                prnt();
+                IsWin();
+                return;
+            }
+        }
+
+        public void IsWin()
+        {
+            if (game.computer._hitInformation.PlayerCount == 0)
+            {
+                MessageBox.Show("Компьютер выиграл!");
+                Stack.IsEnabled = false;
+            }
+            if (ComputerCount == 0)
+            {
+                MessageBox.Show("Вы выиграли!");
+                Stack.IsEnabled = false;
+            }
         }
 
         private void button_Click_1(object sender, RoutedEventArgs e)

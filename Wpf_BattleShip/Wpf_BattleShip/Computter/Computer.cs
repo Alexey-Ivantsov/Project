@@ -15,7 +15,7 @@ namespace Wpf_BattleShip.Computter
         public Grid[,] Grid { get; set; }
         public int LastI { get; set; }
         public int LastJ { get; set; }
-        HitInformation _hitInformation;
+        public HitInformation _hitInformation;
         Random rand;
 
         public Computer(Grid[,] fieldsEnemy)
@@ -102,6 +102,7 @@ namespace Wpf_BattleShip.Computter
 
         public void Hit(Grid[,] playerGrid)
         {
+
             if (_hitInformation.ShipCount == 0)
             {
                 Search(playerGrid);
@@ -150,7 +151,6 @@ namespace Wpf_BattleShip.Computter
         {
             int i;
             int j;
-            Random rand = new Random();
             do
             {
                 i = rand.Next(10);
@@ -187,14 +187,16 @@ namespace Wpf_BattleShip.Computter
                     else if (playerGrid[i, j].Tag.Equals(Status.Occupied4)) { playerGrid[i, j].Tag = Status.Hit; LastI = i; LastJ = j; _hitInformation.ShipCount = 3; break; }
 
                 }
-                else if (!playerGrid[i, j].Equals(Status.Hit)) playerGrid[i, j].Tag = Status.Used;
+                else if (playerGrid[i, j].Tag.Equals(Status.Empty))
+                { playerGrid[i, j].Tag = Status.Used; break; }
+                if (_hitInformation.PlayerCount == 0)
+                {
+                    return;
+                }
 
 
-            } while (playerGrid[i, j].Tag.Equals(Status.Hit) && _hitInformation.PlayerCount != 0 && playerGrid[i, j].Tag.Equals(Status.Used));
+            } while (playerGrid[i, j].Tag.Equals(Status.Hit) || playerGrid[i, j].Tag.Equals(Status.Used));
         }
-        public bool IsWin()
-        {
-            return _hitInformation.PlayerCount == 0;
-        }
+
     }
 }

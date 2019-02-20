@@ -7,7 +7,7 @@
         mc:Ignorable="d" 
       Height="482.097" Width="1343.084">
 
-    <StackPanel Orientation="Horizontal" Margin="0,0,0,-4.2" HorizontalAlignment="Left" Width="1333">
+    <StackPanel x:Name="Stack" Orientation="Horizontal" Margin="0,0,0,-4.2" HorizontalAlignment="Left" Width="1333">
 
 
 
@@ -547,7 +547,7 @@
             </Grid>
 
         </ListBoxItem>
-        <Grid Height="440" Margin="0,8,0,-0.2" VerticalAlignment="Top" Width="448">
+        <Grid Height="440" Margin="0,8,0,-0.2" VerticalAlignment="Top" Width="448" Background="#FF7AE0EA" >
 
             <Button x:Name="FourH" Margin="0,20,328,315" Background="#FF7AE0EA">
                 <Image x:Name="FourDeckHoriz" Source="Resources/FourDeck.png" HorizontalAlignment="Left" Height="105" VerticalAlignment="Top" Width="120" MouseDown="FourHoriztShip" />
@@ -582,7 +582,7 @@
             </Button>
 
             <Button x:Name="StartButton" HorizontalAlignment="Left" Height="215" Margin="285,128,0,0" VerticalAlignment="Top" Width="143" Background="#FF7AE0EA">
-                <Image x:Name="StartImage" Source="Resources/Start.png" HorizontalAlignment="Stretch" Height="210" VerticalAlignment="Top" Width="143" MouseDown="Start"/>
+                <Image x:Name="StartImage" Source="Resources/Start.png" HorizontalAlignment="Stretch" Height="210" VerticalAlignment="Top" Width="143" MouseDown="Start" />
             </Button>
 
 
