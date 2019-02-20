@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf_BattleShip"
         mc:Ignorable="d" 
-      Height="482.097" Width="1343.084">
+      Height="482.097" Width="1320.684">
 
-    <StackPanel x:Name="Stack" Orientation="Horizontal" Margin="0,0,0,-4.2" HorizontalAlignment="Left" Width="1333">
+    <StackPanel x:Name="Stack" Orientation="Horizontal" Margin="0,0,-6.6,-4.2" HorizontalAlignment="Left" Width="1321">
 
 
 
@@ -273,7 +273,6 @@
                 </Grid>
                 <Grid x:Name="PJ10" Grid.Row="10" Grid.Column="10"  MouseDown="gridA1"   Background="#FFF0F0F0">
                 </Grid>
-                <Button x:Name="Pbutton" Background="Tomato" Content="Show" HorizontalAlignment="Left" VerticalAlignment="Top" Width="36" Height="36" Click="button_Click_2"/>
 
             </Grid>
         </ListBoxItem>
@@ -547,14 +546,14 @@
             </Grid>
 
         </ListBoxItem>
-        <Grid Height="440" Margin="0,8,0,-0.2" VerticalAlignment="Top" Width="448" Background="#FF7AE0EA" >
+        <Grid Height="449" Margin="0,8,0,-0.2" VerticalAlignment="Top" Width="448" Background="#2F4F4F" >
 
             <Button x:Name="FourH" Margin="0,20,328,315" Background="#FF7AE0EA">
-                <Image x:Name="FourDeckHoriz" Source="Resources/FourDeck.png" HorizontalAlignment="Left" Height="105" VerticalAlignment="Top" Width="120" MouseDown="FourHoriztShip" />
+                <Image x:Name="FourDeckHoriz" Source="Resources/FourDeck.png" HorizontalAlignment="Left" Height="96" VerticalAlignment="Top" Width="110" MouseDown="FourHoriztShip" />
             </Button>
 
             <Button x:Name="FourV" Margin="120,20,208,315" Background="#FF7AE0EA">
-                <Image x:Name="FourDeckVert" Source="Resources/FourDeckVert.png"  HorizontalAlignment="Left" Height="102" VerticalAlignment="Top" Width="117"  MouseDown="FourVertShip"  />
+                <Image x:Name="FourDeckVert" Source="Resources/FourDeckVert.png"  HorizontalAlignment="Left" Height="97" VerticalAlignment="Top" Width="117"  MouseDown="FourVertShip"  />
             </Button>
 
 
@@ -569,20 +568,20 @@
 
 
 
-            <Button x:Name="DoubleH" Margin="0,230,328,100" Background="#FF7AE0EA">
+            <Button x:Name="DoubleH" Margin="0,230,328,109" Background="#FF7AE0EA" >
                 <Image x:Name="DoubleDeckHoriz" Source="Resources/DoubleDeck.png" HorizontalAlignment="Left" Height="108" VerticalAlignment="Top" Width="118"  MouseDown="DoubleHoriztShip"/>
             </Button>
 
-            <Button x:Name="DoubleV" Margin="120,230,208,100" Background="#FF7AE0EA">
+            <Button x:Name="DoubleV" Margin="120,230,208,109" Background="#FF7AE0EA">
                 <Image x:Name="DoubleDeckVert" Source="Resources/DoubleDeckVert.png" HorizontalAlignment="Left" Height="110" VerticalAlignment="Top" Width="116"  RenderTransformOrigin="0.5,0.5" MouseDown="DoubleVertShip" />
             </Button>
 
-            <Button x:Name="Single" Margin="0,340,328,-5" Background="#FF7AE0EA">
+            <Button x:Name="Single" Margin="0,340,328,0" Background="#FF7AE0EA">
                 <Image x:Name="SingleDeck" Source="Resources/SingleDeck.png" HorizontalAlignment="Left" Height="105" VerticalAlignment="Top" Width="117" MouseDown="SingleShip"/>
             </Button>
 
-            <Button x:Name="StartButton" HorizontalAlignment="Left" Height="215" Margin="285,128,0,0" VerticalAlignment="Top" Width="143" Background="#FF7AE0EA">
-                <Image x:Name="StartImage" Source="Resources/Start.png" HorizontalAlignment="Stretch" Height="210" VerticalAlignment="Top" Width="143" MouseDown="Start" />
+            <Button x:Name="StartButton" HorizontalAlignment="Left" Height="210" Margin="240,20,0,0" VerticalAlignment="Top" Width="77" Background="#FF7AE0EA">
+                <Image x:Name="StartImage" Source="Resources/Start.png" HorizontalAlignment="Stretch" Height="200" VerticalAlignment="Top" Width="77" MouseDown="Start" />
             </Button>
 
 
