@@ -70,48 +70,9 @@ namespace Wpf_BattleShip
             game = new Game(fieldsEnemy, fieldsPlayer);
             ComputerCount = Const.COMPUTER_START;
             FieldsEnemy.IsEnabled = false;
-            StartButton.IsEnabled = false;
+            Start.IsEnabled = false;
         }
 
-        public void prnt()
-        {
-            foreach (var item in fieldsPlayer)
-            {
-                if (item.Tag.Equals(Status.Empty))
-                {
-                    item.Background = Brushes.DeepSkyBlue;
-                }
-                else if (item.Tag.Equals(Status.Occupied) || item.Tag.Equals(Status.Occupied2) || item.Tag.Equals(Status.Occupied3) || item.Tag.Equals(Status.Occupied4))
-                    item.Background = Brushes.Black;
-                else if (item.Tag.Equals(Status.Used))
-                    item.Background = Brushes.Violet;
-                else if (item.Tag.Equals(Status.Hit))
-                    item.Background = Brushes.BlanchedAlmond;
-                //else
-                //item.Background = Brushes.Red;
-            }
-            foreach (var item in fieldsEnemy)
-            {
-                if (item.Tag.Equals(Status.Used))
-                    item.Background = Brushes.DeepSkyBlue;
-                else if (item.Tag.Equals(Status.Hit))
-                { item.Background = Brushes.Red; }
-
-            }
-        }
-        private void GridShow(object sender, MouseButtonEventArgs e)
-        {
-            Grid square = (Grid)sender;
-            if ((Status)square.Tag == Status.Empty)
-            {
-                square.Background = Brushes.DeepSkyBlue;
-            }
-            else if ((Status)square.Tag == Status.OccupiedComputer)
-                square.Background = Brushes.OrangeRed;
-            // else
-            //  square.Background = Brushes.Red;
-
-        }
 
         /*private void Place_Ship(object sender, RoutedEventArgs e)
         {
@@ -166,23 +127,20 @@ namespace Wpf_BattleShip
              }
         }*/
 
-        private void FourVertShip(object sender, MouseButtonEventArgs e)
+        private void FourVertShip(object sender, RoutedEventArgs e)
         {
             // MessageBox.Show("Укажите на поле игрока место расположения");
             typeShip = TypeShip.FourDeck;
             orientations = Orientations.Vertical;
-
-
-
         }
-        private void FourHoriztShip(object sender, MouseButtonEventArgs e)
+        private void FourHoriztShip(object sender, RoutedEventArgs e)
         {
             // MessageBox.Show("Укажите на поле игрока место расположения");
             typeShip = TypeShip.FourDeck;
             orientations = Orientations.Horizontal;
         }
 
-        private void ThreeVertShip(object sender, MouseButtonEventArgs e)
+        private void ThreeVertShip(object sender, RoutedEventArgs e)
         {
             // MessageBox.Show("Укажите на поле игрока место расположения");
             typeShip = TypeShip.ThreeDeck;
@@ -190,35 +148,35 @@ namespace Wpf_BattleShip
 
 
         }
-        private void ThreeHoriztShip(object sender, MouseButtonEventArgs e)
+        private void ThreeHoriztShip(object sender, RoutedEventArgs e)
         {
-            // MessageBox.Show("Укажите на поле игрока место расположения");
+            //MessageBox.Show("Укажите на поле игрока место расположения");
             typeShip = TypeShip.ThreeDeck;
             orientations = Orientations.Horizontal;
         }
 
-        private void DoubleVertShip(object sender, MouseButtonEventArgs e)
+        private void DoubleVertShip(object sender, RoutedEventArgs e)
         {
             // MessageBox.Show("Укажите на поле игрока место расположения");
             typeShip = TypeShip.DoubleDeck;
             orientations = Orientations.Vertical;
         }
-        private void DoubleHoriztShip(object sender, MouseButtonEventArgs e)
+        private void DoubleHoriztShip(object sender, RoutedEventArgs e)
         {
-            // MessageBox.Show("Укажите на поле игрока место расположения");
+            //MessageBox.Show("Укажите на поле игрока место расположения");
             typeShip = TypeShip.DoubleDeck;
             orientations = Orientations.Horizontal;
         }
 
-        private void SingleShip(object sender, MouseButtonEventArgs e)
+        private void SingleShip(object sender, RoutedEventArgs e)
         {
-            // MessageBox.Show("Укажите на поле игрока место расположения");
+            //MessageBox.Show("Укажите на поле игрока место расположения");
             typeShip = TypeShip.SingleDeck;
             orientations = Orientations.None;
         }
 
 
-        public void gridA1(object sender, MouseButtonEventArgs e)
+        public void PlayerGridPlacement(object sender, MouseButtonEventArgs e)
         {
 
 
@@ -354,29 +312,29 @@ namespace Wpf_BattleShip
                         break;
                 }
             }
-            prnt();
+            Print.PrintGrid(fieldsPlayer, fieldsEnemy);
             if (singleDeckbool && doubleDeckbool && threeDeckbool && fourDeckbool)
             {
-                StartButton.IsEnabled = true;
+                Start.IsEnabled = true;
                 MessageBox.Show("Жми старт!");
             }
         }
-        private void Start(object sender, MouseButtonEventArgs e)
+        private void StartButton(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show("Игра Началась!");
             FieldsEnemy.IsEnabled = true;
         }
-        private void gridMouseDown(object sender, MouseButtonEventArgs e)
+        private void ShootEnemyGrid(object sender, MouseButtonEventArgs e)
         {
             Grid square = (Grid)sender;
-            prnt();
+
             int j = Grid.GetColumn(square) - 1;
             int i = Grid.GetRow(square) - 1;
             if (fieldsEnemy[i, j].Tag.Equals(Status.OccupiedComputer))
             {
                 ComputerCount--;
                 fieldsEnemy[i, j].Tag = Status.Hit;
-                prnt();
+                Print.PrintGrid(fieldsPlayer, fieldsEnemy);
                 IsWin();
                 return;
             }
@@ -384,7 +342,7 @@ namespace Wpf_BattleShip
             {
                 fieldsEnemy[i, j].Tag = Status.Used;
                 game.computer.Hit(fieldsPlayer);
-                prnt();
+                Print.PrintGrid(fieldsPlayer, fieldsEnemy);
                 IsWin();
                 return;
             }
@@ -404,27 +362,9 @@ namespace Wpf_BattleShip
             }
         }
 
-        private void button_Click_1(object sender, RoutedEventArgs e)
+        private void ShowEnemyGrid(object sender, RoutedEventArgs e)
         {
-
-            //MessageBox.Show(fieldsEnemy[9, 9].Tag.Equals(Status.OccupiedComputer).ToString());
             foreach (var item in fieldsEnemy)
-            {
-                if (item.Tag.Equals(Status.Empty))
-                {
-                    item.Background = Brushes.DeepSkyBlue;
-                }
-                else if (item.Tag.Equals(Status.OccupiedComputer))
-                    item.Background = Brushes.Black;
-                else
-                    item.Background = Brushes.Red;
-            }
-        }
-        private void button_Click_2(object sender, RoutedEventArgs e)
-        {
-
-            //MessageBox.Show(fieldsEnemy[9, 9].Tag.Equals(Status.OccupiedComputer).ToString());
-            foreach (var item in fieldsPlayer)
             {
                 if (item.Tag.Equals(Status.Empty))
                 {

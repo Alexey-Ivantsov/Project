@@ -63,215 +63,215 @@
                 <TextBlock x:Name="textVert9" FontSize="32" Background="#191970" FontFamily="Times new roman"  FontWeight="SemiBold" Foreground="#FFF5EE" Grid.Row="9"  HorizontalAlignment="Center" Height="36" TextWrapping="Wrap" Text=" 9" VerticalAlignment="Center" Width="37"/>
                 <TextBlock x:Name="textVert10" FontSize="32" Background="#191970" FontFamily="Times new roman"  FontWeight="SemiBold" Foreground="#FFF5EE" Grid.Row="10"  HorizontalAlignment="Center" Height="36" TextWrapping="Wrap" Text="10" VerticalAlignment="Center" Width="37"/>
 
-                <Grid x:Name="PA1" Grid.Row="1" Grid.Column="1" MouseDown="gridA1"  Background="#FFF0F0F0">
+                <Grid x:Name="PA1" Grid.Row="1" Grid.Column="1" MouseDown="PlayerGridPlacement"  Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PB1" Grid.Row="1" Grid.Column="2" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PB1" Grid.Row="1" Grid.Column="2" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PC1" Grid.Row="1" Grid.Column="3" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PC1" Grid.Row="1" Grid.Column="3" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PD1" Grid.Row="1" Grid.Column="4" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PD1" Grid.Row="1" Grid.Column="4" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PE1" Grid.Row="1" Grid.Column="5" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PE1" Grid.Row="1" Grid.Column="5" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PF1" Grid.Row="1" Grid.Column="6" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PF1" Grid.Row="1" Grid.Column="6" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PG1" Grid.Row="1" Grid.Column="7" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PG1" Grid.Row="1" Grid.Column="7" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PH1" Grid.Row="1" Grid.Column="8" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PH1" Grid.Row="1" Grid.Column="8" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PI1" Grid.Row="1" Grid.Column="9" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PI1" Grid.Row="1" Grid.Column="9" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PJ1" Grid.Row="1" Grid.Column="10"  MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-
-                <Grid x:Name="PA2" Grid.Row="2" Grid.Column="1" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PB2" Grid.Row="2" Grid.Column="2" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PC2" Grid.Row="2" Grid.Column="3" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PD2" Grid.Row="2" Grid.Column="4" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PE2" Grid.Row="2" Grid.Column="5" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PF2" Grid.Row="2" Grid.Column="6" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PG2" Grid.Row="2" Grid.Column="7" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PH2" Grid.Row="2" Grid.Column="8" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PI2" Grid.Row="2" Grid.Column="9" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PJ2" Grid.Row="2" Grid.Column="10"  MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PJ1" Grid.Row="1" Grid.Column="10"  MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
 
-                <Grid x:Name="PA3" Grid.Row="3" Grid.Column="1" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PA2" Grid.Row="2" Grid.Column="1" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PB3" Grid.Row="3" Grid.Column="2" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PB2" Grid.Row="2" Grid.Column="2" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PC3" Grid.Row="3" Grid.Column="3" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PC2" Grid.Row="2" Grid.Column="3" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PD3" Grid.Row="3" Grid.Column="4" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PD2" Grid.Row="2" Grid.Column="4" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PE3" Grid.Row="3" Grid.Column="5" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PE2" Grid.Row="2" Grid.Column="5" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PF3" Grid.Row="3" Grid.Column="6" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PF2" Grid.Row="2" Grid.Column="6" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PG3" Grid.Row="3" Grid.Column="7" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PG2" Grid.Row="2" Grid.Column="7" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PH3" Grid.Row="3" Grid.Column="8" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PH2" Grid.Row="2" Grid.Column="8" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PI3" Grid.Row="3" Grid.Column="9" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PI2" Grid.Row="2" Grid.Column="9" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PJ3" Grid.Row="3" Grid.Column="10"  MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-
-                <Grid x:Name="PA4" Grid.Row="4" Grid.Column="1" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PB4" Grid.Row="4" Grid.Column="2" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PC4" Grid.Row="4" Grid.Column="3" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PD4" Grid.Row="4" Grid.Column="4" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PE4" Grid.Row="4" Grid.Column="5" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PF4" Grid.Row="4" Grid.Column="6" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PG4" Grid.Row="4" Grid.Column="7" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PH4" Grid.Row="4" Grid.Column="8" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PI4" Grid.Row="4" Grid.Column="9" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PJ4" Grid.Row="4" Grid.Column="10"  MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PJ2" Grid.Row="2" Grid.Column="10"  MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
 
-
-                <Grid x:Name="PA5" Grid.Row="5" Grid.Column="1" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PA3" Grid.Row="3" Grid.Column="1" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PB5" Grid.Row="5" Grid.Column="2" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PB3" Grid.Row="3" Grid.Column="2" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PC5" Grid.Row="5" Grid.Column="3" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PC3" Grid.Row="3" Grid.Column="3" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PD5" Grid.Row="5" Grid.Column="4" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PD3" Grid.Row="3" Grid.Column="4" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PE5" Grid.Row="5" Grid.Column="5" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PE3" Grid.Row="3" Grid.Column="5" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PF5" Grid.Row="5" Grid.Column="6" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PF3" Grid.Row="3" Grid.Column="6" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PG5" Grid.Row="5" Grid.Column="7" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PG3" Grid.Row="3" Grid.Column="7" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PH5" Grid.Row="5" Grid.Column="8" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PH3" Grid.Row="3" Grid.Column="8" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PI5" Grid.Row="5" Grid.Column="9" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PI3" Grid.Row="3" Grid.Column="9" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PJ5" Grid.Row="5" Grid.Column="10"  MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-
-                <Grid x:Name="PA6" Grid.Row="6" Grid.Column="1" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PB6" Grid.Row="6" Grid.Column="2" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PC6" Grid.Row="6" Grid.Column="3" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PD6" Grid.Row="6" Grid.Column="4" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PE6" Grid.Row="6" Grid.Column="5" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PF6" Grid.Row="6" Grid.Column="6" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PG6" Grid.Row="6" Grid.Column="7" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PH6" Grid.Row="6" Grid.Column="8" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PI6" Grid.Row="6" Grid.Column="9" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PJ6" Grid.Row="6" Grid.Column="10"  MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PJ3" Grid.Row="3" Grid.Column="10"  MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
 
-                <Grid x:Name="PA7" Grid.Row="7" Grid.Column="1" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PA4" Grid.Row="4" Grid.Column="1" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PB7" Grid.Row="7" Grid.Column="2" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PB4" Grid.Row="4" Grid.Column="2" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PC7" Grid.Row="7" Grid.Column="3" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PC4" Grid.Row="4" Grid.Column="3" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PD7" Grid.Row="7" Grid.Column="4" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PD4" Grid.Row="4" Grid.Column="4" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PE7" Grid.Row="7" Grid.Column="5" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PE4" Grid.Row="4" Grid.Column="5" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PF7" Grid.Row="7" Grid.Column="6" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PF4" Grid.Row="4" Grid.Column="6" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PG7" Grid.Row="7" Grid.Column="7" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PG4" Grid.Row="4" Grid.Column="7" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PH7" Grid.Row="7" Grid.Column="8" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PH4" Grid.Row="4" Grid.Column="8" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PI7" Grid.Row="7" Grid.Column="9" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PI4" Grid.Row="4" Grid.Column="9" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PJ7" Grid.Row="7" Grid.Column="10"  MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-
-                <Grid x:Name="PA8" Grid.Row="8" Grid.Column="1" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PB8" Grid.Row="8" Grid.Column="2" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PC8" Grid.Row="8" Grid.Column="3" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PD8" Grid.Row="8" Grid.Column="4" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PE8" Grid.Row="8" Grid.Column="5" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PF8" Grid.Row="8" Grid.Column="6" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PG8" Grid.Row="8" Grid.Column="7" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PH8" Grid.Row="8" Grid.Column="8" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PI8" Grid.Row="8" Grid.Column="9" MouseDown="gridA1"   Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="PJ8" Grid.Row="8" Grid.Column="10"  MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PJ4" Grid.Row="4" Grid.Column="10"  MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
 
-                <Grid x:Name="PA9" Grid.Row="9" Grid.Column="1" MouseDown="gridA1"   Background="#FFF0F0F0">
+
+                <Grid x:Name="PA5" Grid.Row="5" Grid.Column="1" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PB9" Grid.Row="9" Grid.Column="2" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PB5" Grid.Row="5" Grid.Column="2" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PC9" Grid.Row="9" Grid.Column="3" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PC5" Grid.Row="5" Grid.Column="3" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PD9" Grid.Row="9" Grid.Column="4" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PD5" Grid.Row="5" Grid.Column="4" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PE9" Grid.Row="9" Grid.Column="5" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PE5" Grid.Row="5" Grid.Column="5" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PF9" Grid.Row="9" Grid.Column="6" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PF5" Grid.Row="5" Grid.Column="6" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PG9" Grid.Row="9" Grid.Column="7" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PG5" Grid.Row="5" Grid.Column="7" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PH9" Grid.Row="9" Grid.Column="8" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PH5" Grid.Row="5" Grid.Column="8" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PI9" Grid.Row="9" Grid.Column="9" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PI5" Grid.Row="5" Grid.Column="9" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PJ9" Grid.Row="9" Grid.Column="10"  MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PJ5" Grid.Row="5" Grid.Column="10"  MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
 
-                <Grid x:Name="PA10" Grid.Row="10" Grid.Column="1" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PA6" Grid.Row="6" Grid.Column="1" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PB10" Grid.Row="10" Grid.Column="2" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PB6" Grid.Row="6" Grid.Column="2" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PC10" Grid.Row="10" Grid.Column="3" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PC6" Grid.Row="6" Grid.Column="3" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PD10" Grid.Row="10" Grid.Column="4" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PD6" Grid.Row="6" Grid.Column="4" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PE10" Grid.Row="10" Grid.Column="5" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PE6" Grid.Row="6" Grid.Column="5" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PF10" Grid.Row="10" Grid.Column="6" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PF6" Grid.Row="6" Grid.Column="6" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PG10" Grid.Row="10" Grid.Column="7" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PG6" Grid.Row="6" Grid.Column="7" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PH10" Grid.Row="10" Grid.Column="8" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PH6" Grid.Row="6" Grid.Column="8" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PI10" Grid.Row="10" Grid.Column="9" MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PI6" Grid.Row="6" Grid.Column="9" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="PJ10" Grid.Row="10" Grid.Column="10"  MouseDown="gridA1"   Background="#FFF0F0F0">
+                <Grid x:Name="PJ6" Grid.Row="6" Grid.Column="10"  MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+
+                <Grid x:Name="PA7" Grid.Row="7" Grid.Column="1" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PB7" Grid.Row="7" Grid.Column="2" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PC7" Grid.Row="7" Grid.Column="3" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PD7" Grid.Row="7" Grid.Column="4" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PE7" Grid.Row="7" Grid.Column="5" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PF7" Grid.Row="7" Grid.Column="6" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PG7" Grid.Row="7" Grid.Column="7" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PH7" Grid.Row="7" Grid.Column="8" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PI7" Grid.Row="7" Grid.Column="9" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PJ7" Grid.Row="7" Grid.Column="10"  MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+
+                <Grid x:Name="PA8" Grid.Row="8" Grid.Column="1" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PB8" Grid.Row="8" Grid.Column="2" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PC8" Grid.Row="8" Grid.Column="3" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PD8" Grid.Row="8" Grid.Column="4" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PE8" Grid.Row="8" Grid.Column="5" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PF8" Grid.Row="8" Grid.Column="6" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PG8" Grid.Row="8" Grid.Column="7" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PH8" Grid.Row="8" Grid.Column="8" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PI8" Grid.Row="8" Grid.Column="9" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PJ8" Grid.Row="8" Grid.Column="10"  MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+
+                <Grid x:Name="PA9" Grid.Row="9" Grid.Column="1" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PB9" Grid.Row="9" Grid.Column="2" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PC9" Grid.Row="9" Grid.Column="3" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PD9" Grid.Row="9" Grid.Column="4" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PE9" Grid.Row="9" Grid.Column="5" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PF9" Grid.Row="9" Grid.Column="6" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PG9" Grid.Row="9" Grid.Column="7" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PH9" Grid.Row="9" Grid.Column="8" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PI9" Grid.Row="9" Grid.Column="9" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PJ9" Grid.Row="9" Grid.Column="10"  MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+
+                <Grid x:Name="PA10" Grid.Row="10" Grid.Column="1" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PB10" Grid.Row="10" Grid.Column="2" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PC10" Grid.Row="10" Grid.Column="3" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PD10" Grid.Row="10" Grid.Column="4" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PE10" Grid.Row="10" Grid.Column="5" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PF10" Grid.Row="10" Grid.Column="6" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PG10" Grid.Row="10" Grid.Column="7" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PH10" Grid.Row="10" Grid.Column="8" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PI10" Grid.Row="10" Grid.Column="9" MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="PJ10" Grid.Row="10" Grid.Column="10"  MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
 
             </Grid>
@@ -331,257 +331,257 @@
                 <TextBlock x:Name="textEnemyVert10" FontSize="32" Background="#191970" FontFamily="Times new roman"  FontWeight="SemiBold" Foreground="#FFF5EE" Grid.Row="10"  HorizontalAlignment="Center" Height="36" TextWrapping="Wrap" Text="10" VerticalAlignment="Center" Width="37"/>
 
 
-                <Grid x:Name="A1" Grid.Row="1" Grid.Column="1" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="A1" Grid.Row="1" Grid.Column="1" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="B1" Grid.Row="1" Grid.Column="2" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="B1" Grid.Row="1" Grid.Column="2" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="C1" Grid.Row="1" Grid.Column="3" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="C1" Grid.Row="1" Grid.Column="3" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="D1" Grid.Row="1" Grid.Column="4" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="D1" Grid.Row="1" Grid.Column="4" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="E1" Grid.Row="1" Grid.Column="5" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="E1" Grid.Row="1" Grid.Column="5" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="F1" Grid.Row="1" Grid.Column="6" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="F1" Grid.Row="1" Grid.Column="6" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="G1" Grid.Row="1" Grid.Column="7" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="G1" Grid.Row="1" Grid.Column="7" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="H1" Grid.Row="1" Grid.Column="8" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="H1" Grid.Row="1" Grid.Column="8" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="I1" Grid.Row="1" Grid.Column="9" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="I1" Grid.Row="1" Grid.Column="9" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="J1" Grid.Row="1" Grid.Column="10" MouseDown="gridMouseDown"  Background="#FFF0F0F0">
-                </Grid>
-
-                <Grid x:Name="A2" Grid.Row="2" Grid.Column="1" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="B2" Grid.Row="2" Grid.Column="2" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="C2" Grid.Row="2" Grid.Column="3" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="D2" Grid.Row="2" Grid.Column="4" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="E2" Grid.Row="2" Grid.Column="5" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="F2" Grid.Row="2" Grid.Column="6" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="G2" Grid.Row="2" Grid.Column="7" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="H2" Grid.Row="2" Grid.Column="8" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="I2" Grid.Row="2" Grid.Column="9" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="J2" Grid.Row="2" Grid.Column="10" MouseDown="gridMouseDown"  Background="#FFF0F0F0">
+                <Grid x:Name="J1" Grid.Row="1" Grid.Column="10" MouseDown="ShootEnemyGrid"  Background="#FFF0F0F0">
                 </Grid>
 
-                <Grid x:Name="A3" Grid.Row="3" Grid.Column="1" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="A2" Grid.Row="2" Grid.Column="1" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="B3" Grid.Row="3" Grid.Column="2" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="B2" Grid.Row="2" Grid.Column="2" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="C3" Grid.Row="3" Grid.Column="3" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="C2" Grid.Row="2" Grid.Column="3" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="D3" Grid.Row="3" Grid.Column="4" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="D2" Grid.Row="2" Grid.Column="4" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="E3" Grid.Row="3" Grid.Column="5" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="E2" Grid.Row="2" Grid.Column="5" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="F3" Grid.Row="3" Grid.Column="6" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="F2" Grid.Row="2" Grid.Column="6" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="G3" Grid.Row="3" Grid.Column="7" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="G2" Grid.Row="2" Grid.Column="7" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="H3" Grid.Row="3" Grid.Column="8" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="H2" Grid.Row="2" Grid.Column="8" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="I3" Grid.Row="3" Grid.Column="9" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="I2" Grid.Row="2" Grid.Column="9" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="J3" Grid.Row="3" Grid.Column="10" MouseDown="gridMouseDown"  Background="#FFF0F0F0">
-                </Grid>
-
-                <Grid x:Name="A4" Grid.Row="4" Grid.Column="1" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="B4" Grid.Row="4" Grid.Column="2" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="C4" Grid.Row="4" Grid.Column="3" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="D4" Grid.Row="4" Grid.Column="4" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="E4" Grid.Row="4" Grid.Column="5" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="F4" Grid.Row="4" Grid.Column="6" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="G4" Grid.Row="4" Grid.Column="7" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="H4" Grid.Row="4" Grid.Column="8" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="I4" Grid.Row="4" Grid.Column="9" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="J4" Grid.Row="4" Grid.Column="10" MouseDown="gridMouseDown"  Background="#FFF0F0F0">
+                <Grid x:Name="J2" Grid.Row="2" Grid.Column="10" MouseDown="ShootEnemyGrid"  Background="#FFF0F0F0">
                 </Grid>
 
-
-                <Grid x:Name="A5" Grid.Row="5" Grid.Column="1" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="A3" Grid.Row="3" Grid.Column="1" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="B5" Grid.Row="5" Grid.Column="2" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="B3" Grid.Row="3" Grid.Column="2" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="C5" Grid.Row="5" Grid.Column="3" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="C3" Grid.Row="3" Grid.Column="3" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="D5" Grid.Row="5" Grid.Column="4" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="D3" Grid.Row="3" Grid.Column="4" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="E5" Grid.Row="5" Grid.Column="5" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="E3" Grid.Row="3" Grid.Column="5" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="F5" Grid.Row="5" Grid.Column="6" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="F3" Grid.Row="3" Grid.Column="6" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="G5" Grid.Row="5" Grid.Column="7" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="G3" Grid.Row="3" Grid.Column="7" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="H5" Grid.Row="5" Grid.Column="8" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="H3" Grid.Row="3" Grid.Column="8" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="I5" Grid.Row="5" Grid.Column="9" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="I3" Grid.Row="3" Grid.Column="9" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="J5" Grid.Row="5" Grid.Column="10" MouseDown="gridMouseDown"  Background="#FFF0F0F0">
-                </Grid>
-
-                <Grid x:Name="A6" Grid.Row="6" Grid.Column="1" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="B6" Grid.Row="6" Grid.Column="2" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="C6" Grid.Row="6" Grid.Column="3" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="D6" Grid.Row="6" Grid.Column="4" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="E6" Grid.Row="6" Grid.Column="5" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="F6" Grid.Row="6" Grid.Column="6" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="G6" Grid.Row="6" Grid.Column="7" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="H6" Grid.Row="6" Grid.Column="8" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="I6" Grid.Row="6" Grid.Column="9" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="J6" Grid.Row="6" Grid.Column="10" MouseDown="gridMouseDown"  Background="#FFF0F0F0">
+                <Grid x:Name="J3" Grid.Row="3" Grid.Column="10" MouseDown="ShootEnemyGrid"  Background="#FFF0F0F0">
                 </Grid>
 
-                <Grid x:Name="A7" Grid.Row="7" Grid.Column="1" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="A4" Grid.Row="4" Grid.Column="1" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="B7" Grid.Row="7" Grid.Column="2" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="B4" Grid.Row="4" Grid.Column="2" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="C7" Grid.Row="7" Grid.Column="3" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="C4" Grid.Row="4" Grid.Column="3" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="D7" Grid.Row="7" Grid.Column="4" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="D4" Grid.Row="4" Grid.Column="4" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="E7" Grid.Row="7" Grid.Column="5" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="E4" Grid.Row="4" Grid.Column="5" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="F7" Grid.Row="7" Grid.Column="6" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="F4" Grid.Row="4" Grid.Column="6" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="G7" Grid.Row="7" Grid.Column="7" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="G4" Grid.Row="4" Grid.Column="7" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="H7" Grid.Row="7" Grid.Column="8" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="H4" Grid.Row="4" Grid.Column="8" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="I7" Grid.Row="7" Grid.Column="9" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="I4" Grid.Row="4" Grid.Column="9" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="J7" Grid.Row="7" Grid.Column="10" MouseDown="gridMouseDown"  Background="#FFF0F0F0">
-                </Grid>
-
-                <Grid x:Name="A8" Grid.Row="8" Grid.Column="1" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="B8" Grid.Row="8" Grid.Column="2" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="C8" Grid.Row="8" Grid.Column="3" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="D8" Grid.Row="8" Grid.Column="4" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="E8" Grid.Row="8" Grid.Column="5" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="F8" Grid.Row="8" Grid.Column="6" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="G8" Grid.Row="8" Grid.Column="7" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="H8" Grid.Row="8" Grid.Column="8" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="I8" Grid.Row="8" Grid.Column="9" MouseDown="gridMouseDown" Background="#FFF0F0F0">
-                </Grid>
-                <Grid x:Name="J8" Grid.Row="8" Grid.Column="10" MouseDown="gridMouseDown"  Background="#FFF0F0F0">
+                <Grid x:Name="J4" Grid.Row="4" Grid.Column="10" MouseDown="ShootEnemyGrid"  Background="#FFF0F0F0">
                 </Grid>
 
-                <Grid x:Name="A9" Grid.Row="9" Grid.Column="1" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+
+                <Grid x:Name="A5" Grid.Row="5" Grid.Column="1" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="B9" Grid.Row="9" Grid.Column="2" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="B5" Grid.Row="5" Grid.Column="2" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="C9" Grid.Row="9" Grid.Column="3" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="C5" Grid.Row="5" Grid.Column="3" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="D9" Grid.Row="9" Grid.Column="4" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="D5" Grid.Row="5" Grid.Column="4" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="E9" Grid.Row="9" Grid.Column="5" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="E5" Grid.Row="5" Grid.Column="5" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="F9" Grid.Row="9" Grid.Column="6" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="F5" Grid.Row="5" Grid.Column="6" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="G9" Grid.Row="9" Grid.Column="7" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="G5" Grid.Row="5" Grid.Column="7" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="H9" Grid.Row="9" Grid.Column="8" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="H5" Grid.Row="5" Grid.Column="8" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="I9" Grid.Row="9" Grid.Column="9" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="I5" Grid.Row="5" Grid.Column="9" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="J9" Grid.Row="9" Grid.Column="10" MouseDown="gridMouseDown"  Background="#FFF0F0F0">
+                <Grid x:Name="J5" Grid.Row="5" Grid.Column="10" MouseDown="ShootEnemyGrid"  Background="#FFF0F0F0">
                 </Grid>
 
-                <Grid x:Name="A10" Grid.Row="10" Grid.Column="1" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="A6" Grid.Row="6" Grid.Column="1" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="B10" Grid.Row="10" Grid.Column="2" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="B6" Grid.Row="6" Grid.Column="2" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="C10" Grid.Row="10" Grid.Column="3" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="C6" Grid.Row="6" Grid.Column="3" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="D10" Grid.Row="10" Grid.Column="4" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="D6" Grid.Row="6" Grid.Column="4" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="E10" Grid.Row="10" Grid.Column="5" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="E6" Grid.Row="6" Grid.Column="5" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="F10" Grid.Row="10" Grid.Column="6" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="F6" Grid.Row="6" Grid.Column="6" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="G10" Grid.Row="10" Grid.Column="7" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="G6" Grid.Row="6" Grid.Column="7" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="H10" Grid.Row="10" Grid.Column="8" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="H6" Grid.Row="6" Grid.Column="8" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="I10" Grid.Row="10" Grid.Column="9" MouseDown="gridMouseDown" Background="#FFF0F0F0">
+                <Grid x:Name="I6" Grid.Row="6" Grid.Column="9" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
                 </Grid>
-                <Grid x:Name="J10" Grid.Row="10" Grid.Column="10" MouseDown="gridMouseDown"  Background="#FFF0F0F0">
+                <Grid x:Name="J6" Grid.Row="6" Grid.Column="10" MouseDown="ShootEnemyGrid"  Background="#FFF0F0F0">
                 </Grid>
-                <Button x:Name="button" Background="Tomato" Content="Show" HorizontalAlignment="Left" VerticalAlignment="Top" Width="36" Height="36" Click="button_Click_1"/>
+
+                <Grid x:Name="A7" Grid.Row="7" Grid.Column="1" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="B7" Grid.Row="7" Grid.Column="2" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="C7" Grid.Row="7" Grid.Column="3" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="D7" Grid.Row="7" Grid.Column="4" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="E7" Grid.Row="7" Grid.Column="5" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="F7" Grid.Row="7" Grid.Column="6" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="G7" Grid.Row="7" Grid.Column="7" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="H7" Grid.Row="7" Grid.Column="8" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="I7" Grid.Row="7" Grid.Column="9" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="J7" Grid.Row="7" Grid.Column="10" MouseDown="ShootEnemyGrid"  Background="#FFF0F0F0">
+                </Grid>
+
+                <Grid x:Name="A8" Grid.Row="8" Grid.Column="1" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="B8" Grid.Row="8" Grid.Column="2" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="C8" Grid.Row="8" Grid.Column="3" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="D8" Grid.Row="8" Grid.Column="4" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="E8" Grid.Row="8" Grid.Column="5" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="F8" Grid.Row="8" Grid.Column="6" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="G8" Grid.Row="8" Grid.Column="7" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="H8" Grid.Row="8" Grid.Column="8" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="I8" Grid.Row="8" Grid.Column="9" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="J8" Grid.Row="8" Grid.Column="10" MouseDown="ShootEnemyGrid"  Background="#FFF0F0F0">
+                </Grid>
+
+                <Grid x:Name="A9" Grid.Row="9" Grid.Column="1" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="B9" Grid.Row="9" Grid.Column="2" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="C9" Grid.Row="9" Grid.Column="3" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="D9" Grid.Row="9" Grid.Column="4" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="E9" Grid.Row="9" Grid.Column="5" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="F9" Grid.Row="9" Grid.Column="6" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="G9" Grid.Row="9" Grid.Column="7" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="H9" Grid.Row="9" Grid.Column="8" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="I9" Grid.Row="9" Grid.Column="9" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="J9" Grid.Row="9" Grid.Column="10" MouseDown="ShootEnemyGrid"  Background="#FFF0F0F0">
+                </Grid>
+
+                <Grid x:Name="A10" Grid.Row="10" Grid.Column="1" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="B10" Grid.Row="10" Grid.Column="2" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="C10" Grid.Row="10" Grid.Column="3" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="D10" Grid.Row="10" Grid.Column="4" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="E10" Grid.Row="10" Grid.Column="5" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="F10" Grid.Row="10" Grid.Column="6" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="G10" Grid.Row="10" Grid.Column="7" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="H10" Grid.Row="10" Grid.Column="8" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="I10" Grid.Row="10" Grid.Column="9" MouseDown="ShootEnemyGrid" Background="#FFF0F0F0">
+                </Grid>
+                <Grid x:Name="J10" Grid.Row="10" Grid.Column="10" MouseDown="ShootEnemyGrid"  Background="#FFF0F0F0">
+                </Grid>
+                <Button x:Name="button" Background="Tomato" Content="Show" HorizontalAlignment="Left" VerticalAlignment="Top" Width="36" Height="36" Click="ShowEnemyGrid"/>
 
             </Grid>
 
         </ListBoxItem>
         <Grid Height="449" Margin="0,8,0,-0.2" VerticalAlignment="Top" Width="448" Background="#2F4F4F" >
 
-            <Button x:Name="FourH" Margin="0,20,328,315" Background="#FF7AE0EA">
-                <Image x:Name="FourDeckHoriz" Source="Resources/FourDeck.png" HorizontalAlignment="Left" Height="96" VerticalAlignment="Top" Width="110" MouseDown="FourHoriztShip" />
+            <Button x:Name="FourH" Margin="0,20,328,324" Background="#FF7AE0EA" Click="FourHoriztShip" >
+                <Image x:Name="FourDeckHoriz" Source="Resources/FourDeck.png" HorizontalAlignment="Left" Height="96" VerticalAlignment="Top" Width="110"  />
             </Button>
 
-            <Button x:Name="FourV" Margin="120,20,208,315" Background="#FF7AE0EA">
-                <Image x:Name="FourDeckVert" Source="Resources/FourDeckVert.png"  HorizontalAlignment="Left" Height="97" VerticalAlignment="Top" Width="117"  MouseDown="FourVertShip"  />
-            </Button>
-
-
-
-            <Button x:Name="ThreeH" Margin="0,125,328,210" Background="#FF7AE0EA">
-                <Image x:Name="ThreeDeckHoriz" Source="Resources/ThreeDeck.png" HorizontalAlignment="Left" Height="103" VerticalAlignment="Top" Width="118" MouseDown="ThreeHoriztShip"/>
-            </Button>
-
-            <Button x:Name="ThreeV" Margin="120,125,208,210" Background="#FF7AE0EA" >
-                <Image x:Name="ThreeDeckVert" Source="Resources/ThreeDeckVert.png"  HorizontalAlignment="Left" Height="105" VerticalAlignment="Top" Width="120"  MouseDown="ThreeVertShip" />
+            <Button x:Name="FourV" Margin="120,20,208,324" Background="#FF7AE0EA" Click="FourVertShip" >
+                <Image x:Name="FourDeckVert" Source="Resources/FourDeckVert.png"  HorizontalAlignment="Center" Height="97" VerticalAlignment="Top" Width="117"    />
             </Button>
 
 
 
-            <Button x:Name="DoubleH" Margin="0,230,328,109" Background="#FF7AE0EA" >
-                <Image x:Name="DoubleDeckHoriz" Source="Resources/DoubleDeck.png" HorizontalAlignment="Left" Height="108" VerticalAlignment="Top" Width="118"  MouseDown="DoubleHoriztShip"/>
+            <Button x:Name="ThreeH" Margin="0,125,328,219" Background="#FF7AE0EA"  Click="ThreeHoriztShip" >
+                <Image x:Name="ThreeDeckHoriz" Source="Resources/ThreeDeck.png" HorizontalAlignment="Left" Height="103" VerticalAlignment="Top" Width="118"/>
             </Button>
 
-            <Button x:Name="DoubleV" Margin="120,230,208,109" Background="#FF7AE0EA">
-                <Image x:Name="DoubleDeckVert" Source="Resources/DoubleDeckVert.png" HorizontalAlignment="Left" Height="110" VerticalAlignment="Top" Width="116"  RenderTransformOrigin="0.5,0.5" MouseDown="DoubleVertShip" />
+            <Button x:Name="ThreeV" Margin="120,125,208,219" Background="#FF7AE0EA" Click="ThreeVertShip">
+                <Image x:Name="ThreeDeckVert" Source="Resources/ThreeDeckVert.png"  HorizontalAlignment="Center" Height="104" VerticalAlignment="Top" Width="94"   />
             </Button>
 
-            <Button x:Name="Single" Margin="0,340,328,0" Background="#FF7AE0EA">
-                <Image x:Name="SingleDeck" Source="Resources/SingleDeck.png" HorizontalAlignment="Left" Height="105" VerticalAlignment="Top" Width="117" MouseDown="SingleShip"/>
+
+
+            <Button x:Name="DoubleH" Margin="0,230,328,109" Background="#FF7AE0EA" Click="DoubleHoriztShip" >
+                <Image x:Name="DoubleDeckHoriz" Source="Resources/DoubleDeck.png" HorizontalAlignment="Left" Height="108" VerticalAlignment="Top" Width="118"  />
             </Button>
 
-            <Button x:Name="StartButton" HorizontalAlignment="Left" Height="210" Margin="240,20,0,0" VerticalAlignment="Top" Width="77" Background="#FF7AE0EA">
-                <Image x:Name="StartImage" Source="Resources/Start.png" HorizontalAlignment="Stretch" Height="200" VerticalAlignment="Top" Width="77" MouseDown="Start" />
+            <Button x:Name="DoubleV" Margin="120,230,208,109" Background="#FF7AE0EA" Click="DoubleVertShip" >
+                <Image x:Name="DoubleDeckVert"  Source="Resources/DoubleDeckVert.png"  Height="110" VerticalAlignment="Top" Width="109"   />
+            </Button>
+
+            <Button x:Name="Single" Margin="0,340,328,0" Background="#FF7AE0EA" Click="SingleShip" >
+                <Image x:Name="SingleDeck" Source="Resources/SingleDeck.png" HorizontalAlignment="Center" Height="105" VerticalAlignment="Top" Width="117" />
+            </Button>
+
+            <Button x:Name="ButtonStart" HorizontalAlignment="Left" Height="210" Margin="240,20,0,0" VerticalAlignment="Top" Width="77" Background="#2F4F4F">
+                <Image x:Name="Start" Source="Resources/Start.png" HorizontalAlignment="Stretch" Height="200" VerticalAlignment="Top" Width="77" MouseDown="StartButton" />
             </Button>
 
 

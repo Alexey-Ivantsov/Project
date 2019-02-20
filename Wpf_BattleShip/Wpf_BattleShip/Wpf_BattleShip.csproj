@@ -69,6 +69,7 @@
     <Compile Include="Systems\Const.cs" />
     <Compile Include="Systems\Fill.cs" />
     <Compile Include="Systems\HitInformation.cs" />
+    <Compile Include="Systems\Print.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
