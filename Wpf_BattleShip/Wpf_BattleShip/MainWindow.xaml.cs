@@ -31,6 +31,9 @@ namespace Wpf_BattleShip
         public int threeDeckCount = Const.ThreeDeck;
         public int doubleDeckCount = Const.DoubleDeck;
         public int singleDeckCount = Const.SingleDeck;
+        public int fourDeckHit = 0;
+        public int threeDeckHit = 0;
+        public int doubleDeckHit = 0;
         bool singleDeckbool;
         bool doubleDeckbool;
         bool threeDeckbool;
@@ -67,10 +70,51 @@ namespace Wpf_BattleShip
                                     {PA9,PB9,PC9,PD9,PE9,PF9,PG9,PH9,PI9,PJ9},
                                     {PA10,PB10,PC10,PD10,PE10,PF10,PG10,PH10,PI10,PJ10}
             };
+
             game = new Game(fieldsEnemy, fieldsPlayer);
+
             ComputerCount = Const.COMPUTER_START;
-            FieldsEnemy.IsEnabled = false;
+            //FieldsEnemy.IsEnabled = false;
             Start.IsEnabled = false;
+            //FieldPlayer.Children.Clear();
+            Grid DynamicGrid = new Grid();
+
+            DynamicGrid.Width = 500;
+
+            DynamicGrid.HorizontalAlignment = HorizontalAlignment.Left;
+
+            DynamicGrid.VerticalAlignment = VerticalAlignment.Top;
+
+            DynamicGrid.ShowGridLines = true;
+
+            DynamicGrid.Background = new SolidColorBrush(Colors.LightSteelBlue);
+            ColumnDefinition gridCol1 = new ColumnDefinition();
+
+            ColumnDefinition gridCol2 = new ColumnDefinition();
+
+            ColumnDefinition gridCol3 = new ColumnDefinition();
+
+            DynamicGrid.ColumnDefinitions.Add(gridCol1);
+
+            DynamicGrid.ColumnDefinitions.Add(gridCol2);
+
+            DynamicGrid.ColumnDefinitions.Add(gridCol3);
+            TextBlock txtBlock1 = new TextBlock();
+
+            txtBlock1.Text = "Author Name";
+
+            txtBlock1.FontSize = 14;
+
+            txtBlock1.FontWeight = FontWeights.Bold;
+
+            txtBlock1.Foreground = new SolidColorBrush(Colors.Green);
+
+            txtBlock1.VerticalAlignment = VerticalAlignment.Top;
+
+            Grid.SetRow(txtBlock1, 0);
+
+            Grid.SetColumn(txtBlock1, 0);
+            Content = DynamicGrid;
         }
 
 
@@ -322,18 +366,66 @@ namespace Wpf_BattleShip
         private void StartButton(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show("Игра Началась!");
+            FieldPlayer.IsEnabled = false;
+            Start.IsEnabled = false;
             FieldsEnemy.IsEnabled = true;
         }
         private void ShootEnemyGrid(object sender, MouseButtonEventArgs e)
         {
             Grid square = (Grid)sender;
-
             int j = Grid.GetColumn(square) - 1;
             int i = Grid.GetRow(square) - 1;
             if (fieldsEnemy[i, j].Tag.Equals(Status.OccupiedComputer))
             {
                 ComputerCount--;
                 fieldsEnemy[i, j].Tag = Status.Hit;
+                FindHit(fieldsEnemy);
+                MessageBox.Show("Вы потопили однопалубный корабль!");
+                Print.PrintGrid(fieldsPlayer, fieldsEnemy);
+                IsWin();
+                return;
+            }
+            else if (fieldsEnemy[i, j].Tag.Equals(Status.OccupiedComputer2))
+            {
+                ComputerCount--;
+                fieldsEnemy[i, j].Tag = Status.Hit;
+                doubleDeckHit++;
+                if (doubleDeckHit == 2)
+                {
+                    FindHit(fieldsEnemy);
+                    MessageBox.Show("Вы потопили двухпалубный корабль!");
+                    doubleDeckHit = 0;
+                }
+                Print.PrintGrid(fieldsPlayer, fieldsEnemy);
+                IsWin();
+                return;
+            }
+            else if (fieldsEnemy[i, j].Tag.Equals(Status.OccupiedComputer3))
+            {
+                ComputerCount--;
+                fieldsEnemy[i, j].Tag = Status.Hit;
+                threeDeckHit++;
+                if (threeDeckHit == 3)
+                {
+                    FindHit(fieldsEnemy);
+                    MessageBox.Show("Вы потопили трёхпалубный корабль!");
+                    threeDeckHit = 0;
+                }
+                Print.PrintGrid(fieldsPlayer, fieldsEnemy);
+                IsWin();
+                return;
+            }
+            else if (fieldsEnemy[i, j].Tag.Equals(Status.OccupiedComputer4))
+            {
+                ComputerCount--;
+                fieldsEnemy[i, j].Tag = Status.Hit;
+                fourDeckHit++;
+                if (fourDeckHit == 4)
+                {
+                    FindHit(fieldsEnemy);
+                    MessageBox.Show("Вы потопили четырёхпалубный корабль!");
+                    fourDeckHit = 0;
+                }
                 Print.PrintGrid(fieldsPlayer, fieldsEnemy);
                 IsWin();
                 return;
@@ -347,7 +439,39 @@ namespace Wpf_BattleShip
                 return;
             }
         }
+        public void FindHit(Grid[,] fieldsEnemy)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    if (fieldsEnemy[i, j].Tag.Equals(Status.Hit))
+                    {
+                        for (int k = -1; k < 2;)
+                        {
+                            for (int l = -1; l < 2;)
+                            {
+                                if (i + k < Const.MIN_BOUND || i + k > Const.MAX_BOUND || j + l < Const.MIN_BOUND || j + l > Const.MAX_BOUND)
+                                {
+                                    l++;
+                                }
+                                else
+                                {
+                                    if (!fieldsEnemy[i + k, j + l].Tag.Equals(Status.Hit) && !fieldsEnemy[i + k, j + l].Tag.Equals(Status.Occupied) && !fieldsEnemy[i + k, j + l].Tag.Equals(Status.Occupied2) && !fieldsEnemy[i + k, j + l].Tag.Equals(Status.Occupied3) && !fieldsEnemy[i + k, j + l].Tag.Equals(Status.Occupied4))
+                                    {
+                                        fieldsEnemy[i + k, j + l].Tag = Status.Used;
 
+                                    }
+                                    l++;
+                                }
+
+                            }
+                            k++;
+                        }
+                    }
+                }
+            }
+        }
         public void IsWin()
         {
             if (game.computer._hitInformation.PlayerCount == 0)
@@ -368,10 +492,16 @@ namespace Wpf_BattleShip
             {
                 if (item.Tag.Equals(Status.Empty))
                 {
-                    item.Background = Brushes.DeepSkyBlue;
+                    item.Background = Brushes.Gray;
                 }
                 else if (item.Tag.Equals(Status.OccupiedComputer))
                     item.Background = Brushes.Black;
+                else if (item.Tag.Equals(Status.OccupiedComputer2))
+                    item.Background = Brushes.Yellow;
+                else if (item.Tag.Equals(Status.OccupiedComputer3))
+                    item.Background = Brushes.Green;
+                else if (item.Tag.Equals(Status.OccupiedComputer4))
+                    item.Background = Brushes.DarkBlue;
                 else
                     item.Background = Brushes.Red;
             }

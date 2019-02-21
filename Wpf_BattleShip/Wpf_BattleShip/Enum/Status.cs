@@ -15,7 +15,10 @@ namespace Wpf_BattleShip.Enum
         Empty,
         Hit,
         Direct,
+        Used,
         OccupiedComputer,
-        Used
+        OccupiedComputer2,
+        OccupiedComputer3,
+        OccupiedComputer4
     }
 }

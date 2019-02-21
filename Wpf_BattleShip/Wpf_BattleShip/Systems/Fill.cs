@@ -20,7 +20,7 @@ namespace Wpf_BattleShip.Systems
                 {
                     if (role == Role.Computer)
                     {
-                        grid[(i + l), j].Tag = Status.OccupiedComputer;
+                        grid[(i + l), j].Tag = Status.OccupiedComputer + size - 1;
                     }
                     else
                     {
@@ -34,7 +34,7 @@ namespace Wpf_BattleShip.Systems
                 {
                     if (role == Role.Computer)
                     {
-                        grid[i, j + l].Tag = Status.OccupiedComputer;
+                        grid[i, j + l].Tag = Status.OccupiedComputer + size - 1;
                     }
                     else
                     {

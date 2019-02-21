@@ -118,7 +118,7 @@ namespace Wpf_BattleShip.Computter
                                 }
                                 else
                                 {
-                                    if (!playerGrid[i, j].Tag.Equals(Status.Hit) && !playerGrid[i, j].Tag.Equals(Status.Occupied) && !playerGrid[i, j].Tag.Equals(Status.Occupied2) && !playerGrid[i, j].Tag.Equals(Status.Occupied3) && !playerGrid[i, j].Tag.Equals(Status.Occupied4))
+                                    if (!playerGrid[i + k, j + l].Tag.Equals(Status.Hit) && !playerGrid[i + k, j + l].Tag.Equals(Status.Occupied) && !playerGrid[i + k, j + l].Tag.Equals(Status.Occupied2) && !playerGrid[i + k, j + l].Tag.Equals(Status.Occupied3) && !playerGrid[i + k, j + l].Tag.Equals(Status.Occupied4))
                                     {
                                         playerGrid[i + k, j + l].Tag = Status.Used;
 
@@ -135,9 +135,10 @@ namespace Wpf_BattleShip.Computter
         }
         public void Hit(Grid[,] playerGrid)
         {
-            FindHit(playerGrid);
+
             if (_hitInformation.ShipCount == 0)
             {
+                FindHit(playerGrid);
                 Search(playerGrid);
             }
             if (_hitInformation.ShipCount != 0 && _hitInformation.ResDirection == ResultDirection.None)
@@ -178,6 +179,7 @@ namespace Wpf_BattleShip.Computter
                     _hitInformation.ResDirection = ResultDirection.None;
                 }
             }
+
         }
 
         public void Search(Grid[,] playerGrid)

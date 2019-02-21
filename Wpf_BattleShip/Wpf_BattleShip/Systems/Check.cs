@@ -34,6 +34,9 @@ namespace Wpf_BattleShip.Systems
                             }
 
                             else if (i > grid.GetLength(0) - size || grid[i + column, j + Line].Tag.Equals(Status.Occupied) || grid[i + column, j + Line].Tag.Equals(Status.OccupiedComputer)
+                                || grid[i + column, j + Line].Tag.Equals(Status.OccupiedComputer2)
+                                || grid[i + column, j + Line].Tag.Equals(Status.OccupiedComputer3)
+                                || grid[i + column, j + Line].Tag.Equals(Status.OccupiedComputer4)
                                 || grid[i + column, j + Line].Tag.Equals(Status.Occupied2)
                                 || grid[i + column, j + Line].Tag.Equals(Status.Occupied3)
                                 || grid[i + column, j + Line].Tag.Equals(Status.Occupied4)
@@ -57,6 +60,9 @@ namespace Wpf_BattleShip.Systems
                             }
 
                             else if (j > grid.GetLength(0) - size || grid[i + Column, j + Line].Tag.Equals(Status.Occupied) || grid[i + Column, j + Line].Tag.Equals(Status.OccupiedComputer)
+                                || grid[i + Column, j + Line].Tag.Equals(Status.OccupiedComputer2)
+                                || grid[i + Column, j + Line].Tag.Equals(Status.OccupiedComputer3)
+                                || grid[i + Column, j + Line].Tag.Equals(Status.OccupiedComputer4)
                                 || grid[i + Column, j + Line].Tag.Equals(Status.Occupied + 1)
                                 || grid[i + Column, j + Line].Tag.Equals(Status.Occupied + 2)
                                 || grid[i + Column, j + Line].Tag.Equals(Status.Occupied + 3)
@@ -78,6 +84,9 @@ namespace Wpf_BattleShip.Systems
                                 continue;
                             }
                             else if (grid[i + Column, j + Line].Tag.Equals(Status.Occupied) || grid[i + Column, j + Line].Tag.Equals(Status.OccupiedComputer)
+                                || grid[i + Column, j + Line].Tag.Equals(Status.OccupiedComputer2)
+                                || grid[i + Column, j + Line].Tag.Equals(Status.OccupiedComputer3)
+                                || grid[i + Column, j + Line].Tag.Equals(Status.OccupiedComputer4)
                                 || grid[i + Column, j + Line].Tag.Equals(Status.Occupied + 1)
                                 || grid[i + Column, j + Line].Tag.Equals(Status.Occupied + 2)
                                 || grid[i + Column, j + Line].Tag.Equals(Status.Occupied + 3)
