@@ -116,23 +116,29 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\ThreeDeck.png" />
+    <Resource Include="Resources\Start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\BackGround.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\DoubleDeck.png" />
     <Resource Include="Resources\FourDeck.png" />
-    <Resource Include="Resources\SingleDeck.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\DoubleDeckVert.png" />
-    <Resource Include="Resources\FourDeckVert.png" />
     <Resource Include="Resources\ThreeDeckVert.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\Start.png" />
+    <Resource Include="Resources\FourDeckVert.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\1357eca0dd6f002.jpg" />
+    <Resource Include="Resources\DoubleDeckVert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ThreeDeck.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SingleDeck.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

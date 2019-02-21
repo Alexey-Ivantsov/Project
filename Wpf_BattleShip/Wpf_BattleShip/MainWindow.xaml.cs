@@ -76,45 +76,7 @@ namespace Wpf_BattleShip
             ComputerCount = Const.COMPUTER_START;
             //FieldsEnemy.IsEnabled = false;
             Start.IsEnabled = false;
-            //FieldPlayer.Children.Clear();
-            Grid DynamicGrid = new Grid();
 
-            DynamicGrid.Width = 500;
-
-            DynamicGrid.HorizontalAlignment = HorizontalAlignment.Left;
-
-            DynamicGrid.VerticalAlignment = VerticalAlignment.Top;
-
-            DynamicGrid.ShowGridLines = true;
-
-            DynamicGrid.Background = new SolidColorBrush(Colors.LightSteelBlue);
-            ColumnDefinition gridCol1 = new ColumnDefinition();
-
-            ColumnDefinition gridCol2 = new ColumnDefinition();
-
-            ColumnDefinition gridCol3 = new ColumnDefinition();
-
-            DynamicGrid.ColumnDefinitions.Add(gridCol1);
-
-            DynamicGrid.ColumnDefinitions.Add(gridCol2);
-
-            DynamicGrid.ColumnDefinitions.Add(gridCol3);
-            TextBlock txtBlock1 = new TextBlock();
-
-            txtBlock1.Text = "Author Name";
-
-            txtBlock1.FontSize = 14;
-
-            txtBlock1.FontWeight = FontWeights.Bold;
-
-            txtBlock1.Foreground = new SolidColorBrush(Colors.Green);
-
-            txtBlock1.VerticalAlignment = VerticalAlignment.Top;
-
-            Grid.SetRow(txtBlock1, 0);
-
-            Grid.SetColumn(txtBlock1, 0);
-            Content = DynamicGrid;
         }
 
 
