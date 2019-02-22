@@ -8,13 +8,13 @@
       Height="441.297" Width="1144.684">
 
 
-    <StackPanel x:Name="Stack" Orientation="Horizontal" Margin="0,0,-6.6,-2" HorizontalAlignment="Left" Width="1145">
+     <StackPanel x:Name="Stack" Orientation="Horizontal" Margin="0,0,-6.6,-2" HorizontalAlignment="Left" Width="1145">
 
 
 
         <ListBoxItem  Width="408" HorizontalAlignment="Left" Margin="0,0,0,0.4">
             <Grid x:Name="FieldPlayer"  HorizontalAlignment="Left" Height="400" Margin="0,0,0,0"  Width="400" ShowGridLines="True">
-                <Grid.RowDefinitions>
+                <!-- <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
@@ -274,10 +274,10 @@
                 </Grid>
                 <Grid x:Name="PJ10" Grid.Row="10" Grid.Column="10"  MouseDown="PlayerGridPlacement"   Background="#FFF0F0F0">
                 </Grid>
-
+                    -->
             </Grid>
         </ListBoxItem>
-        <ListBoxItem  Margin="0,0,0,0"  >
+        <ListBoxItem  Margin="0,0,0,0"  > 
 
             <Grid x:Name="FieldsEnemy" HorizontalAlignment="Left" Height="400" Margin="0,0,0,0" VerticalAlignment="Top" Width="400" ShowGridLines="True" Background="LightBlue" >
                 <Grid.RowDefinitions>

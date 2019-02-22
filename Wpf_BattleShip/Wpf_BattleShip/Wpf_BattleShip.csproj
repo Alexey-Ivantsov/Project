@@ -67,6 +67,7 @@
     <Compile Include="Playerr\Player.cs" />
     <Compile Include="Systems\Check.cs" />
     <Compile Include="Systems\Const.cs" />
+    <Compile Include="Systems\CreateGrid.cs" />
     <Compile Include="Systems\Fill.cs" />
     <Compile Include="Systems\HitInformation.cs" />
     <Compile Include="Systems\Print.cs" />
