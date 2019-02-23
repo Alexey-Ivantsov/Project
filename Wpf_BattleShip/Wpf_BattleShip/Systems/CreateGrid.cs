@@ -5,14 +5,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
+using Wpf_BattleShip.Enum;
 
 namespace Wpf_BattleShip.Systems
 {
-    static class CreateGrid
+    class CreateGrid : UserControl
     {
-        public static void CreatePlayerGrid(Grid FieldPlayer)
+        public static Grid[,] CreatePlayerGrid(Grid FieldPlayer)
         {
+            Grid[,] fieldsPlayer = new Grid[10, 10];
             var bc = new BrushConverter();
             /////////////////////////////////
             for (int i = 0; i < 11; i++)
@@ -20,7 +23,6 @@ namespace Wpf_BattleShip.Systems
                 FieldPlayer.ColumnDefinitions.Add(new ColumnDefinition());
                 FieldPlayer.RowDefinitions.Add(new RowDefinition());
             }
-
             for (int i = 0; i < 10; i++)
             {
                 TextBlock txt1 = new TextBlock();
@@ -49,7 +51,24 @@ namespace Wpf_BattleShip.Systems
                 Grid.SetRow(txt2, 1 + i);
                 FieldPlayer.Children.Add(txt2);
             }
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    Grid grid = new Grid();
+                    grid.Name = "i" + i + j;
+                    Grid.SetColumn(grid, 1 + j);
+                    Grid.SetRow(grid, 1 + i);
+                    FieldPlayer.Children.Add(grid);
+                    grid.Tag = Status.Empty;
+                    fieldsPlayer[i, j] = grid;
 
+                }
+
+            }
+
+            return fieldsPlayer;
         }
+
     }
 }

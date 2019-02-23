@@ -38,6 +38,10 @@ namespace Wpf_BattleShip
         bool doubleDeckbool;
         bool threeDeckbool;
         bool fourDeckbool;
+        delegate void func();
+
+
+
 
 
         Game game;
@@ -58,25 +62,20 @@ namespace Wpf_BattleShip
                                 { A9, B9, C9, D9, E9, F9, G9, H9, I9, J9},
                                 { A10, B10, C10, D10, E10, F10, G10, H10, I10, J10 }
             };
-            /*fieldsPlayer = new Grid[,]{
-                                     {PA1,PB1,PC1,PD1,PE1,PF1,PG1,PH1,PI1,PJ1},
-                                     {PA2,PB2,PC2,PD2,PE2,PF2,PG2,PH2,PI2,PJ2},
-                                     {PA3,PB3,PC3,PD3,PE3,PF3,PG3,PH3,PI3,PJ3},
-                                     {PA4,PB4,PC4,PD4,PE4,PF4,PG4,PH4,PI4,PJ4},
-                                     {PA5,PB5,PC5,PD5,PE5,PF5,PG5,PH5,PI5,PJ5},
-                                     {PA6,PB6,PC6,PD6,PE6,PF6,PG6,PH6,PI6,PJ6},
-                                     {PA7,PB7,PC7,PD7,PE7,PF7,PG7,PH7,PI7,PJ7},
-                                     {PA8,PB8,PC8,PD8,PE8,PF8,PG8,PH8,PI8,PJ8},
-                                     {PA9,PB9,PC9,PD9,PE9,PF9,PG9,PH9,PI9,PJ9},
-                                     {PA10,PB10,PC10,PD10,PE10,PF10,PG10,PH10,PI10,PJ10}
-             };*/
+            fieldsPlayer = CreateGrid.CreatePlayerGrid(FieldPlayer);
 
-            // game = new Game(fieldsEnemy, fieldsPlayer);
-
+            game = new Game(fieldsEnemy, fieldsPlayer);
+            Print.PrintGrid(fieldsPlayer, fieldsEnemy);
             ComputerCount = Const.COMPUTER_START;
-            //FieldsEnemy.IsEnabled = false;
-            Start.IsEnabled = false;
-            CreateGrid.CreatePlayerGrid(FieldPlayer);
+            FieldsEnemy.IsEnabled = false;
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    fieldsPlayer[i, j].MouseDown += new MouseButtonEventHandler(PlayerGridPlacement);
+                }
+            }
+
 
         }
 
@@ -134,6 +133,9 @@ namespace Wpf_BattleShip
              }
         }*/
 
+
+
+
         private void FourVertShip(object sender, RoutedEventArgs e)
         {
             // MessageBox.Show("Укажите на поле игрока место расположения");
@@ -185,8 +187,6 @@ namespace Wpf_BattleShip
 
         public void PlayerGridPlacement(object sender, MouseButtonEventArgs e)
         {
-
-
             Grid square = (Grid)sender;
             int j = Grid.GetColumn(square) - 1;
             int i = Grid.GetRow(square) - 1;
@@ -218,6 +218,8 @@ namespace Wpf_BattleShip
                         {
                             DoubleH.IsEnabled = false;
                             DoubleV.IsEnabled = false;
+                            DoubleDeckHoriz.Opacity = 0.2;
+                            DoubleDeckVert.Opacity = 0.2;
                             typeShip = 0;
                             doubleDeckbool = true;
                         }
@@ -239,6 +241,8 @@ namespace Wpf_BattleShip
                         {
                             ThreeH.IsEnabled = false;
                             ThreeV.IsEnabled = false;
+                            ThreeDeckHoriz.Opacity = 0.2;
+                            ThreeDeckVert.Opacity = 0.2;
                             typeShip = 0;
                             threeDeckbool = true;
                         }
@@ -260,6 +264,8 @@ namespace Wpf_BattleShip
                         {
                             FourH.IsEnabled = false;
                             FourV.IsEnabled = false;
+                            FourDeckHoriz.Opacity = 0.2;
+                            FourDeckVert.Opacity = 0.2;
                             typeShip = 0;
                             fourDeckbool = true;
                         }
@@ -268,7 +274,7 @@ namespace Wpf_BattleShip
                     default:
                         break;
                 }
-                // MessageBox.Show("Неверное расположение");
+                MessageBox.Show("Неверное расположение");
             }
             else
             {
@@ -281,6 +287,7 @@ namespace Wpf_BattleShip
                         if (singleDeckCount == 0)
                         {
                             Single.IsEnabled = false;
+                            SingleDeck.Opacity = 0.2;
                             typeShip = 0;
                             singleDeckbool = true;
                         }
@@ -291,6 +298,8 @@ namespace Wpf_BattleShip
                         {
                             DoubleH.IsEnabled = false;
                             DoubleV.IsEnabled = false;
+                            DoubleDeckHoriz.Opacity = 0.2;
+                            DoubleDeckVert.Opacity = 0.2;
                             typeShip = 0;
                             doubleDeckbool = true;
                         }
@@ -301,6 +310,8 @@ namespace Wpf_BattleShip
                         {
                             ThreeH.IsEnabled = false;
                             ThreeV.IsEnabled = false;
+                            ThreeDeckHoriz.Opacity = 0.2;
+                            ThreeDeckVert.Opacity = 0.2;
                             typeShip = 0;
                             threeDeckbool = true;
                         }
@@ -311,6 +322,8 @@ namespace Wpf_BattleShip
                         {
                             FourH.IsEnabled = false;
                             FourV.IsEnabled = false;
+                            FourDeckHoriz.Opacity = 0.2;
+                            FourDeckVert.Opacity = 0.2;
                             typeShip = 0;
                             fourDeckbool = true;
                         }

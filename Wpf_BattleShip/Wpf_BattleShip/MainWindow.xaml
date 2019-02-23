@@ -8,7 +8,7 @@
       Height="441.297" Width="1144.684">
 
 
-     <StackPanel x:Name="Stack" Orientation="Horizontal" Margin="0,0,-6.6,-2" HorizontalAlignment="Left" Width="1145">
+    <StackPanel x:Name="Stack" Orientation="Horizontal" Margin="0,0,-6.6,-2" HorizontalAlignment="Left" Width="1145">
 
 
 
@@ -277,7 +277,7 @@
                     -->
             </Grid>
         </ListBoxItem>
-        <ListBoxItem  Margin="0,0,0,0"  > 
+        <ListBoxItem  Margin="0,0,0,0"  >
 
             <Grid x:Name="FieldsEnemy" HorizontalAlignment="Left" Height="400" Margin="0,0,0,0" VerticalAlignment="Top" Width="400" ShowGridLines="True" Background="LightBlue" >
                 <Grid.RowDefinitions>
@@ -549,8 +549,8 @@
         </ListBoxItem>
         <Grid Height="412" VerticalAlignment="Top" Width="321"  >
             <Image x:Name="Back" Source="Resources/BackGround.jpg" Stretch="Fill" Width="312"  />
-            <Button x:Name="FourH" Margin="0,0,200,310" Background="#FF7AE0EA" Click="FourHoriztShip"  >
-                <Image x:Name="FourDeckHoriz" Source="Resources/FourDeck.png"  Stretch="Fill" Height="102"  Width="120" />
+            <Button x:Name="FourH" Margin="0,0,200,310" Background="#FF7AE0EA" Click="FourHoriztShip"   >
+                <Image x:Name="FourDeckHoriz"  Source="Resources/FourDeck.png"  Stretch="Fill" Height="102"  Width="120"  />
             </Button>
 
             <Button x:Name="FourV" Margin="121,0,86,310" Background="#FF7AE0EA" Click="FourVertShip" >
@@ -560,11 +560,11 @@
 
 
             <Button x:Name="ThreeH" Margin="0,102,200,202" Background="#FF7AE0EA"  Click="ThreeHoriztShip" >
-                <Image x:Name="ThreeDeckHoriz" Source="Resources/ThreeDeck.png" Stretch="Fill" HorizontalAlignment="Left" Height="108" VerticalAlignment="Center" Width="121"/>
+                <Image x:Name="ThreeDeckHoriz" Source="Resources/ThreeDeck.png" Stretch="Fill" HorizontalAlignment="Left" Height="110" VerticalAlignment="Center" Width="121"/>
             </Button>
 
-            <Button x:Name="ThreeV" Margin="121,102,86,210" Background="#FF7AE0EA" Click="ThreeVertShip">
-                <Image x:Name="ThreeDeckVert" Source="Resources/ThreeDeckVert.png" Stretch="Fill" HorizontalAlignment="Center" Height="123" VerticalAlignment="Top" Width="120"   />
+            <Button x:Name="ThreeV" Margin="121,102,86,202" Background="#FF7AE0EA" Click="ThreeVertShip">
+                <Image x:Name="ThreeDeckVert" Source="Resources/ThreeDeckVert.png" Stretch="Fill" HorizontalAlignment="Center" Height="122" VerticalAlignment="Top" Width="120"   />
             </Button>
 
 
@@ -578,7 +578,7 @@
             </Button>
 
             <Button x:Name="Single" Margin="0,301,200,0" Background="#FF7AE0EA" Click="SingleShip"  >
-                <Image x:Name="SingleDeck" Source="Resources/SingleDeck.png" Stretch="Fill" HorizontalAlignment="Center" Height="111" VerticalAlignment="Top" Width="121"  />
+                <Image x:Name="SingleDeck" Source="Resources/SingleDeck.png" Stretch="Fill" HorizontalAlignment="Center" Height="111" VerticalAlignment="Top" Width="123"  />
             </Button>
 
             <Button x:Name="ButtonStart" HorizontalAlignment="Left" Height="210" Margin="235,0,0,0" VerticalAlignment="Top" Width="77"  Background="Transparent" BorderThickness="0" >
