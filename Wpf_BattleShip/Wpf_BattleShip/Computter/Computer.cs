@@ -23,7 +23,7 @@ namespace Wpf_BattleShip.Computter
             Grid = fieldsEnemy;
             LastI = 0;
             LastJ = 0;
-            GridComputer();
+            //GridComputer();
             _hitInformation = new HitInformation();
             rand = new Random();
         }
@@ -99,7 +99,7 @@ namespace Wpf_BattleShip.Computter
                     break;
             }
         }
-        ////////////////////////////////////////////////////////////////////////////////////////
+
         public void FindHit(Grid[,] playerGrid)
         {
             for (int i = 0; i < 10; i++)

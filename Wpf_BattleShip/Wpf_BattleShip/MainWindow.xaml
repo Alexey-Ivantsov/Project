@@ -279,8 +279,8 @@
         </ListBoxItem>
         <ListBoxItem  Margin="0,0,0,0"  >
 
-            <Grid x:Name="FieldsEnemy" HorizontalAlignment="Left" Height="400" Margin="0,0,0,0" VerticalAlignment="Top" Width="400" ShowGridLines="True" Background="LightBlue" >
-                <Grid.RowDefinitions>
+            <Grid x:Name="FieldsEnemy" HorizontalAlignment="Left" Height="400" Margin="0,0,0,0" VerticalAlignment="Top" Width="400" ShowGridLines="True"  >
+                <!--<Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
@@ -542,8 +542,9 @@
                 </Grid>
                 <Grid x:Name="J10" Grid.Row="10" Grid.Column="10" MouseDown="ShootEnemyGrid"  Background="#FFF0F0F0">
                 </Grid>
+                
+                -->
                 <Button x:Name="button" Background="Tomato" Content="Show" HorizontalAlignment="Left" VerticalAlignment="Top" Width="36" Height="36" Click="ShowEnemyGrid"/>
-
             </Grid>
 
         </ListBoxItem>

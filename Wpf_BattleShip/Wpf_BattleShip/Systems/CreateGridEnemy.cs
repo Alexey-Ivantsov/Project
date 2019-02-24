@@ -11,17 +11,17 @@ using Wpf_BattleShip.Enum;
 
 namespace Wpf_BattleShip.Systems
 {
-    class CreateGrid : UserControl
+    public static class CreateGridEnemy
     {
-        public static Grid[,] CreatePlayerGrid(Grid FieldPlayer)
+        public static Grid[,] CreateEnemyGrid(Grid FieldsEnemy, MouseButtonEventHandler func)
         {
-            Grid[,] fieldsPlayer = new Grid[10, 10];
+            Grid[,] fieldsEnemy = new Grid[10, 10];
             var bc = new BrushConverter();
-            /////////////////////////////////
+
             for (int i = 0; i < 11; i++)
             {
-                FieldPlayer.ColumnDefinitions.Add(new ColumnDefinition());
-                FieldPlayer.RowDefinitions.Add(new RowDefinition());
+                FieldsEnemy.ColumnDefinitions.Add(new ColumnDefinition());
+                FieldsEnemy.RowDefinitions.Add(new RowDefinition());
             }
             for (int i = 0; i < 10; i++)
             {
@@ -37,7 +37,7 @@ namespace Wpf_BattleShip.Systems
                 txt1.Foreground = (Brush)bc.ConvertFrom("#FFF5EE");
                 Grid.SetColumn(txt1, i + 1);
                 Grid.SetRow(txt1, 0);
-                FieldPlayer.Children.Add(txt1);
+                FieldsEnemy.Children.Add(txt1);
 
                 TextBlock txt2 = new TextBlock();
                 txt2.FontFamily = new FontFamily("Times new roman");
@@ -49,7 +49,7 @@ namespace Wpf_BattleShip.Systems
                 txt2.Foreground = (Brush)bc.ConvertFrom("#FFF5EE");
                 Grid.SetColumn(txt2, 0);
                 Grid.SetRow(txt2, 1 + i);
-                FieldPlayer.Children.Add(txt2);
+                FieldsEnemy.Children.Add(txt2);
             }
             for (int i = 0; i < 10; i++)
             {
@@ -59,16 +59,15 @@ namespace Wpf_BattleShip.Systems
                     grid.Name = "i" + i + j;
                     Grid.SetColumn(grid, 1 + j);
                     Grid.SetRow(grid, 1 + i);
-                    FieldPlayer.Children.Add(grid);
                     grid.Tag = Status.Empty;
-                    fieldsPlayer[i, j] = grid;
-
+                    fieldsEnemy[i, j] = grid;
+                    fieldsEnemy[i, j].MouseDown += func;
+                    FieldsEnemy.Children.Add(grid);
                 }
 
             }
 
-            return fieldsPlayer;
+            return fieldsEnemy;
         }
-
     }
 }
