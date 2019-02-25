@@ -58,15 +58,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <Compile Include="Controls\PlayingField.xaml.cs">
-      <DependentUpon>PlayingField.xaml</DependentUpon>
+    <Compile Include="Controls.xaml.cs">
+      <DependentUpon>Controls.xaml</DependentUpon>
     </Compile>
-=======
->>>>>>> parent of e6bc6cb... --
-=======
->>>>>>> parent of e6bc6cb... --
     <Compile Include="Enum\Directions.cs" />
     <Compile Include="Enum\DirectionCheck.cs" />
     <Compile Include="Enum\Orientations.cs" />
@@ -81,16 +75,10 @@
     <Compile Include="Systems\Fill.cs" />
     <Compile Include="Systems\HitInformation.cs" />
     <Compile Include="Systems\Print.cs" />
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <Page Include="Controls\PlayingField.xaml">
+    <Page Include="Controls.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-=======
->>>>>>> parent of e6bc6cb... --
-=======
->>>>>>> parent of e6bc6cb... --
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -161,6 +149,5 @@
   <ItemGroup>
     <Resource Include="Resources\SingleDeck.png" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

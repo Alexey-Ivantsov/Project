@@ -15,12 +15,14 @@ using System.Windows.Shapes;
 using Wpf_BattleShip.Enum;
 using Wpf_BattleShip.Systems;
 
-namespace Wpf_BattleShip.Controls
+namespace Wpf_BattleShip
 {
     /// <summary>
-    /// Interaction logic for PlayingField.xaml
+    /// Interaction logic for Controls.xaml
     /// </summary>
-    public partial class PlayingField : UserControl
+    /// 
+
+    public partial class Controls : UserControl
     {
         int ComputerCount;
 
@@ -40,7 +42,7 @@ namespace Wpf_BattleShip.Controls
         public static Grid[,] fieldsPlayer;
         public static Grid[,] fieldsEnemy;
 
-        public PlayingField()
+        public Controls()
         {
             InitializeComponent();
             ComputerCount = Const.COMPUTER_START;
