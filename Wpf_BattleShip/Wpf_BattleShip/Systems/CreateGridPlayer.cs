@@ -11,7 +11,7 @@ using Wpf_BattleShip.Enum;
 
 namespace Wpf_BattleShip.Systems
 {
-    class CreateGridPlayer
+    class CreateGridPlayer : UserControl
     {
         public static Grid[,] CreatePlayerGrid(Grid FieldPlayer, MouseButtonEventHandler func)
         {

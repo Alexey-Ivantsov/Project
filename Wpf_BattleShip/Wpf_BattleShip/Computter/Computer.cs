@@ -38,6 +38,7 @@ namespace Wpf_BattleShip.Computter
                     Grid[i, j].Tag = Status.Empty;
                 }
             }
+
         }
 
         public void Placement()
