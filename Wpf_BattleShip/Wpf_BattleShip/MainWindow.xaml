@@ -5,11 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf_BattleShip.Controls"
         mc:Ignorable="d" 
-      Height="437.992" Width="909.555">
-    <Grid HorizontalAlignment="Left" Height="372" Margin="24,19,0,0" VerticalAlignment="Top" Width="365">
+      Height="462.059" Width="1187.132">
+    <Grid HorizontalAlignment="Left" Height="410" Margin="0,0,0,0" VerticalAlignment="Top" Width="410">
         <local:PlayingFields></local:PlayingFields>
-        <Grid HorizontalAlignment="Left" Height="371" Margin="401,6,-485,-5" VerticalAlignment="Top" Width="449">
+        <Grid HorizontalAlignment="Left" Height="410" Margin="420,0,-420,0" VerticalAlignment="Top" Width="410">
             <local:PlayingFields></local:PlayingFields>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="410" Margin="420,0,-420,0" VerticalAlignment="Top" Width="410">
+            <local:FieldButtons Margin="429,12,-341,-20"></local:FieldButtons>
         </Grid>
     </Grid>
 

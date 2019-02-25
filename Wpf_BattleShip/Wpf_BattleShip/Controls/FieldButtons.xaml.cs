@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -14,20 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Wpf_BattleShip.Controls;
-using Wpf_BattleShip.Enum;
-using Wpf_BattleShip.Systems;
 
-namespace Wpf_BattleShip
+namespace Wpf_BattleShip.Controls
 {
-
-    public partial class MainWindow : Window
+    /// <summary>
+    /// Interaction logic for FieldButtons.xaml
+    /// </summary>
+    public partial class FieldButtons : UserControl
     {
-
-        public MainWindow()
+        public FieldButtons()
         {
             InitializeComponent();
-
         }
     }
 }
