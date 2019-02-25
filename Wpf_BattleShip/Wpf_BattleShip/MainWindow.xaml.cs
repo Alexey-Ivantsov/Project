@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Wpf_BattleShip.Controls;
 using Wpf_BattleShip.Enum;
 using Wpf_BattleShip.Systems;
 
@@ -26,6 +27,8 @@ namespace Wpf_BattleShip
         public MainWindow()
         {
             InitializeComponent();
+            //PlayingFields pl = new PlayingFields();
+
         }
     }
 }

@@ -3,11 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Wpf_BattleShip"
+        xmlns:local="clr-namespace:Wpf_BattleShip.Controls"
         mc:Ignorable="d" 
-      Height="441.297" Width="1144.684">
-
-
-    <local:Controls></local:Controls>
+      Height="437.992" Width="909.555">
+    <Grid HorizontalAlignment="Left" Height="372" Margin="24,19,0,0" VerticalAlignment="Top" Width="365">
+        <local:PlayingFields></local:PlayingFields>
+        <Grid HorizontalAlignment="Left" Height="371" Margin="401,6,-485,-5" VerticalAlignment="Top" Width="449">
+            <local:PlayingFields></local:PlayingFields>
+        </Grid>
+    </Grid>
 
 </Window>
