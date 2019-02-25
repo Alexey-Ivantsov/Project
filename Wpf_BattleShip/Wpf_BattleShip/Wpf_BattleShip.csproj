@@ -59,9 +59,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Compile Include="Controls\PlayingField.xaml.cs">
       <DependentUpon>PlayingField.xaml</DependentUpon>
     </Compile>
+=======
+>>>>>>> parent of e6bc6cb... --
 =======
 >>>>>>> parent of e6bc6cb... --
     <Compile Include="Enum\Directions.cs" />
@@ -79,10 +82,13 @@
     <Compile Include="Systems\HitInformation.cs" />
     <Compile Include="Systems\Print.cs" />
 <<<<<<< HEAD
+<<<<<<< HEAD
     <Page Include="Controls\PlayingField.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+=======
+>>>>>>> parent of e6bc6cb... --
 =======
 >>>>>>> parent of e6bc6cb... --
     <Page Include="MainWindow.xaml">
