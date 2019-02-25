@@ -8,6 +8,5 @@
       Height="441.297" Width="1144.684">
 
 
-    <local:Controls></local:Controls>
-
+    <local:Controls/>
 </Window>

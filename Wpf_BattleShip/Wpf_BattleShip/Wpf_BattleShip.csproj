@@ -58,8 +58,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Controls.xaml.cs">
-      <DependentUpon>Controls.xaml</DependentUpon>
+    <Compile Include="Controls\PlayingField.xaml.cs">
+      <DependentUpon>PlayingField.xaml</DependentUpon>
     </Compile>
     <Compile Include="Enum\Directions.cs" />
     <Compile Include="Enum\DirectionCheck.cs" />
@@ -75,7 +75,7 @@
     <Compile Include="Systems\Fill.cs" />
     <Compile Include="Systems\HitInformation.cs" />
     <Compile Include="Systems\Print.cs" />
-    <Page Include="Controls.xaml">
+    <Page Include="Controls\PlayingField.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -149,5 +149,6 @@
   <ItemGroup>
     <Resource Include="Resources\SingleDeck.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
