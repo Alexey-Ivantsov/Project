@@ -56,13 +56,14 @@ namespace Wpf_BattleShip.Systems
                 for (int j = 0; j < 10; j++)
                 {
                     Grid grid = new Grid();
-                    grid.Name = "i" + i + j;
+                    grid.Name = "is" + i + j;
                     Grid.SetColumn(grid, 1 + j);
                     Grid.SetRow(grid, 1 + i);
+                    FieldsEnemy.Children.Add(grid);
                     grid.Tag = Status.Empty;
                     fieldsEnemy[i, j] = grid;
                     fieldsEnemy[i, j].MouseDown += func;
-                    FieldsEnemy.Children.Add(grid);
+
                 }
 
             }
