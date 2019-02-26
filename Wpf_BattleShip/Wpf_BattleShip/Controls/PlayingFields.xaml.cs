@@ -77,7 +77,6 @@ namespace Wpf_BattleShip.Controls
                 }
 
             }
-
         }
 
     }
