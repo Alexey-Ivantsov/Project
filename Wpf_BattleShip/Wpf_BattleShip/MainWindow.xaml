@@ -6,16 +6,14 @@
         xmlns:local="clr-namespace:Wpf_BattleShip.Controls"
         mc:Ignorable="d" 
       Height="462.059" Width="1104.931">
-    <Grid HorizontalAlignment="Left" Height="430" VerticalAlignment="Top" Width="1077" Margin="0,0,0,0">
+    <Grid HorizontalAlignment="Left" Height="430" VerticalAlignment="Top" Width="1077" MouseDown="sk" >
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="27*" ></ColumnDefinition>
+            <ColumnDefinition  Width="27*" ></ColumnDefinition>
             <ColumnDefinition Width="28*" ></ColumnDefinition>
             <ColumnDefinition Width="306.4" ></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <local:PlayingFields Grid.Column="0" x:Name="FieldPlayer" Margin="0,0,0.4,0" ></local:PlayingFields>
-
         <local:PlayingFields Grid.Column="1" x:Name="FieldEnemy" Margin="9.6,-1,0.4,1"  />
-
         <local:FieldButtons Grid.Column="2" Margin="9.6,1,-25.2,10" Height="Auto" Width="322" HorizontalAlignment="Left"   />
         <Button x:Name="button" Content="Button" Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="12.6,10,0,0" VerticalAlignment="Top" Width="23" Click="button_Click"/>
 

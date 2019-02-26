@@ -20,10 +20,11 @@ namespace Wpf_BattleShip.Systems
         public Game(Grid[,] fieldsPlayer, Grid[,] fieldsEnemy)
         {
             computer = new Computer(fieldsEnemy);
-            //player = new Player(fieldsPlayer);
+            player = new Player(fieldsPlayer);
             foreach (var item in fieldsEnemy)
             {
                 item.Background = Brushes.Gray;
+
             }
             foreach (var item in fieldsPlayer)
             {

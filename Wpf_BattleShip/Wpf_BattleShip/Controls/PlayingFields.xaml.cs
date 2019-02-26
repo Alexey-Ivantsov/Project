@@ -73,15 +73,11 @@ namespace Wpf_BattleShip.Controls
                     Field.Children.Add(grid);
                     grid.Tag = Status.Empty;
                     field[i, j] = grid;
-                    field[i, j].MouseDown += func;
+                    // field[i, j].MouseDown += func;
                 }
             }
         }
 
-        public void func(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("sad");
-        }
 
     }
 }
