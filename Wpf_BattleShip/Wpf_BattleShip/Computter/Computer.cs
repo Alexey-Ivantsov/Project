@@ -26,16 +26,15 @@ namespace Wpf_BattleShip.Computter
             //GridComputer();
             _hitInformation = new HitInformation();
             rand = new Random();
+            Placement();
         }
         public void GridComputer()
         {
-
-            for (int i = 0; i < Grid.GetLength(0); i++)
+            for (int i = 0; i < 10; i++)
             {
-                for (int j = 0; j < Grid.GetLength(1); j++)
+                for (int j = 0; j < 10; j++)
                 {
 
-                    Grid[i, j].Tag = Status.Empty;
                 }
             }
         }

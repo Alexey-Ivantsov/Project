@@ -22,11 +22,11 @@ namespace Wpf_BattleShip.Controls
     /// </summary>
     public partial class PlayingFields : UserControl
     {
-        public Grid[,] fieldsPlayer;
-        public PlayingFields()
+        public Grid[,] field;
+        public PlayingFields(/*MouseButtonEventHandler func*/)
         {
             InitializeComponent();
-            fieldsPlayer = new Grid[10, 10];
+            field = new Grid[10, 10];
             var bc = new BrushConverter();
 
             for (int i = 0; i < 11; i++)
@@ -72,11 +72,15 @@ namespace Wpf_BattleShip.Controls
                     Grid.SetRow(grid, 1 + i);
                     Field.Children.Add(grid);
                     grid.Tag = Status.Empty;
-                    fieldsPlayer[i, j] = grid;
-                    //fieldsPlayer[i, j].MouseDown += func;
+                    field[i, j] = grid;
+                    field[i, j].MouseDown += func;
                 }
-
             }
+        }
+
+        public void func(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("sad");
         }
 
     }

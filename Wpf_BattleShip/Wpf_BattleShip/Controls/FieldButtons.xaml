@@ -6,41 +6,41 @@
              xmlns:local="clr-namespace:Wpf_BattleShip.Controls"
              mc:Ignorable="d" Height="419.058" Width="321.749">
     <Grid>
-        <Image x:Name="Back" Source="/Resources/BackGround.jpg" Stretch="Fill" Width="312" Margin="10,0,-0.4,0.2"  />
-        <Button x:Name="FourH" Margin="0,0,200,310" Background="#FF7AE0EA"   >
+        <Image x:Name="Back" Source="/Resources/BackGround.jpg" Stretch="Fill" Width="312"  />
+        <Button x:Name="FourH" Margin="0,0,200,310" Background="#FF7AE0EA" Click="FourHoriztShip"   >
             <Image x:Name="FourDeckHoriz"  Source="/Resources/FourDeck.png"  Stretch="Fill" Height="102"  Width="120"  />
         </Button>
 
-        <Button x:Name="FourV" Margin="121,0,86,310" Background="#FF7AE0EA"  >
+        <Button x:Name="FourV" Margin="121,0,86,310" Background="#FF7AE0EA" Click="FourVertShip" >
             <Image x:Name="FourDeckVert" Source="/Resources/FourDeckVert.png" Stretch="Fill"  Height="170"  Width="132"    />
         </Button>
 
 
 
-        <Button x:Name="ThreeH" Margin="0,102,200,202" Background="#FF7AE0EA"   >
+        <Button x:Name="ThreeH" Margin="0,102,200,202" Background="#FF7AE0EA"  Click="ThreeHoriztShip" >
             <Image x:Name="ThreeDeckHoriz" Source="/Resources/ThreeDeck.png" Stretch="Fill" HorizontalAlignment="Left" Height="110" VerticalAlignment="Center" Width="121"/>
         </Button>
 
-        <Button x:Name="ThreeV" Margin="121,102,86,202" Background="#FF7AE0EA" >
+        <Button x:Name="ThreeV" Margin="121,102,86,202" Background="#FF7AE0EA" Click="ThreeVertShip">
             <Image x:Name="ThreeDeckVert" Source="/Resources/ThreeDeckVert.png" Stretch="Fill" HorizontalAlignment="Center" Height="122" VerticalAlignment="Top" Width="120"   />
         </Button>
 
 
 
-        <Button x:Name="DoubleH" Margin="0,202,200,111" Background="#FF7AE0EA"  >
-            <Image x:Name="DoubleDeckHoriz" Source="/Resources/DoubleDeck.png" Stretch="Fill" HorizontalAlignment="Left" Height="98" VerticalAlignment="Top" Width="121"  />
+        <Button x:Name="DoubleH" Margin="0,202,199.6,118.2" Background="#FF7AE0EA" Click="DoubleHoriztShip" >
+            <Image x:Name="DoubleDeckHoriz" Source="/Resources/DoubleDeck.png" Stretch="Fill" HorizontalAlignment="Left" Height="96" VerticalAlignment="Top" Width="121"  />
         </Button>
 
-        <Button x:Name="DoubleV" Margin="121,202,85.6,118.2" Background="#FF7AE0EA" >
+        <Button x:Name="DoubleV" Margin="121,202,85.6,118.2" Background="#FF7AE0EA" Click="DoubleVertShip" >
             <Image x:Name="DoubleDeckVert"  Source="/Resources/DoubleDeckVert.png" Stretch="Fill" HorizontalAlignment="Center" Height="180" VerticalAlignment="Top" Width="151"   />
         </Button>
 
-        <Button x:Name="Single" Margin="0,301,200,0" Background="#FF7AE0EA" >
-            <Image x:Name="SingleDeck" Source="/Resources/SingleDeck.png" Stretch="Fill" HorizontalAlignment="Center" Height="111" VerticalAlignment="Top" Width="123"  />
+        <Button x:Name="Single" Margin="0,301,200.6,0.2" Background="#FF7AE0EA" Click="SingleShip"  >
+            <Image x:Name="SingleDeck" Source="/Resources/SingleDeck.png" Stretch="Fill" HorizontalAlignment="Center" Height="120" VerticalAlignment="Top" Width="123"  />
         </Button>
 
         <Button x:Name="ButtonStart" HorizontalAlignment="Left" Height="210" Margin="235,0,0,0" VerticalAlignment="Top" Width="77"  Background="Transparent" BorderThickness="0" >
-            <Image x:Name="Start" Source="/Resources/Start.png" HorizontalAlignment="Stretch" Height="200" VerticalAlignment="Top" Width="72" />
+            <Image x:Name="Start" Source="/Resources/Start.png" HorizontalAlignment="Stretch" Height="200" VerticalAlignment="Top" Width="72" MouseDown="StartButton" />
         </Button>
     </Grid>
 </UserControl>

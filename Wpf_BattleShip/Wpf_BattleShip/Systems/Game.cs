@@ -15,13 +15,12 @@ namespace Wpf_BattleShip.Systems
     public class Game
     {
 
-        public static Computer computer;
+        public Computer computer;
         public Player player;
         public Game(Grid[,] fieldsPlayer, Grid[,] fieldsEnemy)
         {
             computer = new Computer(fieldsEnemy);
-            player = new Player(fieldsPlayer);
-            computer.Placement();
+            //player = new Player(fieldsPlayer);
             foreach (var item in fieldsEnemy)
             {
                 item.Background = Brushes.Gray;

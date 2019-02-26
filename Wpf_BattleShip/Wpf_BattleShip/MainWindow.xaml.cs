@@ -27,7 +27,33 @@ namespace Wpf_BattleShip
         public MainWindow()
         {
             InitializeComponent();
+            Print.PrintGrid(FieldPlayer.field, FieldEnemy.field);
+            Game game = new Game(FieldPlayer.field, FieldEnemy.field);
+
 
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            foreach (var item in FieldEnemy.field)
+            {
+                if (item.Tag.Equals(Status.Empty))
+                {
+                    item.Background = Brushes.Gray;
+                }
+                else if (item.Tag.Equals(Status.OccupiedComputer))
+                    item.Background = Brushes.Black;
+                else if (item.Tag.Equals(Status.OccupiedComputer2))
+                    item.Background = Brushes.Yellow;
+                else if (item.Tag.Equals(Status.OccupiedComputer3))
+                    item.Background = Brushes.Green;
+                else if (item.Tag.Equals(Status.OccupiedComputer4))
+                    item.Background = Brushes.DarkBlue;
+                else
+                    item.Background = Brushes.Red;
+            }
+        }
+
+
     }
 }
