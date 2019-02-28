@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Wpf_BattleShip.Enum;
+using Wpf_BattleShip.Systems;
 
 namespace Wpf_BattleShip.Controls
 {

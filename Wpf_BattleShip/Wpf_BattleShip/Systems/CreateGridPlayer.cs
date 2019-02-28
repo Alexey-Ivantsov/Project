@@ -14,6 +14,7 @@ namespace Wpf_BattleShip.Systems
 {
     class CreateGridPlayer : FieldButtons
     {
+
         TypeShip typeShip = 0;
         Orientations orientations;
         public int fourDeckCount = Const.FourDeck;
