@@ -14,8 +14,7 @@ namespace Wpf_BattleShip.Systems
 {
     public class Game
     {
-
-        public Computer computer;
+        public static Computer computer;
         public Player player;
         public Game(Grid[,] fieldsPlayer, Grid[,] fieldsEnemy)
         {

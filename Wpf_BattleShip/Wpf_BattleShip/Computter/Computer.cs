@@ -23,7 +23,7 @@ namespace Wpf_BattleShip.Computter
             Grid = fieldsEnemy;
             LastI = 0;
             LastJ = 0;
-            //GridComputer();
+            // GridComputer();
             _hitInformation = new HitInformation();
             rand = new Random();
             Placement();
@@ -34,7 +34,7 @@ namespace Wpf_BattleShip.Computter
             {
                 for (int j = 0; j < 10; j++)
                 {
-
+                    Grid[i, j].Tag = Status.Empty;
                 }
             }
         }

@@ -21,7 +21,7 @@ namespace Wpf_BattleShip.Controls
     /// </summary>
     public partial class FieldButtons : UserControl
     {
-        TypeShip typeShip = 0;
+        public TypeShip typeShip = 0;
         Orientations orientations;
         public FieldButtons()
         {
@@ -32,6 +32,8 @@ namespace Wpf_BattleShip.Controls
             // MessageBox.Show("Укажите на поле игрока место расположения");
             typeShip = TypeShip.FourDeck;
             orientations = Orientations.Vertical;
+
+
         }
         private void FourHoriztShip(object sender, RoutedEventArgs e)
         {

@@ -23,7 +23,7 @@ namespace Wpf_BattleShip.Controls
     public partial class PlayingFields : UserControl
     {
         public Grid[,] field;
-        public PlayingFields(/*MouseButtonEventHandler func*/)
+        public PlayingFields()
         {
             InitializeComponent();
             field = new Grid[10, 10];

@@ -38,5 +38,21 @@ namespace Wpf_BattleShip.Systems
 
             }
         }
+
+        public static void PrintGrid(Grid[,] fieldsEnemy)
+        {
+
+            foreach (var item in fieldsEnemy)
+            {
+
+                if (item.Tag.Equals(Status.Used))
+                    item.Background = Brushes.DeepSkyBlue;
+                else if (item.Tag.Equals(Status.Hit))
+                { item.Background = Brushes.Red; }
+                else if (item.Tag.Equals(Status.Empty))
+                { item.Background = Brushes.Gray; }
+
+            }
+        }
     }
 }

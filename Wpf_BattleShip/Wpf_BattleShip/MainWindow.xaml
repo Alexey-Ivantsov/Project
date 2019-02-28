@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Wpf_BattleShip.Controls"
         mc:Ignorable="d" 
       Height="462.059" Width="1104.931">
-    <Grid HorizontalAlignment="Left" Height="430" VerticalAlignment="Top" Width="1077" MouseDown="sk" >
+    <Grid HorizontalAlignment="Left" Height="430" VerticalAlignment="Top" Width="1077"  >
         <Grid.ColumnDefinitions>
             <ColumnDefinition  Width="27*" ></ColumnDefinition>
             <ColumnDefinition Width="28*" ></ColumnDefinition>

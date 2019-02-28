@@ -7,67 +7,182 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
+using Wpf_BattleShip.Controls;
 using Wpf_BattleShip.Enum;
 
 namespace Wpf_BattleShip.Systems
 {
-    class CreateGridPlayer
+    class CreateGridPlayer : FieldButtons
     {
-        public static Grid[,] CreatePlayerGrid(Grid FieldPlayer, MouseButtonEventHandler func)
+        TypeShip typeShip = 0;
+        Orientations orientations;
+        public int fourDeckCount = Const.FourDeck;
+        public int threeDeckCount = Const.ThreeDeck;
+        public int doubleDeckCount = Const.DoubleDeck;
+        public int singleDeckCount = Const.SingleDeck;
+        bool singleDeckbool;
+        bool doubleDeckbool;
+        bool threeDeckbool;
+        bool fourDeckbool;
+        public Grid[,] fieldsPlayer;
+        public CreateGridPlayer(Grid[,] field)
         {
-            Grid[,] fieldsPlayer = new Grid[10, 10];
-            var bc = new BrushConverter();
-
-            for (int i = 0; i < 11; i++)
+            fieldsPlayer = field;
+        }
+        public void PlayerGridPlacement(object sender, MouseButtonEventArgs e)
+        {
+            Grid square = (Grid)sender;
+            int j = Grid.GetColumn(square) - 1;
+            int i = Grid.GetRow(square) - 1;
+            if (typeShip == 0)
             {
-                FieldPlayer.ColumnDefinitions.Add(new ColumnDefinition());
-                FieldPlayer.RowDefinitions.Add(new RowDefinition());
+                MessageBox.Show("Выберите тип корабля");
             }
-            for (int i = 0; i < 10; i++)
+            if (Check.CheckPlacement(i, j, typeShip, orientations, fieldsPlayer))
             {
-                TextBlock txt1 = new TextBlock();
-                txt1.FontFamily = new FontFamily("Times new roman");
-                txt1.TextAlignment = TextAlignment.Center;
-                Char first = 'A';
-                Char newf = Convert.ToChar(first + i);
-                txt1.Text = Convert.ToString(newf);
-                txt1.FontSize = 32;
-                txt1.FontWeight = FontWeights.SemiBold;
-                txt1.Background = (Brush)bc.ConvertFrom("#191970");
-                txt1.Foreground = (Brush)bc.ConvertFrom("#FFF5EE");
-                Grid.SetColumn(txt1, i + 1);
-                Grid.SetRow(txt1, 0);
-                FieldPlayer.Children.Add(txt1);
+                int flag = Convert.ToInt32(typeShip);
 
-                TextBlock txt2 = new TextBlock();
-                txt2.FontFamily = new FontFamily("Times new roman");
-                txt2.TextAlignment = TextAlignment.Center;
-                txt2.Text = Convert.ToString(1 + i);
-                txt2.FontSize = 32;
-                txt2.FontWeight = FontWeights.SemiBold;
-                txt2.Background = (Brush)bc.ConvertFrom("#191970");
-                txt2.Foreground = (Brush)bc.ConvertFrom("#FFF5EE");
-                Grid.SetColumn(txt2, 0);
-                Grid.SetRow(txt2, 1 + i);
-                FieldPlayer.Children.Add(txt2);
-            }
-            for (int i = 0; i < 10; i++)
-            {
-                for (int j = 0; j < 10; j++)
+                switch (flag)
                 {
-                    Grid grid = new Grid();
-                    grid.Name = "i" + i + j;
-                    Grid.SetColumn(grid, 1 + j);
-                    Grid.SetRow(grid, 1 + i);
-                    FieldPlayer.Children.Add(grid);
-                    grid.Tag = Status.Empty;
-                    fieldsPlayer[i, j] = grid;
-                    fieldsPlayer[i, j].MouseDown += func;
+
+                    case 2:
+                        if (!Check.CheckPlacement(i - 1, j, typeShip, orientations, fieldsPlayer) && orientations == Orientations.Vertical)
+                        {
+
+                            Fill.FillShip(i - 1, j, typeShip, orientations, fieldsPlayer, 0);
+                            doubleDeckCount--;
+                        }
+                        if (!Check.CheckPlacement(i, j - 1, typeShip, orientations, fieldsPlayer) && orientations == Orientations.Horizontal)
+                        {
+
+                            Fill.FillShip(i, j - 1, typeShip, orientations, fieldsPlayer, 0);
+                            doubleDeckCount--;
+                        }
+                        if (doubleDeckCount == 0)
+                        {
+
+                            DoubleH.IsEnabled = false;
+                            DoubleV.IsEnabled = false;
+                            DoubleDeckHoriz.Opacity = 0.2;
+                            DoubleDeckVert.Opacity = 0.2;
+                            typeShip = 0;
+                            doubleDeckbool = true;
+                        }
+                        break;
+                    case 3:
+                        if (!Check.CheckPlacement(i - 2, j, typeShip, orientations, fieldsPlayer) && orientations == Orientations.Vertical)
+                        {
+
+                            Fill.FillShip(i - 2, j, typeShip, orientations, fieldsPlayer, 0);
+                            threeDeckCount--;
+                        }
+                        if (!Check.CheckPlacement(i, j - 2, typeShip, orientations, fieldsPlayer) && orientations == Orientations.Horizontal)
+                        {
+
+                            Fill.FillShip(i, j - 2, typeShip, orientations, fieldsPlayer, 0);
+                            threeDeckCount--;
+                        }
+                        if (threeDeckCount == 0)
+                        {
+                            ThreeH.IsEnabled = false;
+                            ThreeV.IsEnabled = false;
+                            ThreeDeckHoriz.Opacity = 0.2;
+                            ThreeDeckVert.Opacity = 0.2;
+                            typeShip = 0;
+                            threeDeckbool = true;
+                        }
+                        break;
+                    case 4:
+                        if (!Check.CheckPlacement(i - 3, j, typeShip, orientations, fieldsPlayer) && orientations == Orientations.Vertical)
+                        {
+
+                            Fill.FillShip(i - 3, j, typeShip, orientations, fieldsPlayer, 0);
+                            fourDeckCount--;
+                        }
+                        if (!Check.CheckPlacement(i, j - 3, typeShip, orientations, fieldsPlayer) && orientations == Orientations.Horizontal)
+                        {
+
+                            Fill.FillShip(i, j - 3, typeShip, orientations, fieldsPlayer, 0);
+                            fourDeckCount--;
+                        }
+                        if (fourDeckCount == 0)
+                        {
+                            FourH.IsEnabled = false;
+                            FourV.IsEnabled = false;
+                            FourDeckHoriz.Opacity = 0.2;
+                            FourDeckVert.Opacity = 0.2;
+                            typeShip = 0;
+                            fourDeckbool = true;
+                        }
+                        break;
+
+                    default:
+                        break;
                 }
-
+                MessageBox.Show("Неверное расположение");
             }
-
-            return fieldsPlayer;
+            else
+            {
+                Fill.FillShip(i, j, typeShip, orientations, fieldsPlayer, 0);
+                int size = Convert.ToInt32(typeShip);
+                switch (size)
+                {
+                    case 1:
+                        singleDeckCount--;
+                        if (singleDeckCount == 0)
+                        {
+                            Single.IsEnabled = false;
+                            SingleDeck.Opacity = 0.2;
+                            typeShip = 0;
+                            singleDeckbool = true;
+                        }
+                        break;
+                    case 2:
+                        doubleDeckCount--;
+                        if (doubleDeckCount == 0)
+                        {
+                            DoubleH.IsEnabled = false;
+                            DoubleV.IsEnabled = false;
+                            DoubleDeckHoriz.Opacity = 0.2;
+                            DoubleDeckVert.Opacity = 0.2;
+                            typeShip = 0;
+                            doubleDeckbool = true;
+                        }
+                        break;
+                    case 3:
+                        threeDeckCount--;
+                        if (threeDeckCount == 0)
+                        {
+                            ThreeH.IsEnabled = false;
+                            ThreeV.IsEnabled = false;
+                            ThreeDeckHoriz.Opacity = 0.2;
+                            ThreeDeckVert.Opacity = 0.2;
+                            typeShip = 0;
+                            threeDeckbool = true;
+                        }
+                        break;
+                    case 4:
+                        fourDeckCount--;
+                        if (fourDeckCount == 0)
+                        {
+                            FourH.IsEnabled = false;
+                            FourV.IsEnabled = false;
+                            FourDeckHoriz.Opacity = 0.2;
+                            FourDeckVert.Opacity = 0.2;
+                            typeShip = 0;
+                            fourDeckbool = true;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+            }
+            Print.PrintGrid(fieldsPlayer);
+            if (singleDeckbool && doubleDeckbool && threeDeckbool && fourDeckbool)
+            {
+                Start.IsEnabled = true;
+                MessageBox.Show("Жми старт!");
+            }
         }
 
     }
