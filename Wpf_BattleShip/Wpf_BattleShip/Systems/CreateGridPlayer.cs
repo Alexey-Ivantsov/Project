@@ -15,8 +15,8 @@ namespace Wpf_BattleShip.Systems
     class CreateGridPlayer : FieldButtons
     {
 
-        TypeShip typeShip = 0;
-        Orientations orientations;
+        TypeShip typeShip;
+        Orientations orientations = Orientations.Horizontal;
         public int fourDeckCount = Const.FourDeck;
         public int threeDeckCount = Const.ThreeDeck;
         public int doubleDeckCount = Const.DoubleDeck;
@@ -26,9 +26,14 @@ namespace Wpf_BattleShip.Systems
         bool threeDeckbool;
         bool fourDeckbool;
         public Grid[,] fieldsPlayer;
-        public CreateGridPlayer(Grid[,] field)
+        public CreateGridPlayer(Grid[,] field, TypeShip type)
         {
             fieldsPlayer = field;
+            typeShip = type;
+            foreach (var item in fieldsPlayer)
+            {
+                item.MouseDown += PlayerGridPlacement;
+            }
         }
         public void PlayerGridPlacement(object sender, MouseButtonEventArgs e)
         {

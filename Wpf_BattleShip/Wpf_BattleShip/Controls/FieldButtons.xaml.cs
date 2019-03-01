@@ -30,10 +30,10 @@ namespace Wpf_BattleShip.Controls
         }
         private void FourVertShip(object sender, RoutedEventArgs e)
         {
-            // MessageBox.Show("Укажите на поле игрока место расположения");
+
             typeShip = TypeShip.FourDeck;
             orientations = Orientations.Vertical;
-
+            MessageBox.Show(typeShip.ToString());
 
         }
         private void FourHoriztShip(object sender, RoutedEventArgs e)

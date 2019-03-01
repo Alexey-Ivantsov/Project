@@ -26,11 +26,15 @@ namespace Wpf_BattleShip
         Game game;
         CreateGridEnemy gridEnemy;
         CreateGridPlayer gridPlayer;
+
+
         public MainWindow()
         {
+
             InitializeComponent();
+
             gridEnemy = new CreateGridEnemy(FieldEnemy.field);
-            gridPlayer = new CreateGridPlayer(FieldPlayer.field);
+            gridPlayer = new CreateGridPlayer(FieldPlayer.field, Buttons.typeShip);
             game = new Game(gridPlayer.fieldsPlayer, gridEnemy.fieldsEnemy);
             Print.PrintGrid(gridPlayer.fieldsPlayer, gridEnemy.fieldsEnemy);
         }

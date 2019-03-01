@@ -14,8 +14,7 @@
         </Grid.ColumnDefinitions>
         <local:PlayingFields Grid.Column="0" x:Name="FieldPlayer" Margin="0,0,0.4,0" ></local:PlayingFields>
         <local:PlayingFields Grid.Column="1" x:Name="FieldEnemy" Margin="9.6,-1,0.4,1"  />
-        <local:FieldButtons Grid.Column="2" Margin="9.6,1,-25.2,10" Height="Auto" Width="322" HorizontalAlignment="Left"   />
-        <Button x:Name="button" Content="Button" Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="12.6,10,0,0" VerticalAlignment="Top" Width="23" Click="button_Click"/>
+        <local:FieldButtons Grid.Column="2" x:Name="Buttons" Margin="9.6,1,-25.2,10" Height="Auto" Width="322" HorizontalAlignment="Left"   />
 
     </Grid>
 
