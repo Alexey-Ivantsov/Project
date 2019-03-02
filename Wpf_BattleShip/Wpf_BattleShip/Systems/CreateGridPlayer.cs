@@ -12,11 +12,11 @@ using Wpf_BattleShip.Enum;
 
 namespace Wpf_BattleShip.Systems
 {
-    class CreateGridPlayer : FieldButtons
+    public class CreateGridPlayer : FieldButtons
     {
 
         TypeShip typeShip;
-        Orientations orientations = Orientations.Horizontal;
+        Orientations orientations;
         public int fourDeckCount = Const.FourDeck;
         public int threeDeckCount = Const.ThreeDeck;
         public int doubleDeckCount = Const.DoubleDeck;
@@ -26,17 +26,27 @@ namespace Wpf_BattleShip.Systems
         bool threeDeckbool;
         bool fourDeckbool;
         public Grid[,] fieldsPlayer;
-        public CreateGridPlayer(Grid[,] field, TypeShip type)
+        public delegate void IsEnables(TypeShip typeShip);
+        public event IsEnables isE;
+        public CreateGridPlayer(Grid[,] field)
         {
             fieldsPlayer = field;
-            typeShip = type;
             foreach (var item in fieldsPlayer)
             {
                 item.MouseDown += PlayerGridPlacement;
             }
+
         }
+        public void data(TypeShip typeShip, Orientations orientations)
+        {
+            this.typeShip = typeShip;
+            this.orientations = orientations;
+        }
+
+
         public void PlayerGridPlacement(object sender, MouseButtonEventArgs e)
         {
+
             Grid square = (Grid)sender;
             int j = Grid.GetColumn(square) - 1;
             int i = Grid.GetRow(square) - 1;
@@ -66,11 +76,7 @@ namespace Wpf_BattleShip.Systems
                         }
                         if (doubleDeckCount == 0)
                         {
-
-                            DoubleH.IsEnabled = false;
-                            DoubleV.IsEnabled = false;
-                            DoubleDeckHoriz.Opacity = 0.2;
-                            DoubleDeckVert.Opacity = 0.2;
+                            isE(TypeShip.DoubleDeck);
                             typeShip = 0;
                             doubleDeckbool = true;
                         }
@@ -90,10 +96,7 @@ namespace Wpf_BattleShip.Systems
                         }
                         if (threeDeckCount == 0)
                         {
-                            ThreeH.IsEnabled = false;
-                            ThreeV.IsEnabled = false;
-                            ThreeDeckHoriz.Opacity = 0.2;
-                            ThreeDeckVert.Opacity = 0.2;
+                            isE(TypeShip.ThreeDeck);
                             typeShip = 0;
                             threeDeckbool = true;
                         }
@@ -113,10 +116,8 @@ namespace Wpf_BattleShip.Systems
                         }
                         if (fourDeckCount == 0)
                         {
-                            FourH.IsEnabled = false;
-                            FourV.IsEnabled = false;
-                            FourDeckHoriz.Opacity = 0.2;
-                            FourDeckVert.Opacity = 0.2;
+
+                            isE(TypeShip.FourDeck);
                             typeShip = 0;
                             fourDeckbool = true;
                         }
@@ -137,8 +138,7 @@ namespace Wpf_BattleShip.Systems
                         singleDeckCount--;
                         if (singleDeckCount == 0)
                         {
-                            Single.IsEnabled = false;
-                            SingleDeck.Opacity = 0.2;
+                            isE(TypeShip.SingleDeck);
                             typeShip = 0;
                             singleDeckbool = true;
                         }
@@ -147,10 +147,7 @@ namespace Wpf_BattleShip.Systems
                         doubleDeckCount--;
                         if (doubleDeckCount == 0)
                         {
-                            DoubleH.IsEnabled = false;
-                            DoubleV.IsEnabled = false;
-                            DoubleDeckHoriz.Opacity = 0.2;
-                            DoubleDeckVert.Opacity = 0.2;
+                            isE(TypeShip.DoubleDeck);
                             typeShip = 0;
                             doubleDeckbool = true;
                         }
@@ -159,10 +156,7 @@ namespace Wpf_BattleShip.Systems
                         threeDeckCount--;
                         if (threeDeckCount == 0)
                         {
-                            ThreeH.IsEnabled = false;
-                            ThreeV.IsEnabled = false;
-                            ThreeDeckHoriz.Opacity = 0.2;
-                            ThreeDeckVert.Opacity = 0.2;
+                            isE(TypeShip.ThreeDeck);
                             typeShip = 0;
                             threeDeckbool = true;
                         }
@@ -171,10 +165,7 @@ namespace Wpf_BattleShip.Systems
                         fourDeckCount--;
                         if (fourDeckCount == 0)
                         {
-                            FourH.IsEnabled = false;
-                            FourV.IsEnabled = false;
-                            FourDeckHoriz.Opacity = 0.2;
-                            FourDeckVert.Opacity = 0.2;
+                            isE(TypeShip.FourDeck);
                             typeShip = 0;
                             fourDeckbool = true;
                         }
@@ -183,10 +174,10 @@ namespace Wpf_BattleShip.Systems
                         break;
                 }
             }
-            Print.PrintGrid(fieldsPlayer);
+            Print.PrintGrid(fieldsPlayer, 0);
             if (singleDeckbool && doubleDeckbool && threeDeckbool && fourDeckbool)
             {
-                Start.IsEnabled = true;
+                // Start.IsEnabled = true;
                 MessageBox.Show("Жми старт!");
             }
         }

@@ -43,7 +43,7 @@ namespace Wpf_BattleShip.Systems
                 FindStatusHit(fieldsEnemy);
                 MessageBox.Show("Вы потопили однопалубный корабль!");
                 MainWindow.IsWin(ComputerCount);
-                Print.PrintGrid(fieldsEnemy);
+                Print.PrintGrid(fieldsEnemy, 1);
                 return;
             }
             else if (fieldsEnemy[i, j].Tag.Equals(Status.OccupiedComputer2))
@@ -58,7 +58,7 @@ namespace Wpf_BattleShip.Systems
                     doubleDeckHit = 0;
                 }
                 MainWindow.IsWin(ComputerCount);
-                Print.PrintGrid(fieldsEnemy);
+                Print.PrintGrid(fieldsEnemy, 1);
                 return;
             }
             else if (fieldsEnemy[i, j].Tag.Equals(Status.OccupiedComputer3))
@@ -74,7 +74,7 @@ namespace Wpf_BattleShip.Systems
                 }
 
                 MainWindow.IsWin(ComputerCount);
-                Print.PrintGrid(fieldsEnemy);
+                Print.PrintGrid(fieldsEnemy, 1);
                 return;
             }
             else if (fieldsEnemy[i, j].Tag.Equals(Status.OccupiedComputer4))
@@ -90,14 +90,14 @@ namespace Wpf_BattleShip.Systems
                 }
 
                 MainWindow.IsWin(ComputerCount);
-                Print.PrintGrid(fieldsEnemy);
+                Print.PrintGrid(fieldsEnemy, 1);
                 return;
             }
             else if (fieldsEnemy[i, j].Tag.Equals(Status.Empty))
             {
                 fieldsEnemy[i, j].Tag = Status.Used;
                 MainWindow.IsWin(ComputerCount);
-                Print.PrintGrid(fieldsEnemy);
+                Print.PrintGrid(fieldsEnemy, 1);
                 return;
             }
         }
