@@ -17,83 +17,75 @@ using Wpf_BattleShip.Systems;
 
 namespace Wpf_BattleShip.Controls
 {
-    /// <summary>
-    /// Interaction logic for FieldButtons.xaml
-    /// </summary>
     public partial class FieldButtons : UserControl
     {
         TypeShip typeShip;
         Orientations orientations;
         public delegate void dataField(TypeShip typeShip, Orientations orientations);
-        public event dataField dataEvent;
+        public event dataField DataEvent;
         public FieldButtons()
         {
             InitializeComponent();
         }
-
-
-
         public void FourVertShip(object sender, RoutedEventArgs e)
         {
-            // MessageBox.Show("Укажите на поле игрока место расположения");
+            MessageBox.Show("Укажите на поле игрока место расположения");
             typeShip = TypeShip.FourDeck;
             orientations = Orientations.Vertical;
-            dataEvent(typeShip, orientations);
+            if (DataEvent != null)
+                DataEvent(typeShip, orientations);
         }
         private void FourHoriztShip(object sender, RoutedEventArgs e)
         {
-            // MessageBox.Show("Укажите на поле игрока место расположения");
+            MessageBox.Show("Укажите на поле игрока место расположения");
             typeShip = TypeShip.FourDeck;
             orientations = Orientations.Horizontal;
-            dataEvent(typeShip, orientations);
-
+            if (DataEvent != null)
+                DataEvent(typeShip, orientations);
         }
-
         private void ThreeVertShip(object sender, RoutedEventArgs e)
         {
-            // MessageBox.Show("Укажите на поле игрока место расположения");
+            MessageBox.Show("Укажите на поле игрока место расположения");
             typeShip = TypeShip.ThreeDeck;
             orientations = Orientations.Vertical;
-            dataEvent(typeShip, orientations);
+            if (DataEvent != null)
+                DataEvent(typeShip, orientations);
         }
         private void ThreeHoriztShip(object sender, RoutedEventArgs e)
         {
-            //MessageBox.Show("Укажите на поле игрока место расположения");
+            MessageBox.Show("Укажите на поле игрока место расположения");
             typeShip = TypeShip.ThreeDeck;
             orientations = Orientations.Horizontal;
-            dataEvent(typeShip, orientations);
+            if (DataEvent != null)
+                DataEvent(typeShip, orientations);
         }
-
         private void DoubleVertShip(object sender, RoutedEventArgs e)
         {
-            // MessageBox.Show("Укажите на поле игрока место расположения");
+            MessageBox.Show("Укажите на поле игрока место расположения");
             typeShip = TypeShip.DoubleDeck;
             orientations = Orientations.Vertical;
-            dataEvent(typeShip, orientations);
+            if (DataEvent != null)
+                DataEvent(typeShip, orientations);
         }
         private void DoubleHoriztShip(object sender, RoutedEventArgs e)
         {
-            //MessageBox.Show("Укажите на поле игрока место расположения");
+            MessageBox.Show("Укажите на поле игрока место расположения");
             typeShip = TypeShip.DoubleDeck;
             orientations = Orientations.Horizontal;
-            dataEvent(typeShip, orientations);
+            if (DataEvent != null)
+                DataEvent(typeShip, orientations);
         }
-
         private void SingleShip(object sender, RoutedEventArgs e)
         {
-            //MessageBox.Show("Укажите на поле игрока место расположения");
+            MessageBox.Show("Укажите на поле игрока место расположения");
             typeShip = TypeShip.SingleDeck;
             orientations = Orientations.None;
-            dataEvent(typeShip, orientations);
+            if (DataEvent != null)
+                DataEvent(typeShip, orientations);
         }
-
-        private void StartButton(object sender, MouseButtonEventArgs e)
+        private void StartButton(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Игра Началась!");
-            //FieldPlayer.IsEnabled = false;
-            Start.IsEnabled = false;
-            //FieldsEnemy.IsEnabled = true;
-            //Print.PrintGrid(fieldsPlayer, fieldsEnemy);
+            MessageBox.Show("Игра Началась!Найди Корабли соперника.");
         }
     }
 }

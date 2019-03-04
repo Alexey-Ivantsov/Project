@@ -17,28 +17,15 @@ namespace Wpf_BattleShip.Computter
         public int LastJ { get; set; }
         public HitInformation _hitInformation;
         Random rand;
-
         public Computer(Grid[,] fieldsEnemy)
         {
             Grid = fieldsEnemy;
             LastI = 0;
             LastJ = 0;
-            // GridComputer();
             _hitInformation = new HitInformation();
             rand = new Random();
             Placement();
         }
-        public void GridComputer()
-        {
-            for (int i = 0; i < 10; i++)
-            {
-                for (int j = 0; j < 10; j++)
-                {
-                    Grid[i, j].Tag = Status.Empty;
-                }
-            }
-        }
-
         public void Placement()
         {
             for (int i = Const.AMOUNT_SHIPS; i > 0; i--)
@@ -97,7 +84,6 @@ namespace Wpf_BattleShip.Computter
                     break;
             }
         }
-
         public void FindHit(Grid[,] playerGrid)
         {
             for (int i = 0; i < 10; i++)
@@ -119,7 +105,6 @@ namespace Wpf_BattleShip.Computter
                                     if (!playerGrid[i + k, j + l].Tag.Equals(Status.Hit) && !playerGrid[i + k, j + l].Tag.Equals(Status.Occupied) && !playerGrid[i + k, j + l].Tag.Equals(Status.Occupied2) && !playerGrid[i + k, j + l].Tag.Equals(Status.Occupied3) && !playerGrid[i + k, j + l].Tag.Equals(Status.Occupied4))
                                     {
                                         playerGrid[i + k, j + l].Tag = Status.Used;
-
                                     }
                                     l++;
                                 }
@@ -133,7 +118,6 @@ namespace Wpf_BattleShip.Computter
         }
         public void Hit(Grid[,] playerGrid)
         {
-
             if (_hitInformation.ShipCount == 0)
             {
                 FindHit(playerGrid);

@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf_BattleShip.Controls"
         mc:Ignorable="d" 
-      Height="465.259" Width="1135.331">
-    <Grid HorizontalAlignment="Left" Height="430" VerticalAlignment="Top" Width="1125"  >
+      Height="465.259" Width="1121.998">
+    <Grid HorizontalAlignment="Left" Height="430" VerticalAlignment="Top" Width="1112"  >
         <Grid.ColumnDefinitions>
             <ColumnDefinition  Width="27*" ></ColumnDefinition>
             <ColumnDefinition Width="28*" ></ColumnDefinition>
             <ColumnDefinition Width="306.4" ></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <local:PlayingFields Grid.Column="0" x:Name="FieldPlayer" Margin="0,0,0.4,0" ></local:PlayingFields>
-        <local:PlayingFields Grid.Column="1" x:Name="FieldEnemy" Margin="9.6,-1,0.4,1"  />
-        <local:FieldButtons Grid.Column="2" x:Name="Buttons"    />
-        <Button x:Name="button" Content="Button" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10.4,6,0,0" VerticalAlignment="Top" Width="26" Click="button_Click_1"/>
+        <local:PlayingFields Grid.Column="1" x:Name="FieldEnemy" IsEnabled="False" Margin="3.6,-1,0.4,1"  />
+        <local:FieldButtons Grid.Column="1" x:Name="Buttons" Grid.ColumnSpan="2" Margin="413.4,9,0,1"    />
+        <Button x:Name="Hint" Content="Hint" Background="PaleVioletRed" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="7.8,7,0,0" VerticalAlignment="Top" Width="26" Click="ShowComputerShip"/>
 
     </Grid>
 

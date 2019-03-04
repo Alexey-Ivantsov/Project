@@ -40,8 +40,8 @@ namespace Wpf_BattleShip.Systems
                         item.Background = Brushes.DeepSkyBlue;
                     else if (item.Tag.Equals(Status.Hit))
                     { item.Background = Brushes.Red; }
-                    else if (item.Tag.Equals(Status.Empty))
-                    { item.Background = Brushes.Gray; }
+
+
 
                 }
             }

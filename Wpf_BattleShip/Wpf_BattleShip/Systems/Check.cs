@@ -421,5 +421,9 @@ namespace Wpf_BattleShip.Systems
             }
 
         }
+        public static bool IsWin(int count)
+        {
+            return (count == 0);
+        }
     }
 }

@@ -14,23 +14,24 @@ namespace Wpf_BattleShip.Systems
 {
     public class CreateGridEnemy : UserControl
     {
-
-        int ComputerCount;
+        public delegate void ComputeHit();
+        public event ComputeHit Hitting;
+        int _computerCount;
         public Grid[,] fieldsEnemy;
-        public int fourDeckHit = 0;
-        public int threeDeckHit = 0;
-        public int doubleDeckHit = 0;
+        int _fourDeckHit = 0;
+        int _threeDeckHit = 0;
+        int _doubleDeckHit = 0;
         public CreateGridEnemy(Grid[,] field)
         {
-            ComputerCount = Const.COMPUTER_START;
+            _computerCount = Const.COMPUTER_START;
             fieldsEnemy = field;
             foreach (var item in fieldsEnemy)
             {
                 item.Tag = Status.Empty;
+                item.Background = Brushes.Gray;
                 item.MouseDown += ShootEnemyGrid;
             }
         }
-
         public void ShootEnemyGrid(object sender, MouseButtonEventArgs e)
         {
             Grid square = (Grid)sender;
@@ -38,70 +39,89 @@ namespace Wpf_BattleShip.Systems
             int i = Grid.GetRow(square) - 1;
             if (fieldsEnemy[i, j].Tag.Equals(Status.OccupiedComputer))
             {
-                ComputerCount--;
+                _computerCount--;
                 fieldsEnemy[i, j].Tag = Status.Hit;
                 FindStatusHit(fieldsEnemy);
                 MessageBox.Show("Вы потопили однопалубный корабль!");
-                MainWindow.IsWin(ComputerCount);
+                if (Check.IsWin(_computerCount))
+                {
+                    MessageBox.Show("Вы выиграли!");
+                }
                 Print.PrintGrid(fieldsEnemy, 1);
                 return;
             }
             else if (fieldsEnemy[i, j].Tag.Equals(Status.OccupiedComputer2))
             {
-                ComputerCount--;
+                _computerCount--;
                 fieldsEnemy[i, j].Tag = Status.Hit;
-                doubleDeckHit++;
-                if (doubleDeckHit == 2)
+                _doubleDeckHit++;
+                if (_doubleDeckHit == 2)
                 {
                     FindStatusHit(fieldsEnemy);
                     MessageBox.Show("Вы потопили двухпалубный корабль!");
-                    doubleDeckHit = 0;
+                    _doubleDeckHit = 0;
                 }
-                MainWindow.IsWin(ComputerCount);
+                if (Check.IsWin(_computerCount))
+                {
+                    MessageBox.Show("Вы выиграли!");
+                }
                 Print.PrintGrid(fieldsEnemy, 1);
                 return;
             }
             else if (fieldsEnemy[i, j].Tag.Equals(Status.OccupiedComputer3))
             {
-                ComputerCount--;
+                _computerCount--;
                 fieldsEnemy[i, j].Tag = Status.Hit;
-                threeDeckHit++;
-                if (threeDeckHit == 3)
+                _threeDeckHit++;
+                if (_threeDeckHit == 3)
                 {
                     FindStatusHit(fieldsEnemy);
                     MessageBox.Show("Вы потопили трёхпалубный корабль!");
-                    threeDeckHit = 0;
+                    _threeDeckHit = 0;
                 }
 
-                MainWindow.IsWin(ComputerCount);
+                if (Check.IsWin(_computerCount))
+                {
+                    MessageBox.Show("Вы выиграли!");
+                }
                 Print.PrintGrid(fieldsEnemy, 1);
                 return;
             }
             else if (fieldsEnemy[i, j].Tag.Equals(Status.OccupiedComputer4))
             {
-                ComputerCount--;
+                _computerCount--;
                 fieldsEnemy[i, j].Tag = Status.Hit;
-                fourDeckHit++;
-                if (fourDeckHit == 4)
+                _fourDeckHit++;
+                if (_fourDeckHit == 4)
                 {
                     FindStatusHit(fieldsEnemy);
                     MessageBox.Show("Вы потопили четырёхпалубный корабль!");
-                    fourDeckHit = 0;
+                    _fourDeckHit = 0;
                 }
 
-                MainWindow.IsWin(ComputerCount);
+                if (Check.IsWin(_computerCount))
+                {
+                    MessageBox.Show("Вы выиграли!");
+                }
                 Print.PrintGrid(fieldsEnemy, 1);
                 return;
             }
             else if (fieldsEnemy[i, j].Tag.Equals(Status.Empty))
             {
                 fieldsEnemy[i, j].Tag = Status.Used;
-                MainWindow.IsWin(ComputerCount);
+                if (Check.IsWin(_computerCount))
+                {
+                    MessageBox.Show("Вы выиграли!");
+                }
                 Print.PrintGrid(fieldsEnemy, 1);
+                if (Hitting != null)
+                {
+                    Hitting();
+                }
                 return;
             }
+            Print.PrintGrid(fieldsEnemy, 1);
         }
-
         public void FindStatusHit(Grid[,] fieldsEnemy)
         {
             for (int i = 0; i < 10; i++)
@@ -115,7 +135,6 @@ namespace Wpf_BattleShip.Systems
                 }
             }
         }
-
         public void EmptyZone(int i, int j)
         {
             for (int k = -1; k < 2;)
@@ -131,16 +150,12 @@ namespace Wpf_BattleShip.Systems
                         if (!fieldsEnemy[i + k, j + l].Tag.Equals(Status.Hit) && !fieldsEnemy[i + k, j + l].Tag.Equals(Status.Occupied) && !fieldsEnemy[i + k, j + l].Tag.Equals(Status.Occupied2) && !fieldsEnemy[i + k, j + l].Tag.Equals(Status.Occupied3) && !fieldsEnemy[i + k, j + l].Tag.Equals(Status.Occupied4))
                         {
                             fieldsEnemy[i + k, j + l].Tag = Status.Used;
-
                         }
                         l++;
                     }
-
                 }
                 k++;
             }
         }
-
-
     }
 }

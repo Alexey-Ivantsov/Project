@@ -14,21 +14,18 @@ namespace Wpf_BattleShip.Systems
 {
     public class Game
     {
-        public static Computer computer;
-        public Player player;
-        public Game(Grid[,] fieldsPlayer, Grid[,] fieldsEnemy)
+        public Computer computer;
+        Grid[,] fieldsPlayer;
+        public Game(Grid[,] fieldsPlayer, Grid[,] fieldsEnemy, CreateGridEnemy gridEnemy)
         {
+            this.fieldsPlayer = fieldsPlayer;
             computer = new Computer(fieldsEnemy);
-            player = new Player(fieldsPlayer);
-            foreach (var item in fieldsEnemy)
-            {
-                item.Background = Brushes.Gray;
-
-            }
-            foreach (var item in fieldsPlayer)
-            {
-                item.Background = Brushes.DeepSkyBlue;
-            }
+            gridEnemy.Hitting += Hitting;
+        }
+        public void Hitting()
+        {
+            computer.Hit(fieldsPlayer);
+            Print.PrintGrid(fieldsPlayer, 0);
         }
 
     }

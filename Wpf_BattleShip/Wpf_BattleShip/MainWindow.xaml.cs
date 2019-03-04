@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Wpf_BattleShip.Computter;
 using Wpf_BattleShip.Controls;
 using Wpf_BattleShip.Enum;
 using Wpf_BattleShip.Systems;
@@ -28,17 +29,25 @@ namespace Wpf_BattleShip
         CreateGridPlayer gridPlayer;
         public MainWindow()
         {
+
             InitializeComponent();
             gridEnemy = new CreateGridEnemy(FieldEnemy.field);
             gridPlayer = new CreateGridPlayer(FieldPlayer.field);
-            gridPlayer.isE += Deactivation;
-            Buttons.dataEvent += DataTrancfer;
-            game = new Game(gridPlayer.fieldsPlayer, gridEnemy.fieldsEnemy);
+            gridPlayer.DisableButtonEvent += Deactivation;
+            gridPlayer.StartEvent += StartEnabled;
+            Buttons.DataEvent += DataTrancfer;
+            game = new Game(gridPlayer.fieldsPlayer, gridEnemy.fieldsEnemy, gridEnemy);
             Print.PrintGrid(gridPlayer.fieldsPlayer, 0);
             Print.PrintGrid(gridEnemy.fieldsEnemy, 1);
-
         }
-
+        private void StartEnabled()
+        {
+            FieldPlayer.IsEnabled = false;
+            FieldEnemy.IsEnabled = true;
+            Buttons.ButtonStart.IsEnabled = true;
+            Buttons.ButtonStart.Opacity = 1;
+            gridEnemy.IsEnabled = true;
+        }
         public void Deactivation(TypeShip typeShip)
         {
             switch (typeShip)
@@ -71,24 +80,9 @@ namespace Wpf_BattleShip
         }
         public void DataTrancfer(TypeShip typeShip, Orientations orientations)
         {
-            gridPlayer.data(typeShip, orientations);
+            gridPlayer.SendData(typeShip, orientations);
         }
-
-        public static void IsWin(int ComputerCount)
-        {
-            if (Game.computer._hitInformation.PlayerCount == 0)
-            {
-                MessageBox.Show("Компьютер выиграл!");
-                // Stack.IsEnabled = false;
-            }
-            if (ComputerCount == 0)
-            {
-                MessageBox.Show("Вы выиграли!");
-                // Stack.IsEnabled = false;
-            }
-        }
-
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void ShowComputerShip(object sender, RoutedEventArgs e)
         {
             foreach (var item in gridEnemy.fieldsEnemy)
             {
@@ -107,13 +101,7 @@ namespace Wpf_BattleShip
                 else
                     item.Background = Brushes.Red;
             }
-            Print.PrintGrid(gridPlayer.fieldsPlayer, 0);
             Print.PrintGrid(gridEnemy.fieldsEnemy, 1);
-        }
-
-        private void button_Click_1(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show(Buttons.FourDeckHoriz.ToString());
         }
     }
 }

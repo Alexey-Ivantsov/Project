@@ -49,7 +49,6 @@ namespace Wpf_BattleShip.Controls
                 Grid.SetColumn(txt1, i + 1);
                 Grid.SetRow(txt1, 0);
                 Field.Children.Add(txt1);
-
                 TextBlock txt2 = new TextBlock();
                 txt2.FontFamily = new FontFamily("Times new roman");
                 txt2.TextAlignment = TextAlignment.Center;
@@ -73,11 +72,8 @@ namespace Wpf_BattleShip.Controls
                     Field.Children.Add(grid);
                     grid.Tag = Status.Empty;
                     field[i, j] = grid;
-                    // field[i, j].MouseDown += func;
                 }
             }
         }
-
-
     }
 }
