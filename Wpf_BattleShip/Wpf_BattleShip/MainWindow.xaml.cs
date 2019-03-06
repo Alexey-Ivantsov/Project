@@ -35,7 +35,7 @@ namespace Wpf_BattleShip
             gridPlayer = new CreateGridPlayer(FieldPlayer.field);
             gridPlayer.DisableButtonEvent += Deactivation;
             gridPlayer.StartEvent += StartEnabled;
-            Buttons.DataEvent += DataTrancfer;
+            Buttons.DataEvent += DataTransfer;
             game = new Game(gridPlayer.fieldsPlayer, gridEnemy.fieldsEnemy, gridEnemy);
             Print.PrintGrid(gridPlayer.fieldsPlayer, 0);
             Print.PrintGrid(gridEnemy.fieldsEnemy, 1);
@@ -78,7 +78,7 @@ namespace Wpf_BattleShip
                     break;
             }
         }
-        public void DataTrancfer(TypeShip typeShip, Orientations orientations)
+        public void DataTransfer(TypeShip typeShip, Orientations orientations)
         {
             gridPlayer.SendData(typeShip, orientations);
         }

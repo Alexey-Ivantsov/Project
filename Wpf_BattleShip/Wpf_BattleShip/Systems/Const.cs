@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace Wpf_BattleShip.Systems
 {
@@ -17,5 +18,10 @@ namespace Wpf_BattleShip.Systems
         public const int ThreeDeck = 2;
         public const int DoubleDeck = 3;
         public const int SingleDeck = 4;
+        public const string background = "#191970";
+        public const string foreground = "#FFF5EE";
+        public const string font = "Times new roman";
+
     }
+
 }

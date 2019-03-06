@@ -114,10 +114,7 @@ namespace Wpf_BattleShip.Systems
                     MessageBox.Show("Вы выиграли!");
                 }
                 Print.PrintGrid(fieldsEnemy, 1);
-                if (Hitting != null)
-                {
-                    Hitting();
-                }
+                Hitting?.Invoke();
                 return;
             }
             Print.PrintGrid(fieldsEnemy, 1);

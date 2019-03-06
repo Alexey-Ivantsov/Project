@@ -32,56 +32,49 @@ namespace Wpf_BattleShip.Controls
             MessageBox.Show("Укажите на поле игрока место расположения");
             typeShip = TypeShip.FourDeck;
             orientations = Orientations.Vertical;
-            if (DataEvent != null)
-                DataEvent(typeShip, orientations);
+            DataEvent?.Invoke(typeShip, orientations);
         }
         private void FourHoriztShip(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Укажите на поле игрока место расположения");
             typeShip = TypeShip.FourDeck;
             orientations = Orientations.Horizontal;
-            if (DataEvent != null)
-                DataEvent(typeShip, orientations);
+            DataEvent?.Invoke(typeShip, orientations);
         }
         private void ThreeVertShip(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Укажите на поле игрока место расположения");
             typeShip = TypeShip.ThreeDeck;
             orientations = Orientations.Vertical;
-            if (DataEvent != null)
-                DataEvent(typeShip, orientations);
+            DataEvent?.Invoke(typeShip, orientations);
         }
         private void ThreeHoriztShip(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Укажите на поле игрока место расположения");
             typeShip = TypeShip.ThreeDeck;
             orientations = Orientations.Horizontal;
-            if (DataEvent != null)
-                DataEvent(typeShip, orientations);
+            DataEvent?.Invoke(typeShip, orientations);
         }
         private void DoubleVertShip(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Укажите на поле игрока место расположения");
             typeShip = TypeShip.DoubleDeck;
             orientations = Orientations.Vertical;
-            if (DataEvent != null)
-                DataEvent(typeShip, orientations);
+            DataEvent?.Invoke(typeShip, orientations);
         }
         private void DoubleHoriztShip(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Укажите на поле игрока место расположения");
             typeShip = TypeShip.DoubleDeck;
             orientations = Orientations.Horizontal;
-            if (DataEvent != null)
-                DataEvent(typeShip, orientations);
+            DataEvent?.Invoke(typeShip, orientations);
         }
         private void SingleShip(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Укажите на поле игрока место расположения");
             typeShip = TypeShip.SingleDeck;
             orientations = Orientations.None;
-            if (DataEvent != null)
-                DataEvent(typeShip, orientations);
+            DataEvent?.Invoke(typeShip, orientations);
         }
         private void StartButton(object sender, RoutedEventArgs e)
         {

@@ -37,12 +37,82 @@ namespace Wpf_BattleShip.Systems
             {
                 item.Tag = Status.Empty;
                 item.MouseDown += PlayerGridPlacement;
+                item.MouseEnter += EnterGrid;
+                item.MouseLeave += LeaveGrid;
             }
         }
         public void SendData(TypeShip typeShip, Orientations orientations)
         {
             this.typeShip = typeShip;
             this.orientations = orientations;
+        }
+        public void EnterGrid(object sender, MouseEventArgs e)
+        {
+            Grid square = (Grid)sender;
+            int j = Grid.GetColumn(square) - 1;
+            int i = Grid.GetRow(square) - 1;
+            if (!Check.CheckPlacement(i, j, typeShip, orientations, fieldsPlayer) && orientations == Orientations.Horizontal || orientations == Orientations.None)
+            {
+                for (int k = 0; k < (int)typeShip; k++)
+                {
+                    fieldsPlayer[i, j + k].Background = Brushes.Cornsilk;
+                }
+            }
+            else if (!Check.CheckPlacement(i, j, typeShip, orientations, fieldsPlayer) && orientations == Orientations.Vertical)
+            {
+                for (int k = 0; k < (int)typeShip; k++)
+                {
+                    fieldsPlayer[i + k, j].Background = Brushes.Cornsilk;
+                }
+            }
+            else if (!Check.CheckPlacement(i - ((int)typeShip - 1), j, typeShip, orientations, fieldsPlayer) && orientations == Orientations.Vertical)
+            {
+                for (int k = 0; k < (int)typeShip; k++)
+                {
+                    fieldsPlayer[i - k, j].Background = Brushes.Cornsilk;
+                }
+            }
+            else if (!Check.CheckPlacement(i, j - ((int)typeShip - 1), typeShip, orientations, fieldsPlayer) && orientations == Orientations.Horizontal)
+            {
+                for (int k = 0; k < (int)typeShip; k++)
+                {
+                    fieldsPlayer[i, j - k].Background = Brushes.Cornsilk;
+                }
+            }
+        }
+        public void LeaveGrid(object sender, MouseEventArgs e)
+        {
+            Grid square = (Grid)sender;
+            int j = Grid.GetColumn(square) - 1;
+            int i = Grid.GetRow(square) - 1;
+            if (!Check.CheckPlacement(i, j, typeShip, orientations, fieldsPlayer) && orientations == Orientations.Horizontal || orientations == Orientations.None)
+            {
+                for (int k = 0; k < (int)typeShip; k++)
+                {
+                    fieldsPlayer[i, j + k].Background = Brushes.DeepSkyBlue;
+                }
+            }
+            else if (!Check.CheckPlacement(i, j, typeShip, orientations, fieldsPlayer) && orientations == Orientations.Vertical)
+            {
+                for (int k = 0; k < (int)typeShip; k++)
+                {
+                    fieldsPlayer[i + k, j].Background = Brushes.DeepSkyBlue;
+                }
+            }
+            else if (!Check.CheckPlacement(i - ((int)typeShip - 1), j, typeShip, orientations, fieldsPlayer) && orientations == Orientations.Vertical)
+            {
+                for (int k = 0; k < (int)typeShip; k++)
+                {
+                    fieldsPlayer[i - k, j].Background = Brushes.DeepSkyBlue;
+                }
+            }
+            else if (!Check.CheckPlacement(i, j - ((int)typeShip - 1), typeShip, orientations, fieldsPlayer) && orientations == Orientations.Horizontal)
+            {
+                for (int k = 0; k < (int)typeShip; k++)
+                {
+                    fieldsPlayer[i, j - k].Background = Brushes.DeepSkyBlue;
+                }
+            }
         }
         public void PlayerGridPlacement(object sender, MouseButtonEventArgs e)
         {
@@ -71,8 +141,7 @@ namespace Wpf_BattleShip.Systems
                         }
                         if (_doubleDeckCount == 0)
                         {
-                            if (DisableButtonEvent != null)
-                                DisableButtonEvent(TypeShip.DoubleDeck);
+                            DisableButtonEvent?.Invoke(TypeShip.DoubleDeck);
                             typeShip = 0;
                             doubleDeckbool = true;
                         }
@@ -90,8 +159,7 @@ namespace Wpf_BattleShip.Systems
                         }
                         if (_threeDeckCount == 0)
                         {
-                            if (DisableButtonEvent != null)
-                                DisableButtonEvent(TypeShip.ThreeDeck);
+                            DisableButtonEvent?.Invoke(TypeShip.ThreeDeck);
                             typeShip = 0;
                             threeDeckbool = true;
                         }
@@ -109,8 +177,7 @@ namespace Wpf_BattleShip.Systems
                         }
                         if (_fourDeckCount == 0)
                         {
-                            if (DisableButtonEvent != null)
-                                DisableButtonEvent(TypeShip.FourDeck);
+                            DisableButtonEvent?.Invoke(TypeShip.FourDeck);
                             typeShip = 0;
                             fourDeckbool = true;
                         }
@@ -119,7 +186,7 @@ namespace Wpf_BattleShip.Systems
                     default:
                         break;
                 }
-                MessageBox.Show("Неверное расположение");
+                //MessageBox.Show("Неверное расположение");
             }
             else
             {
@@ -130,8 +197,7 @@ namespace Wpf_BattleShip.Systems
                         _singleDeckCount--;
                         if (_singleDeckCount == 0)
                         {
-                            if (DisableButtonEvent != null)
-                                DisableButtonEvent(TypeShip.SingleDeck);
+                            DisableButtonEvent?.Invoke(TypeShip.SingleDeck);
                             typeShip = 0;
                             singleDeckbool = true;
                         }
@@ -140,8 +206,7 @@ namespace Wpf_BattleShip.Systems
                         _doubleDeckCount--;
                         if (_doubleDeckCount == 0)
                         {
-                            if (DisableButtonEvent != null)
-                                DisableButtonEvent(TypeShip.DoubleDeck);
+                            DisableButtonEvent?.Invoke(TypeShip.DoubleDeck);
                             typeShip = 0;
                             doubleDeckbool = true;
                         }
@@ -150,8 +215,7 @@ namespace Wpf_BattleShip.Systems
                         _threeDeckCount--;
                         if (_threeDeckCount == 0)
                         {
-                            if (DisableButtonEvent != null)
-                                DisableButtonEvent(TypeShip.ThreeDeck);
+                            DisableButtonEvent?.Invoke(TypeShip.ThreeDeck);
                             typeShip = 0;
                             threeDeckbool = true;
                         }
@@ -160,10 +224,7 @@ namespace Wpf_BattleShip.Systems
                         _fourDeckCount--;
                         if (_fourDeckCount == 0)
                         {
-                            if (DisableButtonEvent != null)
-                            {
-                                DisableButtonEvent(TypeShip.FourDeck);
-                            }
+                            DisableButtonEvent?.Invoke(TypeShip.FourDeck);
                             typeShip = 0;
                             fourDeckbool = true;
                         }
@@ -175,8 +236,7 @@ namespace Wpf_BattleShip.Systems
             Print.PrintGrid(fieldsPlayer, 0);
             if (singleDeckbool && doubleDeckbool && threeDeckbool && fourDeckbool)
             {
-                if (StartEvent != null)
-                    StartEvent();
+                StartEvent?.Invoke();
                 MessageBox.Show("Жми старт!");
             }
         }

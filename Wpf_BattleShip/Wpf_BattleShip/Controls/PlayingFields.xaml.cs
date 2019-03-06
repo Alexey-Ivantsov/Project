@@ -37,26 +37,26 @@ namespace Wpf_BattleShip.Controls
             for (int i = 0; i < 10; i++)
             {
                 TextBlock txt1 = new TextBlock();
-                txt1.FontFamily = new FontFamily("Times new roman");
+                txt1.FontFamily = new FontFamily(Const.font);
                 txt1.TextAlignment = TextAlignment.Center;
                 Char first = 'A';
                 Char newf = Convert.ToChar(first + i);
                 txt1.Text = Convert.ToString(newf);
                 txt1.FontSize = 32;
                 txt1.FontWeight = FontWeights.SemiBold;
-                txt1.Background = (Brush)bc.ConvertFrom("#191970");
-                txt1.Foreground = (Brush)bc.ConvertFrom("#FFF5EE");
+                txt1.Background = (Brush)bc.ConvertFrom(Const.background);
+                txt1.Foreground = (Brush)bc.ConvertFrom(Const.foreground);
                 Grid.SetColumn(txt1, i + 1);
                 Grid.SetRow(txt1, 0);
                 Field.Children.Add(txt1);
                 TextBlock txt2 = new TextBlock();
-                txt2.FontFamily = new FontFamily("Times new roman");
+                txt2.FontFamily = new FontFamily(Const.font);
                 txt2.TextAlignment = TextAlignment.Center;
                 txt2.Text = Convert.ToString(1 + i);
                 txt2.FontSize = 32;
                 txt2.FontWeight = FontWeights.SemiBold;
-                txt2.Background = (Brush)bc.ConvertFrom("#191970");
-                txt2.Foreground = (Brush)bc.ConvertFrom("#FFF5EE");
+                txt2.Background = (Brush)bc.ConvertFrom(Const.background);
+                txt2.Foreground = (Brush)bc.ConvertFrom(Const.foreground);
                 Grid.SetColumn(txt2, 0);
                 Grid.SetRow(txt2, 1 + i);
                 Field.Children.Add(txt2);
