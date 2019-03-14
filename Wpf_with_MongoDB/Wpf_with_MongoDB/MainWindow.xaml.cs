@@ -16,12 +16,33 @@ using MongoDB.Driver;
 using MongoDB.Shared;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver.Builders;
+using System.Collections;
+using MongoDB.Driver.Linq;
 
 namespace Wpf_with_MongoDB
 {
 
     public partial class MainWindow : Window
     {
+        public MainWindow()
+        {
+            InitializeComponent();
+            server = Client.GetServer();
+            server.Connect();
+            DB = server.GetDatabase("Book");
+            Collection = DB.GetCollection<info>("History");
+            //bindgrid();
+
+            var list = Collection.AsQueryable().Select(x => new Person()
+            {
+                FirstName = x.firstname,
+                LastName = x.lastname,
+                Age = x.age,
+                Id = x.info_id
+
+            });
+            DataContext = new ApplicationViewModel(list);
+        }
 
         public class info
         {
@@ -37,60 +58,73 @@ namespace Wpf_with_MongoDB
         MongoCollection<info> Collection;
         MongoServer server;
         info _inf;
-        public MainWindow()
+        private void UpdateDB(object sender, RoutedEventArgs e)
         {
-            InitializeComponent();
-            server = Client.GetServer();
-            server.Connect();
-            DB = server.GetDatabase("Book");
-            Collection = DB.GetCollection<info>("History");
-            bindgrid();
+            _inf = new info { firstname = FirstNamBox.Text, lastname = LastNameBox.Text, age = Convert.ToInt16(AgeBox.Text), info_id = Convert.ToInt16(IdBox.Text) };
+            infogrid.Focusable = false;
+            _inf.firstname = FirstNamBox.Text;
+            _inf.lastname = LastNameBox.Text;
+            _inf.age = Convert.ToInt16(AgeBox.Text);
+            updateInfo(_inf);
         }
-        public void reversBind(info _info)
+        public void updateInfo(info _info)
         {
-            textBox1.Text = _info.firstname;
-            textBox2.Text = _info.lastname;
-            textBox3.Text = _info.age.ToString();
-            textBox4.Text = _info.info_id.ToString();
+            IMongoQuery query = Query.EQ("info_id", _inf.info_id);
+            IMongoUpdate update = Update
+                .Set("firstname", _info.firstname)
+               .Set("lastname", _info.lastname)
+               .Set("age", _info.age);
+            Collection.Update(query, update);
+
         }
 
-        private void ConnectMongodb_Click(object sender, RoutedEventArgs e)
+        private void DeleteDb(object sender, RoutedEventArgs e)
         {
-            _inf = new info { info_id = (int)DB.GetCollection("History").Count() + 1, firstname = textBox1.Text, lastname = textBox2.Text, age = Convert.ToInt16(textBox3.Text) };
-            addinfo(_inf);
-            bindgrid();
+            _inf = new info { info_id = Convert.ToInt16(IdBox.Text) };
+            IMongoQuery query = Query.EQ("info_id", _inf.info_id);
+            Collection.Remove(query);
+            var list = Collection.AsQueryable().Select(x => new Person()
+            {
+                FirstName = x.firstname,
+                LastName = x.lastname,
+                Age = x.age,
+                Id = x.info_id
+
+            });
+            DataContext = new ApplicationViewModel(list);
         }
 
-        public void upd(IMongoQuery q, IMongoUpdate u)
-        {
-            Collection.Update(q, u);
-        }
+        /* public void reversBind(info _info)
+         {
+             textBox1.Text = _info.firstname;
+             textBox2.Text = _info.lastname;
+             textBox3.Text = _info.age.ToString();
+             textBox4.Text = _info.info_id.ToString();
+         }
 
-        public void addinfo(info _info)
-        {
+         /*private void ConnectMongodb_Click(object sender, RoutedEventArgs e)
+         {
+             _inf = new info { info_id = (int)DB.GetCollection("History").Count() + 1, firstname = textBox1.Text, lastname = textBox2.Text, age = Convert.ToInt16(textBox3.Text) };
+             addinfo(_inf);
+             bindgrid();
+         }
 
-            _info.Id = ObjectId.GenerateNewId();
-            Collection.Insert(_info);
-        }
+
+
+         public void addinfo(info _info)
+         {
+
+             _info.Id = ObjectId.GenerateNewId();
+             Collection.Insert(_info);
+         }
 
         public void bindgrid()
         {
-            infogrid.DataContext = Collection.FindAll();
-            infogrid.ItemsSource = Collection.FindAll();
+           infogrid.DataContext = Collection.FindAll();
+           infogrid.ItemsSource = Collection.FindAll();
         }
 
-        public void updateInfo(info _info)
-        {
-            IMongoQuery query = Query.EQ("info_id", _info.info_id);
-            IMongoUpdate update = Update
-                .Set("info_id", _info.info_id)
-                .Set("firstname", _info.firstname)
-
-               .Set("lastname", _info.lastname)
-               .Set("age", _info.age);
-            upd(query, update);
-        }
-
+        
         private void btnUpdate_Click(object sender, RoutedEventArgs e)
         {
             _inf = new info { info_id = Convert.ToInt16(textBox4.Text), firstname = textBox1.Text, lastname = textBox2.Text, age = Convert.ToInt16(textBox3.Text) };
@@ -126,13 +160,12 @@ namespace Wpf_with_MongoDB
 
         public void del(info _info)
         {
-            IMongoQuery query = Query.EQ("info_id", _info.info_id);
-            Collection.Remove(query);
+
         }
 
         private void textBox2_TextChanged(object sender, TextChangedEventArgs e)
         {
 
-        }
+        }*/
     }
 }
