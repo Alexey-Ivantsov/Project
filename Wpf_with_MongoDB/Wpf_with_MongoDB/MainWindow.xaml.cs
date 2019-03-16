@@ -24,26 +24,6 @@ namespace Wpf_with_MongoDB
 
     public partial class MainWindow : Window
     {
-        public MainWindow()
-        {
-            InitializeComponent();
-            server = Client.GetServer();
-            server.Connect();
-            DB = server.GetDatabase("Book");
-            Collection = DB.GetCollection<info>("History");
-            //bindgrid();
-
-            var list = Collection.AsQueryable().Select(x => new Person()
-            {
-                FirstName = x.firstname,
-                LastName = x.lastname,
-                Age = x.age,
-                Id = x.info_id
-
-            });
-            DataContext = new ApplicationViewModel(list);
-        }
-
         public class info
         {
             [BsonId]
@@ -58,6 +38,22 @@ namespace Wpf_with_MongoDB
         MongoCollection<info> Collection;
         MongoServer server;
         info _inf;
+        public MainWindow()
+        {
+            InitializeComponent();
+            server = Client.GetServer();
+            server.Connect();
+            DB = server.GetDatabase("Book");
+            Collection = DB.GetCollection<info>("History");
+            var list = Collection.AsQueryable().Select(x => new PersonVM()
+            {
+                FirstName = x.firstname,
+                LastName = x.lastname,
+                Age = x.age,
+                Id = x.info_id
+            });
+            DataContext = new ApplicationViewModel(list);
+        }
         private void UpdateDB(object sender, RoutedEventArgs e)
         {
             _inf = new info { firstname = FirstNamBox.Text, lastname = LastNameBox.Text, age = Convert.ToInt16(AgeBox.Text), info_id = Convert.ToInt16(IdBox.Text) };
@@ -75,15 +71,14 @@ namespace Wpf_with_MongoDB
                .Set("lastname", _info.lastname)
                .Set("age", _info.age);
             Collection.Update(query, update);
-
         }
 
-        private void DeleteDb(object sender, RoutedEventArgs e)
+        /*private void DeleteDb(object sender, RoutedEventArgs e)
         {
             _inf = new info { info_id = Convert.ToInt16(IdBox.Text) };
             IMongoQuery query = Query.EQ("info_id", _inf.info_id);
             Collection.Remove(query);
-            var list = Collection.AsQueryable().Select(x => new Person()
+            var list = Collection.AsQueryable().Select(x => new PersonVM()
             {
                 FirstName = x.firstname,
                 LastName = x.lastname,
@@ -124,7 +119,7 @@ namespace Wpf_with_MongoDB
            infogrid.ItemsSource = Collection.FindAll();
         }
 
-        
+
         private void btnUpdate_Click(object sender, RoutedEventArgs e)
         {
             _inf = new info { info_id = Convert.ToInt16(textBox4.Text), firstname = textBox1.Text, lastname = textBox2.Text, age = Convert.ToInt16(textBox3.Text) };

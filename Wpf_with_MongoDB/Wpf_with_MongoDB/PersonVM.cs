@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Wpf_with_MongoDB
 {
-    public class Person : INotifyPropertyChanged
+    public class PersonVM : BaseVM, INotifyPropertyChanged
     {
         private string _firstName;
         private string _lastName;
@@ -21,7 +21,7 @@ namespace Wpf_with_MongoDB
             set
             {
                 _id = value;
-                OnPropertyChanged("Id");
+                OnPropertyChanged(() => this.Id);
             }
         }
         public string FirstName
@@ -30,7 +30,7 @@ namespace Wpf_with_MongoDB
             set
             {
                 _firstName = value;
-                OnPropertyChanged("FirstName");
+                OnPropertyChanged(() => this.FirstName);
             }
         }
         public string LastName
@@ -39,7 +39,7 @@ namespace Wpf_with_MongoDB
             set
             {
                 _lastName = value;
-                OnPropertyChanged("LastName");
+                OnPropertyChanged(() => this.LastName);
             }
         }
         public int Age
@@ -48,14 +48,9 @@ namespace Wpf_with_MongoDB
             set
             {
                 _age = value;
-                OnPropertyChanged("Age");
+                OnPropertyChanged(() => this.Age);
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName]string prop = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
-        }
     }
 }

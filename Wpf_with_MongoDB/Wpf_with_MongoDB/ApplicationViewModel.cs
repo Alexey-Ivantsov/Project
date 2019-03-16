@@ -5,35 +5,54 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace Wpf_with_MongoDB
 {
-    public class ApplicationViewModel : INotifyPropertyChanged
+    public class ApplicationViewModel : BaseVM, INotifyPropertyChanged
     {
-        private Person selectedPerson;
 
-        public ObservableCollection<Person> Persons { get; set; }
-        public Person SelectedPerson
+        private PersonVM selectedPerson;
+        public ObservableCollection<PersonVM> Persons { get; set; }
+        public PersonVM SelectedPerson
         {
-            get { return selectedPerson; }
+            get => selectedPerson;
             set
             {
+                if (selectedPerson == value)
+                    return;
+
                 selectedPerson = value;
-                OnPropertyChanged("SelectedPerson");
+                OnPropertyChanged(() => this.SelectedPerson);
             }
         }
-        public ApplicationViewModel(IQueryable<Person> ps)
+        public ApplicationViewModel(IQueryable<PersonVM> ps)
         {
-            var myObservableCollection = new ObservableCollection<Person>(ps);
+            var myObservableCollection = new ObservableCollection<PersonVM>(ps);
             Persons = myObservableCollection;
         }
-        public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName]string prop = "")
+        private RelayCommand removeCommand;
+        public RelayCommand RemoveCommand
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
+            get
+            {
+                return removeCommand ??
+                    (removeCommand = new RelayCommand(obj =>
+                    {
+                        PersonVM pers = obj as PersonVM;
+                        if (pers != null)
+                        {
+                            Persons.Remove(pers);
+                        }
+                    },
+                    (obj) => Persons.Count > 0));
+            }
+
         }
+
     }
 }
