@@ -10,6 +10,8 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
+using System.Windows.Input;
+using System.Windows;
 
 namespace Wpf_with_MongoDB
 {
@@ -35,7 +37,7 @@ namespace Wpf_with_MongoDB
             var myObservableCollection = new ObservableCollection<PersonVM>(ps);
             Persons = myObservableCollection;
         }
-        private RelayCommand removeCommand;
+        /*private RelayCommand removeCommand;
         public RelayCommand RemoveCommand
         {
             get
@@ -51,8 +53,15 @@ namespace Wpf_with_MongoDB
                     },
                     (obj) => Persons.Count > 0));
             }
-
+        }*/
+        ICommand RemoveCommand { get; set; }
+        private void InitCommands()
+        {
+            RemoveCommand = new RoutedCommand(ClickRemoveEvent);
         }
-
+        public void ClickRemoveEvent()
+        {
+            MessageBox.Show("sa");
+        }
     }
 }
