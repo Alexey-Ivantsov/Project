@@ -8,7 +8,7 @@ using System.Web;
 
 namespace TestProject.Models
 {
-    public class dbStruct
+    public class DbStruct
     {
         [Display(Name = "Site")]
         public string _siteName { get; set; }
@@ -16,6 +16,5 @@ namespace TestProject.Models
         public string _url { get; set; }
         [Display(Name = "Time")]
         public int _time { get; set; }
-
     }
 }

@@ -12,7 +12,6 @@ namespace TestProject.Models
 {
     public class TestContext
     {
-
         IMongoDatabase database;
         IGridFSBucket gridFS;
         public TestContext()
@@ -23,17 +22,17 @@ namespace TestProject.Models
             database = client.GetDatabase(connection.DatabaseName);
             gridFS = new GridFSBucket(database);
         }
-        public IMongoCollection<dbStruct> dbStructs
+        public IMongoCollection<DbStruct> DbStructs
         {
-            get { return database.GetCollection<dbStruct>("dbStructs"); }
+            get { return database.GetCollection<DbStruct>("dbStructs"); }
         }
-        public async Task<dbStruct> GetComputer(string id)
+        public async Task<DbStruct> GetComputer(string id)
         {
-            return await dbStructs.Find(new BsonDocument("_id", new ObjectId(id))).FirstOrDefaultAsync();
+            return await DbStructs.Find(new BsonDocument("_id", new ObjectId(id))).FirstOrDefaultAsync();
         }
-        public async Task Create(dbStruct c)
+        public async Task Create(DbStruct c)
         {
-            await dbStructs.InsertOneAsync(c);
+            await DbStructs.InsertOneAsync(c);
         }
     }
 }
