@@ -7,11 +7,9 @@
     <p>
         Введите URL:
     <p>
-        <input name="URL" style="width: 400px; pattern="(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})">
-        <input type="text" ng-model="name" placeholder="Введите URL">
-        <input type="button" value="Go" />
+        <input type="text" ng-model="name" placeholder="Введите URL" />
+        <button class="btn btn-default" ng-click="addItem(text, price)">Добавить</button>
 
-    </p>
     </p>
     <hr />
     <p>
