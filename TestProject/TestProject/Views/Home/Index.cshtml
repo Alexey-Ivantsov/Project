@@ -1,22 +1,42 @@
-﻿<html>
+﻿<html ng-app="test">
 <head>
     <title></title>
+    <script src="~/Libaries/angular.js"></script>
+    <script>
+
+        var model = {
+            default: "Пока в поле пусто",
+            url: [{ name: "google.com", timeNow: "-", timeMin: "-", timeMax: "-" }]
+        };
+        var test = angular.module("test", []);
+        test.controller("testCtrl",
+            function ($scope) {
+                $scope.data = model;
+                $scope.message = model.default;
+                $scope.Add = function () {
+
+                    $scope.message = "Сайт " + $scope.name + " был добавлен.";
+
+                    $scope.data.url.push({
+                        name: $scope.name
+                    });
+                }
+            });
+    </script>
 </head>
-<body>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body ng-controller="testCtrl">
+    <h1>{{message}}</h1>
     <p>
         Введите URL:
-    <p>
-        <input type="text" ng-model="name" placeholder="Введите URL" />
-        <button class="btn btn-default" ng-click="addItem(text, price)">Добавить</button>
-
+        <input type="text" ng-model="name" placeholder="Введите URL" style="width: 400px;" />
+        <button class="btn btn-success" ng-click="Add()">Добавить</button>
     </p>
     <hr />
     <p>
         Таблица
     </p>
     <table border="1" cellpadding="1" cellspacing="1" style="width: 600px;">
-        <tbody>
+        <thead align="center">
             <tr bgcolor="#F0FFF0">
                 <td>
                     Site
@@ -31,138 +51,13 @@
                     MAX
                 </td>
             </tr>
-            <tr>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-
-            </tr>
-            <tr>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-
-            </tr>
-            <tr>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-
-            </tr>
-            <tr>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-
-            </tr>
-            <tr>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-
-            </tr>
-            <tr>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-
-            </tr>
-            <tr>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-
-            </tr>
-            <tr>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
-                <td>
-                    &nbsp;
-                </td>
+        </thead>
+        <tbody align="center">
+            <tr ng-repeat="item in data.url">
+                <td>{{item.name}} </td>
+                <td>{{item.timeNow}} </td>
+                <td>{{item.timeMin}} </td>
+                <td>{{item.timeMax}} </td>
             </tr>
         </tbody>
     </table>
