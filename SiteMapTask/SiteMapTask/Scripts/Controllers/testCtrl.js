@@ -1,4 +1,5 @@
-﻿test.controller("testCtrl",
+﻿var test = angular.module("test", []);
+test.controller("testCtrl",
     function ($scope) {
         $scope.data = model;
         $scope.message = model.default;

@@ -2,26 +2,27 @@
 <head>
     <title></title>
     <script src="~/Libaries/angular.js"></script>
+    <script src="~/Scripts/Controllers/testCtrl.js"></script>
     <script>
 
         var model = {
             default: "Пока в поле пусто",
             url: [{ name: "google.com", timeNow: "-", timeMin: "-", timeMax: "-" }]
         };
-        var test = angular.module("test", []);
-        test.controller("testCtrl",
-            function ($scope) {
-                $scope.data = model;
-                $scope.message = model.default;
-                $scope.Add = function () {
+           /* var test = angular.module("test", []);
+            test.controller("testCtrl",
+                function ($scope) {
+                    $scope.data = model;
+                    $scope.message = model.default;
+                    $scope.Add = function () {
 
-                    $scope.message = "Сайт " + $scope.name + " был добавлен.";
+                        $scope.message = "Сайт " + $scope.name + " был добавлен.";
 
-                    $scope.data.url.push({
-                        name: $scope.name
-                    });
-                }
-            });
+                        $scope.data.url.push({
+                            name: $scope.name
+                        });
+                    }
+                });*/
     </script>
 </head>
 <body ng-controller="testCtrl">
