@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TestProject.Models
+namespace SiteMapTask.Models
 {
     public class SiteMapModel
     {

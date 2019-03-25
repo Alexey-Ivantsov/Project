@@ -1,9 +1,10 @@
-﻿using MongoDB.Bson;
-using MongoDB.Driver;
-using System.Configuration;
+﻿using System.Configuration;
 using System.Threading.Tasks;
+using MongoDB.Bson;
+using MongoDB.Driver;
+using SiteMapTask.Models;
 
-namespace TestProject.Models
+namespace SiteMapTask.dbContext
 {
     public class SiteMapContext
     {

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{D4C6A16A-9A01-4693-8B48-D19BA7771ACB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteMapTask", "SiteMapTask\SiteMapTask.csproj", "{D4C6A16A-9A01-4693-8B48-D19BA7771ACB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {DD48A3F2-5BFA-44B2-B3B0-407431693AE6}
+		SolutionGuid = {36217350-D2E6-4366-B94B-627CA5DA4BB3}
 	EndGlobalSection
 EndGlobal

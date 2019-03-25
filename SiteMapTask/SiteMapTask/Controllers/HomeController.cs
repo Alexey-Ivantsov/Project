@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace TestProject.Controllers
+namespace SiteMapTask.Controllers
 {
     public class HomeController : Controller
     {

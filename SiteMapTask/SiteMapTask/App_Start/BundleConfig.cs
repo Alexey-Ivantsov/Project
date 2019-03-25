@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace TestProject
+namespace SiteMapTask
 {
     public class BundleConfig
     {
@@ -25,6 +25,9 @@ namespace TestProject
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+            bundles.Add(new ScriptBundle("~/bundles/SiteMapTask")
+                .IncludeDirectory("~/Scripts/Controllers", "*.js")
+                .Include("~/Scripts/SiteMapTask.js"));
         }
     }
 }
