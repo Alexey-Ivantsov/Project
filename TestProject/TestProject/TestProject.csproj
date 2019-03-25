@@ -170,8 +170,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\dbStruct.cs" />
-    <Compile Include="Models\TestContext.cs" />
+    <Compile Include="Models\SiteMapModel.cs" />
+    <Compile Include="Models\SiteMapContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
