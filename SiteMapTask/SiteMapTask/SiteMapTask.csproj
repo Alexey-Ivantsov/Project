@@ -167,12 +167,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RequestSitesController.cs" />
+    <Compile Include="Controllers\SitesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\MainModel.cs" />
-    <Compile Include="Models\SiteMapModel.cs" />
-    <Compile Include="dbContext\SiteMapContext.cs" />
+    <Compile Include="Models\SiteModel.cs" />
+    <Compile Include="DBContext\SiteMapContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
