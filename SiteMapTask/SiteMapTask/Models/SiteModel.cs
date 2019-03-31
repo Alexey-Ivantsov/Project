@@ -1,10 +1,13 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace SiteMapTask.Models
 {
     public class SiteModel
     {
-        [Display(Name = "Site")]
+        [BsonId]
+        public ObjectId _id { get; set; }
         public string SiteName { get; set; }
         [Display(Name = "URL")]
         public string Url { get; set; }

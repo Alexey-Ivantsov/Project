@@ -19,7 +19,7 @@
         <p>
             Введите URL:
             @Html.TextBoxFor(model => model.Url, new { style = "width: 400px;", placeholder = "Введите URL" })
-            <button class="btn btn-success" ng-click="Add()">Добавить</button>
+            <button type="submit" class="btn btn-success" ng-click="Add()">Добавить</button>
         </p>
     }
     <p>
@@ -51,6 +51,11 @@
             </tr>
         </tbody>
     </table>
+    <p>
 
+    </p>
+    <button class="btn-block">
+        @Html.ActionLink("Просмотреть результаты", "In")
+    </button>
 </body>
 </html>

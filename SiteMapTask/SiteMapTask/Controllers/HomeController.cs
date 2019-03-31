@@ -1,5 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Web.Mvc;
+using MongoDB.Driver;
 using SiteMapTask.DBContext;
 using SiteMapTask.Models;
 
@@ -7,7 +9,18 @@ namespace SiteMapTask.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly SiteMapContext db = new SiteMapContext();
+        private readonly SiteMapContext db;
+        public IMongoCollection<SiteModel> MapCollection;
+        public async Task Create(SiteModel c)
+        {
+            c.NameSite = c.Url;
+            await MapCollection.InsertOneAsync(c);
+        }
+        public HomeController()
+        {
+            db = new SiteMapContext();
+            MapCollection = db.database.GetCollection<SiteModel>("SiteMap");
+        }
         public ActionResult Index()
         {
             return View();
@@ -15,8 +28,13 @@ namespace SiteMapTask.Controllers
         [HttpPost]
         public async Task<ActionResult> Index(SiteModel c)
         {
-            await db.Create(c);
+            await Create(c);
             return RedirectToAction("Index");
+        }
+        public ActionResult In()
+        {
+            List<SiteModel> pr = MapCollection.AsQueryable<SiteModel>().ToList();
+            return View(pr);
         }
     }
 }
