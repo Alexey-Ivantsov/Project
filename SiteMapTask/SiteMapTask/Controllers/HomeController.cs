@@ -18,6 +18,5 @@ namespace SiteMapTask.Controllers
             await db.Create(c);
             return RedirectToAction("Index");
         }
-
     }
 }
