@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -40,16 +40,17 @@ namespace SiteMapTask.Controllers
             return View(pr);
         }
         [System.Web.Mvc.HttpGet]
-        public async Task<HttpResponseMessage> Postman([FromRoute] string url)
+        public async Task<string> TimeResponse([FromRoute] string url)
         {
+            Stopwatch myStopWatch = new Stopwatch();
             HttpClient client = new HttpClient();
+            myStopWatch.Start();
             client.DefaultRequestHeaders.Connection.Add("keep-alive");
-
             HttpRequestMessage requestMessage = new HttpRequestMessage(HttpMethod.Get, url);
-
             HttpResponseMessage response = await client.SendAsync(requestMessage);
-            Console.WriteLine(requestMessage);
-            return response;
+            string milliseconds = myStopWatch.ElapsedMilliseconds.ToString();
+            myStopWatch.Stop();
+            return milliseconds;
         }
 
     }
