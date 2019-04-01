@@ -1,9 +1,13 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using MongoDB.Driver;
 using SiteMapTask.DBContext;
 using SiteMapTask.Models;
+using ActionResult = System.Web.Mvc.ActionResult;
 
 namespace SiteMapTask.Controllers
 {
@@ -24,7 +28,7 @@ namespace SiteMapTask.Controllers
         {
             return View();
         }
-        [HttpPost]
+        [System.Web.Mvc.HttpPost]
         public async Task<ActionResult> Index(SiteModel c)
         {
             await Create(c);
@@ -35,5 +39,18 @@ namespace SiteMapTask.Controllers
             List<SiteModel> pr = MapCollection.AsQueryable().ToList();
             return View(pr);
         }
+        [System.Web.Mvc.HttpGet]
+        public async Task<HttpResponseMessage> Postman([FromRoute] string url)
+        {
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Connection.Add("keep-alive");
+
+            HttpRequestMessage requestMessage = new HttpRequestMessage(HttpMethod.Get, url);
+
+            HttpResponseMessage response = await client.SendAsync(requestMessage);
+            Console.WriteLine(requestMessage);
+            return response;
+        }
+
     }
 }
