@@ -6,8 +6,7 @@
     <script src="~/Scripts/Controllers/testCtrl.js"></script>
     <script>
         var model = {
-            default: "Пока в поле пусто",
-            url: [{ name: "google.com", timeNow: "-", timeMin: "-", timeMax: "-" }]
+            default: "Пока в поле пусто"
         };
     </script>
 </head>
@@ -25,35 +24,7 @@
     <p>
         Таблица
     </p>
-    <table border="1" cellpadding="1" cellspacing="1" style="width: 600px;">
-        <thead align="center">
-            <tr bgcolor="#F0FFF0">
-                <td>
-                    Site
-                </td>
-                <td>
-                    Now
-                </td>
-                <td>
-                    MIN
-                </td>
-                <td>
-                    MAX
-                </td>
-            </tr>
-        </thead>
-        <tbody align="center">
-            <tr ng-repeat="item in data.url">
-                <td>{{item.name}} </td>
-                <td>{{item.timeNow}} </td>
-                <td>{{item.timeMin}} </td>
-                <td>{{item.timeMax}} </td>
-            </tr>
-        </tbody>
-    </table>
-    <p>
 
-    </p>
     <button class="btn-block">
         @Html.ActionLink("Просмотреть результаты", "In")
     </button>

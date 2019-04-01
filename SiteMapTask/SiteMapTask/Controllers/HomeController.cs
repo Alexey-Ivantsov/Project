@@ -9,7 +9,6 @@ namespace SiteMapTask.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly SiteMapContext db;
         public IMongoCollection<SiteModel> MapCollection;
         public async Task Create(SiteModel c)
         {
@@ -18,7 +17,7 @@ namespace SiteMapTask.Controllers
         }
         public HomeController()
         {
-            db = new SiteMapContext();
+            var db = new SiteMapContext();
             MapCollection = db.database.GetCollection<SiteModel>("SiteMap");
         }
         public ActionResult Index()
@@ -33,7 +32,7 @@ namespace SiteMapTask.Controllers
         }
         public ActionResult In()
         {
-            List<SiteModel> pr = MapCollection.AsQueryable<SiteModel>().ToList();
+            List<SiteModel> pr = MapCollection.AsQueryable().ToList();
             return View(pr);
         }
     }

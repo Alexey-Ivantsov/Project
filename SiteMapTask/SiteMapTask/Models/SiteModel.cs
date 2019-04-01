@@ -7,11 +7,9 @@ namespace SiteMapTask.Models
     public class SiteModel
     {
         [BsonId]
-        public ObjectId _id { get; set; }
+        public ObjectId Id { get; set; }
         public string SiteName { get; set; }
-        [Display(Name = "URL")]
         public string Url { get; set; }
-        //[Display(Name = "Time")]
         public int Time { get; set; }
         public string NameSite { get; set; }
         public int TimeMini { get; set; }
