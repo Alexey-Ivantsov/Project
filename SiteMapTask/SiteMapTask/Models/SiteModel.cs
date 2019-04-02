@@ -15,9 +15,5 @@ namespace SiteMapTask.Models
         public int TimeMini { get; set; }
         public int TimeNow { get; set; }
         public int TimeMax { get; set; }
-        public SiteModel()
-        {
-            NameSite = Url;
-        }
     }
 }
