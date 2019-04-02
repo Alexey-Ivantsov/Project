@@ -16,12 +16,12 @@ namespace SiteMapTask.Controllers
             await UrlResponse(url);
             int milliseconds = (int)myStopWatch.ElapsedMilliseconds;
             myStopWatch.Stop();
-            SiteModel newModel = new SiteModel
+            var newModel = new SiteModel
             {
                 NameSite = url,
                 TimeNow = milliseconds
             };
-            Create(newModel);
+            await Create(newModel);
             return milliseconds;
         }
 
