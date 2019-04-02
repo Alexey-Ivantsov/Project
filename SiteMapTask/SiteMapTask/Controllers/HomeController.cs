@@ -22,7 +22,7 @@ namespace SiteMapTask.Controllers
         }
         public ActionResult In()
         {
-            List<SiteModel> pr = dbContext._mapCollection.AsQueryable().ToList();
+            List<SiteModel> pr = dbContext.GetListSite();
             return View(pr);
         }
     }

@@ -31,7 +31,7 @@ namespace SiteMapTask.DBContext
         {
             List<SiteModel> siteList = _mapCollection.AsQueryable().ToList();
             var sortedList = siteList.OrderBy(t => t.TimeMini).ToList();
-            return siteList;
+            return sortedList;
         }
     }
 }
