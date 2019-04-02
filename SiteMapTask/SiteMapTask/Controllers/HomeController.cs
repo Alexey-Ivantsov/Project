@@ -9,16 +9,7 @@ namespace SiteMapTask.Controllers
 {
     public class HomeController : Controller
     {
-        public IMongoCollection<SiteModel> MapCollection;
-        public async Task Create(SiteModel c)
-        {
-            await MapCollection.InsertOneAsync(c);
-        }
-        public HomeController()
-        {
-            var db = new SiteMapContext();
-            MapCollection = db.database.GetCollection<SiteModel>("SiteMap");
-        }
+        SiteMapContext dbContext = new SiteMapContext();
         public ActionResult Index()
         {
             return View();
@@ -26,12 +17,12 @@ namespace SiteMapTask.Controllers
         [System.Web.Mvc.HttpPost]
         public async Task<ActionResult> Index(SiteModel c)
         {
-            await Create(c);
+            //await Create(c);
             return RedirectToAction("Index");
         }
         public ActionResult In()
         {
-            List<SiteModel> pr = MapCollection.AsQueryable().ToList();
+            List<SiteModel> pr = dbContext._mapCollection.AsQueryable().ToList();
             return View(pr);
         }
     }

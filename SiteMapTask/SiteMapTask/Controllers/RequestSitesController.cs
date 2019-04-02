@@ -1,13 +1,16 @@
 ﻿using System.Diagnostics;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 using Microsoft.AspNetCore.Mvc;
+using SiteMapTask.DBContext;
 using SiteMapTask.Models;
 
 namespace SiteMapTask.Controllers
 {
-    public class RequestSitesController : HomeController
+    public class RequestSitesController : Controller
     {
+        private readonly SiteMapContext _dbContext = new SiteMapContext();
         [System.Web.Mvc.HttpGet]
         public async Task<int> TimeRequest([FromRoute] string url)
         {
@@ -16,15 +19,31 @@ namespace SiteMapTask.Controllers
             await UrlResponse(url);
             int milliseconds = (int)myStopWatch.ElapsedMilliseconds;
             myStopWatch.Stop();
-            var newModel = new SiteModel
+            foreach (var item in _dbContext.GetListSite())
             {
-                NameSite = url,
-                TimeNow = milliseconds
-            };
-            await Create(newModel);
+                if (item.NameSite == url)
+                {
+                    item.TimeNow = milliseconds;
+                    if (milliseconds < item.TimeMini)
+                    {
+                        item.TimeMini = milliseconds;
+                    }
+                    else if (milliseconds > item.TimeMax)
+                    {
+                        item.TimeMax = milliseconds;
+                    }
+                    await _dbContext.Edit(item);
+                    return milliseconds;
+                }
+            }
+            var newModel = new SiteModel();
+            newModel.NameSite = url;
+            newModel.TimeNow = milliseconds;
+            newModel.TimeMini = milliseconds;
+            newModel.TimeMax = milliseconds;
+            await _dbContext.Create(newModel);
             return milliseconds;
         }
-
         private async Task UrlResponse(string url)
         {
             HttpClient client = new HttpClient();
