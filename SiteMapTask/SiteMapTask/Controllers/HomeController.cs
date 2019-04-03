@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using MongoDB.Driver;
@@ -23,6 +24,8 @@ namespace SiteMapTask.Controllers
         public ActionResult In()
         {
             List<SiteModel> pr = dbContext.GetListSite();
+            string test = "https://www.metanit.com";
+            bool s = dbContext.ValidationSiteMap(test);
             return View(pr);
         }
     }

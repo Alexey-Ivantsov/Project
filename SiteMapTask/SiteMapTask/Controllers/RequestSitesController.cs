@@ -36,11 +36,14 @@ namespace SiteMapTask.Controllers
                     return milliseconds;
                 }
             }
-            var newModel = new SiteModel();
-            newModel.NameSite = url;
-            newModel.TimeNow = milliseconds;
-            newModel.TimeMini = milliseconds;
-            newModel.TimeMax = milliseconds;
+
+            var newModel = new SiteModel
+            {
+                NameSite = url,
+                TimeNow = milliseconds,
+                TimeMini = milliseconds,
+                TimeMax = milliseconds
+            };
             await _dbContext.Create(newModel);
             return milliseconds;
         }

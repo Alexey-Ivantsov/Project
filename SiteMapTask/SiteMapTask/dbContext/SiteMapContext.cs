@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -32,6 +35,24 @@ namespace SiteMapTask.DBContext
             List<SiteModel> siteList = _mapCollection.AsQueryable().ToList();
             var sortedList = siteList.OrderBy(t => t.TimeMini).ToList();
             return sortedList;
+        }
+        public SiteModel GetSiteModel(string nameSite)
+        {
+            String[] values = File.ReadAllText("https://www.arcticpaper.com/sitemap.xml").Split('>');
+            var getModel = _mapCollection.Find(new BsonDocument("NameSite", nameSite)).FirstOrDefault();
+            return getModel;
+        }
+        public bool ValidationSiteMap(string url)
+        {
+            using (WebClient client = new WebClient())
+            {
+                try
+                {
+                    string[] values = client.DownloadString(url + "/sitemap.xml").Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+                    return values.Any(x => x.Contains(url));
+                }
+                catch { return false; }
+            }
         }
     }
 }
