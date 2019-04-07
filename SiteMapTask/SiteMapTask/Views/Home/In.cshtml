@@ -1,44 +1,14 @@
-﻿@model IEnumerable<SiteMapTask.Models.SiteModel>
+﻿<!DOCTYPE html>
+<html ng-app="test1">
+<head>
+    <title>n</title>
 
-@{
-    ViewBag.Title = "In";
-}
-<h2>In</h2>
-
-<table border="1" cellpadding="1" cellspacing="1" style="width: 600px;">
-    <thead align="center">
-        <tr bgcolor="#F0FFF0">
-            <td>
-                Site
-            </td>
-            <td>
-                Now
-            </td>
-            <td>
-                MIN
-            </td>
-            <td>
-                MAX
-            </td>
-        </tr>
-    </thead>
-    <tbody align="center">
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.NameSite)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TimeNow)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TimeMini)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.TimeMax)
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+    <script src="~/Libaries/angular.min.js"></script>
+    <script src="~/Scripts/Controllers/Model.js"></script>
+</head>
+<body>
+    <div ng-controller="siteCtrl">
+        {{GetListSite}}
+    </div>
+</body>
+</html>

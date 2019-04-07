@@ -10,6 +10,7 @@
         };
     </script>
 </head>
+
 <body ng-controller="testCtrl">
 
     <h1>{{message}}</h1>
@@ -25,5 +26,12 @@
     <button class="btn-block">
         @Html.ActionLink("Просмотреть результаты", "In")
     </button>
+    <div ng-controller="SitempCtrl">
+        <ul>
+            <li ng-repeat="phone in color">
+                <b>{{phone.NameSite}}</b>
+            </li>
+        </ul>
+    </div>
 </body>
 </html>

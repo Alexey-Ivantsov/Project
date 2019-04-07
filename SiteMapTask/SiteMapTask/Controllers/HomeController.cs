@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using SiteMapTask.DBContext;
 using SiteMapTask.Models;
@@ -10,9 +11,14 @@ namespace SiteMapTask.Controllers
 {
     public class HomeController : Controller
     {
+        public string GetListSite()
+        {
+            return "ss";
+        }
         SiteMapContext dbContext = new SiteMapContext();
         public ActionResult Index()
         {
+
             return View();
         }
         [System.Web.Mvc.HttpPost]
@@ -28,5 +34,6 @@ namespace SiteMapTask.Controllers
             bool s = dbContext.ValidationSiteMap(test);
             return View(pr);
         }
+
     }
 }
